@@ -1,0 +1,14 @@
+project 'TimerH2O.xcodeproj'
+
+platform :ios, '9.0'
+
+target 'TimerH2O' do
+  use_frameworks!
+  # Pods for TimerH2O 
+  pod 'R.swift'
+  target 'TimerH2OTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */; };
+		D5B5AF73E60B7568FB3288C2 /* Pods_TimerH2OTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */; };
 		D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476C71DBD622F009F92B3 /* AppDelegate.swift */; };
 		D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476CD1DBD622F009F92B3 /* Main.storyboard */; };
 		D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98476D01DBD622F009F92B3 /* Assets.xcassets */; };
 		D98476D41DBD622F009F92B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476D21DBD622F009F92B3 /* LaunchScreen.storyboard */; };
 		D98476DF1DBD622F009F92B3 /* TimerH2OTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */; };
-		D98476EC1DBD625C009F92B3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98476EB1DBD625C009F92B3 /* HealthKit.framework */; };
 		D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */; };
 		D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */; };
+		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerH2OTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		226E02B0C9303CFE5007B4AD /* Pods-TimerH2O.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2O.test.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O.test.xcconfig"; sourceTree = "<group>"; };
+		25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerH2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6B6FA5799AF62B45980304 /* Pods-TimerH2O.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2O.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O.debug.xcconfig"; sourceTree = "<group>"; };
+		A70CFCF885A5A8CDB62EE55E /* Pods-TimerH2OTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2O.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O.release.xcconfig"; sourceTree = "<group>"; };
+		C5D760F7D58F7109337C9BC3 /* Pods-TimerH2OTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.test.xcconfig"; sourceTree = "<group>"; };
 		D98476C41DBD622F009F92B3 /* TimerH2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerH2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98476C71DBD622F009F92B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98476CE1DBD622F009F92B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,11 +47,12 @@
 		D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerH2OTests.swift; sourceTree = "<group>"; };
 		D98476E01DBD622F009F92B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98476E91DBD625C009F92B3 /* TimerH2O.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimerH2O.entitlements; sourceTree = "<group>"; };
-		D98476EB1DBD625C009F92B3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		D98476F01DBD62FE009F92B3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		D98476F11DBD62FE009F92B3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OHistoryViewController.swift; path = History/ViewControllers/TH2OHistoryViewController.swift; sourceTree = "<group>"; };
 		D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerViewController.swift; path = Timer/ViewControllers/TH2OTimerViewController.swift; sourceTree = "<group>"; };
+		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98476EC1DBD625C009F92B3 /* HealthKit.framework in Frameworks */,
+				0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +68,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B5AF73E60B7568FB3288C2 /* Pods_TimerH2OTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A627281D142BBAA29135AE10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A6B6FA5799AF62B45980304 /* Pods-TimerH2O.debug.xcconfig */,
+				C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */,
+				226E02B0C9303CFE5007B4AD /* Pods-TimerH2O.test.xcconfig */,
+				A70CFCF885A5A8CDB62EE55E /* Pods-TimerH2OTests.debug.xcconfig */,
+				E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */,
+				C5D760F7D58F7109337C9BC3 /* Pods-TimerH2OTests.test.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D98476BB1DBD622E009F92B3 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +95,7 @@
 				D98476DD1DBD622F009F92B3 /* TimerH2OTests */,
 				D98476C51DBD622F009F92B3 /* Products */,
 				D98476EA1DBD625C009F92B3 /* Frameworks */,
+				A627281D142BBAA29135AE10 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +111,7 @@
 		D98476C61DBD622F009F92B3 /* TimerH2O */ = {
 			isa = PBXGroup;
 			children = (
+				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
 				D98476F51DBD6382009F92B3 /* History */,
@@ -109,7 +135,8 @@
 		D98476EA1DBD625C009F92B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D98476EB1DBD625C009F92B3 /* HealthKit.framework */,
+				25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */,
+				1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,9 +229,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98476E31DBD622F009F92B3 /* Build configuration list for PBXNativeTarget "TimerH2O" */;
 			buildPhases = (
+				EE8C63A2C819964165093239 /* [CP] Check Pods Manifest.lock */,
+				D9D0AEC11DBEA45500B6A8EE /* ShellScript */,
 				D98476C01DBD622F009F92B3 /* Sources */,
 				D98476C11DBD622F009F92B3 /* Frameworks */,
 				D98476C21DBD622F009F92B3 /* Resources */,
+				0A4F92545730379030B0B94C /* [CP] Embed Pods Frameworks */,
+				86CBBE7828731696C30CD7C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98476E61DBD622F009F92B3 /* Build configuration list for PBXNativeTarget "TimerH2OTests" */;
 			buildPhases = (
+				901EE7F829DE11DCB78EC03F /* [CP] Check Pods Manifest.lock */,
 				D98476D61DBD622F009F92B3 /* Sources */,
 				D98476D71DBD622F009F92B3 /* Frameworks */,
 				D98476D81DBD622F009F92B3 /* Resources */,
+				34915FE7796D598E1451D194 /* [CP] Embed Pods Frameworks */,
+				FAF618564C476CFE1725EC8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,7 +283,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -300,6 +334,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A4F92545730379030B0B94C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34915FE7796D598E1451D194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86CBBE7828731696C30CD7C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		901EE7F829DE11DCB78EC03F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D0AEC11DBEA45500B6A8EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
+		EE8C63A2C819964165093239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF618564C476CFE1725EC8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D98476C01DBD622F009F92B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,6 +448,7 @@
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
+				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,9 +587,9 @@
 		};
 		D98476E41DBD622F009F92B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A6B6FA5799AF62B45980304 /* Pods-TimerH2O.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -460,9 +601,9 @@
 		};
 		D98476E51DBD622F009F92B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -474,6 +615,7 @@
 		};
 		D98476E71DBD622F009F92B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70CFCF885A5A8CDB62EE55E /* Pods-TimerH2OTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +631,7 @@
 		};
 		D98476E81DBD622F009F92B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -547,9 +690,9 @@
 		};
 		D98476EE1DBD62E9009F92B3 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 226E02B0C9303CFE5007B4AD /* Pods-TimerH2O.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -561,6 +704,7 @@
 		};
 		D98476EF1DBD62E9009F92B3 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D760F7D58F7109337C9BC3 /* Pods-TimerH2OTests.test.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

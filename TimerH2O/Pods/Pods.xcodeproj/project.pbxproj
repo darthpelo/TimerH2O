@@ -1,0 +1,961 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00EC197334CC2C857EFC25CF091EAFE7 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD04C456239B2E4D78B5C2D1480212F /* R.swift.Library-dummy.m */; };
+		062C49E02A8552EB74675A5963CCBB3D /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985C1F57F5D7264FCC7891364F82BF82 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
+		13542A50B85456CD7BED44BA42FA6679 /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B410B25DDBCC5311FDDA42655EF8DA /* UIFont+FontResource.swift */; };
+		13FE89B67CBF38A25979FB393648C57F /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7DA6B9547340A0235DC74A1F560583 /* NibResource.swift */; };
+		1903941011E5F211610E5F16F9C6A564 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBAB7D31E54D4511D95828D75D5D2B /* ReuseIdentifierProtocol.swift */; };
+		1BC260AA4CD0C3E864BE1B5C16E3F0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		36735175116A61A774786E18D2C611DC /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DF8D544B3364D365DB6819934615F8 /* UIStoryboard+StoryboardViewControllerResource.swift */; };
+		44CC72922091F5C45C7229296C79A110 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E55F0280CEB12A0193E77AC4D6B463 /* StringResource.swift */; };
+		47041EE462502B55F6A82C3C14DD7307 /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7BED9A9142D3973C874C84C008C35D /* NibResource+UIKit.swift */; };
+		4910BA35916A414BAA9330D7714D347F /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375B98323A760412EAE705A73F563CE4 /* UIViewController+NibResource.swift */; };
+		53FE448FCFB25E7A723027DC7E696CE2 /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA71E627ED70BC6345E8A4AD6FAFBD1 /* UITableView+ReuseIdentifierProtocol.swift */; };
+		5AC1A48D591402E3DB5FF4A8F870DC66 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD6B19E0AC26E26C2B335E2A99903F5 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
+		62FA25F75147D6C1FDA793C529C38D6E /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0913537AF8A3C2A60D1142C01571B3 /* StoryboardSegueIdentifierProtocol.swift */; };
+		6C19656E05768FDDA86DD5450DA8166D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		6E01982D6D75F7E9EFCD6778745459B0 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453D05B941AF71A11DE1C2A76649BAF3 /* UINib+NibResource.swift */; };
+		7680A25D904517F97E2256739CD80848 /* Pods-TimerH2O-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1693DADF29CA083374F17B1AD723F5CD /* Pods-TimerH2O-dummy.m */; };
+		7D3E28C300F48AFAF807F52896BD1832 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75FD78F72E2348826A4418C2D8B3472 /* FontResource.swift */; };
+		8067FE610C4F698EADD8A6A198196BEB /* Pods-TimerH2OTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 564047B3E285FC270BED5C8FBC8C40B5 /* Pods-TimerH2OTests-dummy.m */; };
+		8555DEC3EEB0CCB6DAC586B8DD19630D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1926FABA145BDF8F7ECB916D2E7AF8F5 /* Identifier.swift */; };
+		8ED967EEC7FA5E9009E409688157C2F3 /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E729CB38BFB9A07A8B7C8F459CB06D /* Bundle+FileResource.swift */; };
+		96DB343B8E68748DB794F0EDE0E2AE4B /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA584FB961718D5CD56DBB23478EC8C /* StoryboardResourceWithInitialController+UIKit.swift */; };
+		A33DC8BA31865B46FA8CF33CE847D52A /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832052F977EA400DD34531BB48A08E52 /* Validatable.swift */; };
+		A48EE27CEC5B70690ABE8C348BFAAEFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		AFEC85758A3F5D03BF9779449B2DFAE5 /* UIKit+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4B2EAFD35FA4048ECCE12A15A44DBD /* UIKit+Migration.swift */; };
+		B208E132DE16920D2303B627760365D7 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9767A96D64AF161E73F4C4E098178DC2 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B30F3C39AA633141B7FF7A48276E525B /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B25475DA681CC7BAA6A83F39C35E9D /* UICollectionView+ReuseIdentifierProtocol.swift */; };
+		BB3DBB0ED8AAF7965FC7EF06F5F169B1 /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0C7786FD957BA48F2D5CFE887F1C5E /* FileResource.swift */; };
+		BDA93D53EA80663A9CEA390A905FD156 /* Pods-TimerH2O-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA11CF0F1192F5C14AB293336FC5B02 /* Pods-TimerH2O-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06BF6CCC68CABA1FF7A1BD7002B59E7 /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57CB21A1CFF5CCFA064AE811596025C /* StoryboardResource.swift */; };
+		C43B05507D12703CF2A7473198C3CD71 /* Foundation+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3035CC48CB2B4E1C03DC4D658BCFB8 /* Foundation+Migration.swift */; };
+		C9703D591AC44FF5140CA66918041E7D /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58176CF405F6CE69CD194633D4529A /* ImageResource.swift */; };
+		CECB00B717930E9C5A9B169100C5904A /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689086BA8E3E94F22EC8BA5475ED669 /* UIImage+ImageResource.swift */; };
+		CEFC44F679AC039066C6C5F5A5E48B82 /* ColorResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9939720992B5FEC932D70E0EE5B62E /* ColorResource+UIKit.swift */; };
+		D3460C438F176795808063D9D3135F8C /* Pods-TimerH2OTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D697C049358E1D9919AAEC9CB257A9 /* Pods-TimerH2OTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D35B4AAB13F62E98E43A09132776A1EE /* Core+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF062CB4279BBB8448382DC0CCBA49D /* Core+Migration.swift */; };
+		D746C9B8AD36C896A2269244FCD9D790 /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18978EBBD126026E2CF844527A7D7632 /* UIStoryboard+StoryboardResource.swift */; };
+		E0D8BD52A4D8C91835A83101548F830A /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05DB1D2D3189D70277A23A001F7C88F /* Data+FileResource.swift */; };
+		FEBB81648021E5559D2AB07342BF7B79 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D4C2BE6124F72BB13E7F3905772CB /* StoryboardViewControllerResource.swift */; };
+		FFBDD27D296E88ADECA36EA58999B2AF /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9F870D2C4F0A85C6EF0D54C8F3B1D /* ColorResource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F33EE26F316C719589FB90D5A4CD294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CBA0DC393AA096C9B0E51FE2ACFBED6;
+			remoteInfo = R.swift.Library;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DBC284A47EC4F7D2A7C4DA847FEEB4B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		106743ED60E4938DFA171D2A350DF420 /* Pods-TimerH2O-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimerH2O-frameworks.sh"; sourceTree = "<group>"; };
+		12684FC701952FF4106C3138C1C6378B /* Pods-TimerH2O-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimerH2O-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1693DADF29CA083374F17B1AD723F5CD /* Pods-TimerH2O-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimerH2O-dummy.m"; sourceTree = "<group>"; };
+		18978EBBD126026E2CF844527A7D7632 /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
+		1926FABA145BDF8F7ECB916D2E7AF8F5 /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
+		1AD6B19E0AC26E26C2B335E2A99903F5 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
+		2D26621DBE84C71C62B1196CA56AEE84 /* R.swift.Library.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.xcconfig; sourceTree = "<group>"; };
+		375B98323A760412EAE705A73F563CE4 /* UIViewController+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+NibResource.swift"; path = "Library/UIKit/UIViewController+NibResource.swift"; sourceTree = "<group>"; };
+		3E76936CC24A94A3DF9275D4911291B4 /* Pods_TimerH2OTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerH2OTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E7DA6B9547340A0235DC74A1F560583 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
+		453D05B941AF71A11DE1C2A76649BAF3 /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
+		4A7BED9A9142D3973C874C84C008C35D /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
+		52F9F870D2C4F0A85C6EF0D54C8F3B1D /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
+		564047B3E285FC270BED5C8FBC8C40B5 /* Pods-TimerH2OTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimerH2OTests-dummy.m"; sourceTree = "<group>"; };
+		58A24A823D2E3AC7C696E3F84AE1EC36 /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
+		5BDAC3D2B2511DE7D7C6D09F785B385F /* Pods-TimerH2O.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TimerH2O.modulemap"; sourceTree = "<group>"; };
+		5E2BFEB25CFF25886CF95FD82ACEBC28 /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3035CC48CB2B4E1C03DC4D658BCFB8 /* Foundation+Migration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Foundation+Migration.swift"; path = "Library/Foundation/Foundation+Migration.swift"; sourceTree = "<group>"; };
+		68E729CB38BFB9A07A8B7C8F459CB06D /* Bundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+FileResource.swift"; path = "Library/Foundation/Bundle+FileResource.swift"; sourceTree = "<group>"; };
+		690CA0BCF9FCE8278D0DAC611816734F /* Pods-TimerH2OTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2OTests.test.xcconfig"; sourceTree = "<group>"; };
+		6A9939720992B5FEC932D70E0EE5B62E /* ColorResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ColorResource+UIKit.swift"; path = "Library/UIKit/ColorResource+UIKit.swift"; sourceTree = "<group>"; };
+		755678F0B2E9AB77F4246FE0ACAB9F40 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77FE206CE60319F1457B4C419029BD1A /* Pods-TimerH2OTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimerH2OTests-frameworks.sh"; sourceTree = "<group>"; };
+		79B25475DA681CC7BAA6A83F39C35E9D /* UICollectionView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		7A89812FABA3E37A6ACCC120CA63E7E6 /* Pods-TimerH2OTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2OTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8190AC8E608BF816CE47122A9C0596B4 /* Pods-TimerH2OTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimerH2OTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		832052F977EA400DD34531BB48A08E52 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
+		88D697C049358E1D9919AAEC9CB257A9 /* Pods-TimerH2OTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimerH2OTests-umbrella.h"; sourceTree = "<group>"; };
+		8D6A0391ADDAF202F4B8A25F744782F6 /* Pods_TimerH2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerH2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0913537AF8A3C2A60D1142C01571B3 /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9767A96D64AF161E73F4C4E098178DC2 /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
+		985C1F57F5D7264FCC7891364F82BF82 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		A57CB21A1CFF5CCFA064AE811596025C /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
+		A689086BA8E3E94F22EC8BA5475ED669 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
+		ACA584FB961718D5CD56DBB23478EC8C /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
+		B12D4AC3B06423B6568D8DADE8B3EDB9 /* Pods-TimerH2O.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2O.test.xcconfig"; sourceTree = "<group>"; };
+		B38F436CCEFF820BF9598D44147F00AB /* Pods-TimerH2OTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimerH2OTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B43919EAA1B6E54DC3F782F537A01DBD /* Pods-TimerH2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2O.release.xcconfig"; sourceTree = "<group>"; };
+		B8E55F0280CEB12A0193E77AC4D6B463 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Library/Core/StringResource.swift; sourceTree = "<group>"; };
+		B952C401AEF0A0AE55E90F9FAAE26BE4 /* Pods-TimerH2O.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2O.debug.xcconfig"; sourceTree = "<group>"; };
+		BBF062CB4279BBB8448382DC0CCBA49D /* Core+Migration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Core+Migration.swift"; path = "Library/Core/Core+Migration.swift"; sourceTree = "<group>"; };
+		C05DB1D2D3189D70277A23A001F7C88F /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
+		C2FE1686916E04C450D0CFBC26E37694 /* Pods-TimerH2O-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimerH2O-resources.sh"; sourceTree = "<group>"; };
+		C48E5FA4F7BE0975D9672262CB3AABD4 /* Pods-TimerH2OTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TimerH2OTests-resources.sh"; sourceTree = "<group>"; };
+		C4B410B25DDBCC5311FDDA42655EF8DA /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
+		C75FD78F72E2348826A4418C2D8B3472 /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Library/Core/FontResource.swift; sourceTree = "<group>"; };
+		C7B2A6EE6DD07F4B74251A157580D899 /* Pods-TimerH2O-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimerH2O-acknowledgements.plist"; sourceTree = "<group>"; };
+		CB6D4C2BE6124F72BB13E7F3905772CB /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D4FBAB7D31E54D4511D95828D75D5D2B /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseIdentifierProtocol.swift; path = Library/Core/ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		DBA71E627ED70BC6345E8A4AD6FAFBD1 /* UITableView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UITableView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		DDA8982B03A610E7CC9398D0CBB00804 /* Pods-TimerH2OTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TimerH2OTests.modulemap"; sourceTree = "<group>"; };
+		DDD04C456239B2E4D78B5C2D1480212F /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
+		E9AD10AFF461F50AD65AF21EC6640F57 /* R.swift.Library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-prefix.pch"; sourceTree = "<group>"; };
+		EB0C7786FD957BA48F2D5CFE887F1C5E /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
+		EC58176CF405F6CE69CD194633D4529A /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
+		ED4B2EAFD35FA4048ECCE12A15A44DBD /* UIKit+Migration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Migration.swift"; path = "Library/UIKit/UIKit+Migration.swift"; sourceTree = "<group>"; };
+		EDA11CF0F1192F5C14AB293336FC5B02 /* Pods-TimerH2O-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimerH2O-umbrella.h"; sourceTree = "<group>"; };
+		EDCF07F7B79B5CD65F52B8842D6E8C24 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
+		F2DF8D544B3364D365DB6819934615F8 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
+		F938714976A0B595D6C6AB47E926B7AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4621D5AB35F5917F6B9E5565616A967B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48EE27CEC5B70690ABE8C348BFAAEFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804182D929E79EB28BA691B5D8508C8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC260AA4CD0C3E864BE1B5C16E3F0D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B750578E8FF2EE1F0852E9176D690410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C19656E05768FDDA86DD5450DA8166D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19426687580A86B3191563547781D165 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E0EA5657F1A8F61D8BE2CAB398E2546 /* Pods-TimerH2O */,
+				9BC7D0BBCD1272B85DFB9A779D66D3EA /* Pods-TimerH2OTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		323F3AD285DABC46FD6E097656804EB2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DBC284A47EC4F7D2A7C4DA847FEEB4B /* Info.plist */,
+				58A24A823D2E3AC7C696E3F84AE1EC36 /* R.swift.Library.modulemap */,
+				2D26621DBE84C71C62B1196CA56AEE84 /* R.swift.Library.xcconfig */,
+				DDD04C456239B2E4D78B5C2D1480212F /* R.swift.Library-dummy.m */,
+				E9AD10AFF461F50AD65AF21EC6640F57 /* R.swift.Library-prefix.pch */,
+				9767A96D64AF161E73F4C4E098178DC2 /* R.swift.Library-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/R.swift.Library";
+			sourceTree = "<group>";
+		};
+		40407A553C68233F5A3D57BAB0EAC915 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D6A0391ADDAF202F4B8A25F744782F6 /* Pods_TimerH2O.framework */,
+				3E76936CC24A94A3DF9275D4911291B4 /* Pods_TimerH2OTests.framework */,
+				5E2BFEB25CFF25886CF95FD82ACEBC28 /* Rswift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E0EA5657F1A8F61D8BE2CAB398E2546 /* Pods-TimerH2O */ = {
+			isa = PBXGroup;
+			children = (
+				755678F0B2E9AB77F4246FE0ACAB9F40 /* Info.plist */,
+				5BDAC3D2B2511DE7D7C6D09F785B385F /* Pods-TimerH2O.modulemap */,
+				12684FC701952FF4106C3138C1C6378B /* Pods-TimerH2O-acknowledgements.markdown */,
+				C7B2A6EE6DD07F4B74251A157580D899 /* Pods-TimerH2O-acknowledgements.plist */,
+				1693DADF29CA083374F17B1AD723F5CD /* Pods-TimerH2O-dummy.m */,
+				106743ED60E4938DFA171D2A350DF420 /* Pods-TimerH2O-frameworks.sh */,
+				C2FE1686916E04C450D0CFBC26E37694 /* Pods-TimerH2O-resources.sh */,
+				EDA11CF0F1192F5C14AB293336FC5B02 /* Pods-TimerH2O-umbrella.h */,
+				B952C401AEF0A0AE55E90F9FAAE26BE4 /* Pods-TimerH2O.debug.xcconfig */,
+				B43919EAA1B6E54DC3F782F537A01DBD /* Pods-TimerH2O.release.xcconfig */,
+				B12D4AC3B06423B6568D8DADE8B3EDB9 /* Pods-TimerH2O.test.xcconfig */,
+			);
+			name = "Pods-TimerH2O";
+			path = "Target Support Files/Pods-TimerH2O";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9AF9A2AE8C742F002645CCD93D5128F3 /* Pods */,
+				40407A553C68233F5A3D57BAB0EAC915 /* Products */,
+				19426687580A86B3191563547781D165 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		97998F99CB936A91179BCDF8406214E4 /* R.swift.Library */ = {
+			isa = PBXGroup;
+			children = (
+				68E729CB38BFB9A07A8B7C8F459CB06D /* Bundle+FileResource.swift */,
+				52F9F870D2C4F0A85C6EF0D54C8F3B1D /* ColorResource.swift */,
+				6A9939720992B5FEC932D70E0EE5B62E /* ColorResource+UIKit.swift */,
+				BBF062CB4279BBB8448382DC0CCBA49D /* Core+Migration.swift */,
+				C05DB1D2D3189D70277A23A001F7C88F /* Data+FileResource.swift */,
+				EB0C7786FD957BA48F2D5CFE887F1C5E /* FileResource.swift */,
+				C75FD78F72E2348826A4418C2D8B3472 /* FontResource.swift */,
+				5E3035CC48CB2B4E1C03DC4D658BCFB8 /* Foundation+Migration.swift */,
+				1926FABA145BDF8F7ECB916D2E7AF8F5 /* Identifier.swift */,
+				EC58176CF405F6CE69CD194633D4529A /* ImageResource.swift */,
+				3E7DA6B9547340A0235DC74A1F560583 /* NibResource.swift */,
+				4A7BED9A9142D3973C874C84C008C35D /* NibResource+UIKit.swift */,
+				D4FBAB7D31E54D4511D95828D75D5D2B /* ReuseIdentifierProtocol.swift */,
+				A57CB21A1CFF5CCFA064AE811596025C /* StoryboardResource.swift */,
+				ACA584FB961718D5CD56DBB23478EC8C /* StoryboardResourceWithInitialController+UIKit.swift */,
+				8F0913537AF8A3C2A60D1142C01571B3 /* StoryboardSegueIdentifierProtocol.swift */,
+				CB6D4C2BE6124F72BB13E7F3905772CB /* StoryboardViewControllerResource.swift */,
+				B8E55F0280CEB12A0193E77AC4D6B463 /* StringResource.swift */,
+				1AD6B19E0AC26E26C2B335E2A99903F5 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */,
+				79B25475DA681CC7BAA6A83F39C35E9D /* UICollectionView+ReuseIdentifierProtocol.swift */,
+				C4B410B25DDBCC5311FDDA42655EF8DA /* UIFont+FontResource.swift */,
+				A689086BA8E3E94F22EC8BA5475ED669 /* UIImage+ImageResource.swift */,
+				ED4B2EAFD35FA4048ECCE12A15A44DBD /* UIKit+Migration.swift */,
+				453D05B941AF71A11DE1C2A76649BAF3 /* UINib+NibResource.swift */,
+				18978EBBD126026E2CF844527A7D7632 /* UIStoryboard+StoryboardResource.swift */,
+				F2DF8D544B3364D365DB6819934615F8 /* UIStoryboard+StoryboardViewControllerResource.swift */,
+				DBA71E627ED70BC6345E8A4AD6FAFBD1 /* UITableView+ReuseIdentifierProtocol.swift */,
+				375B98323A760412EAE705A73F563CE4 /* UIViewController+NibResource.swift */,
+				985C1F57F5D7264FCC7891364F82BF82 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */,
+				832052F977EA400DD34531BB48A08E52 /* Validatable.swift */,
+				323F3AD285DABC46FD6E097656804EB2 /* Support Files */,
+			);
+			path = R.swift.Library;
+			sourceTree = "<group>";
+		};
+		9AF9A2AE8C742F002645CCD93D5128F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C741B6D219B4C439D5EF822B8A508EA7 /* R.swift */,
+				97998F99CB936A91179BCDF8406214E4 /* R.swift.Library */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9BC7D0BBCD1272B85DFB9A779D66D3EA /* Pods-TimerH2OTests */ = {
+			isa = PBXGroup;
+			children = (
+				F938714976A0B595D6C6AB47E926B7AE /* Info.plist */,
+				DDA8982B03A610E7CC9398D0CBB00804 /* Pods-TimerH2OTests.modulemap */,
+				B38F436CCEFF820BF9598D44147F00AB /* Pods-TimerH2OTests-acknowledgements.markdown */,
+				8190AC8E608BF816CE47122A9C0596B4 /* Pods-TimerH2OTests-acknowledgements.plist */,
+				564047B3E285FC270BED5C8FBC8C40B5 /* Pods-TimerH2OTests-dummy.m */,
+				77FE206CE60319F1457B4C419029BD1A /* Pods-TimerH2OTests-frameworks.sh */,
+				C48E5FA4F7BE0975D9672262CB3AABD4 /* Pods-TimerH2OTests-resources.sh */,
+				88D697C049358E1D9919AAEC9CB257A9 /* Pods-TimerH2OTests-umbrella.h */,
+				7A89812FABA3E37A6ACCC120CA63E7E6 /* Pods-TimerH2OTests.debug.xcconfig */,
+				EDCF07F7B79B5CD65F52B8842D6E8C24 /* Pods-TimerH2OTests.release.xcconfig */,
+				690CA0BCF9FCE8278D0DAC611816734F /* Pods-TimerH2OTests.test.xcconfig */,
+			);
+			name = "Pods-TimerH2OTests";
+			path = "Target Support Files/Pods-TimerH2OTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C741B6D219B4C439D5EF822B8A508EA7 /* R.swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = R.swift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2FAD48FD45ED73BED6874B87266A9E64 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B208E132DE16920D2303B627760365D7 /* R.swift.Library-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F7FD3ED646CA8F68118DE00F0AB93F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3460C438F176795808063D9D3135F8C /* Pods-TimerH2OTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC36DBD08C4B53E11570459E7591AB16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDA93D53EA80663A9CEA390A905FD156 /* Pods-TimerH2O-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		141364A651EF32701BA067EF293D8C7A /* Pods-TimerH2OTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EA15D89D003908F6207F1489228CD67 /* Build configuration list for PBXNativeTarget "Pods-TimerH2OTests" */;
+			buildPhases = (
+				5CF382547B68DB4995BADC8A3D1E412D /* Sources */,
+				B750578E8FF2EE1F0852E9176D690410 /* Frameworks */,
+				8F7FD3ED646CA8F68118DE00F0AB93F9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TimerH2OTests";
+			productName = "Pods-TimerH2OTests";
+			productReference = 3E76936CC24A94A3DF9275D4911291B4 /* Pods_TimerH2OTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3CBA0DC393AA096C9B0E51FE2ACFBED6 /* R.swift.Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEAFB991739BB293EDCBC3CD55358780 /* Build configuration list for PBXNativeTarget "R.swift.Library" */;
+			buildPhases = (
+				5C234B814F14F1EFD6E8DF99E8E69CFE /* Sources */,
+				804182D929E79EB28BA691B5D8508C8B /* Frameworks */,
+				2FAD48FD45ED73BED6874B87266A9E64 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = R.swift.Library;
+			productName = R.swift.Library;
+			productReference = 5E2BFEB25CFF25886CF95FD82ACEBC28 /* Rswift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		713034AD54E2C536386AC0A149ED249B /* Pods-TimerH2O */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1C33D03F7D8CE1151F726BAD34406E3 /* Build configuration list for PBXNativeTarget "Pods-TimerH2O" */;
+			buildPhases = (
+				6810D9B8A8683489DF8C73ECAD4B4195 /* Sources */,
+				4621D5AB35F5917F6B9E5565616A967B /* Frameworks */,
+				AC36DBD08C4B53E11570459E7591AB16 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				571742F24302E903FBE1D1B6FA1B4C12 /* PBXTargetDependency */,
+			);
+			name = "Pods-TimerH2O";
+			productName = "Pods-TimerH2O";
+			productReference = 8D6A0391ADDAF202F4B8A25F744782F6 /* Pods_TimerH2O.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 40407A553C68233F5A3D57BAB0EAC915 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				713034AD54E2C536386AC0A149ED249B /* Pods-TimerH2O */,
+				141364A651EF32701BA067EF293D8C7A /* Pods-TimerH2OTests */,
+				3CBA0DC393AA096C9B0E51FE2ACFBED6 /* R.swift.Library */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C234B814F14F1EFD6E8DF99E8E69CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED967EEC7FA5E9009E409688157C2F3 /* Bundle+FileResource.swift in Sources */,
+				CEFC44F679AC039066C6C5F5A5E48B82 /* ColorResource+UIKit.swift in Sources */,
+				FFBDD27D296E88ADECA36EA58999B2AF /* ColorResource.swift in Sources */,
+				D35B4AAB13F62E98E43A09132776A1EE /* Core+Migration.swift in Sources */,
+				E0D8BD52A4D8C91835A83101548F830A /* Data+FileResource.swift in Sources */,
+				BB3DBB0ED8AAF7965FC7EF06F5F169B1 /* FileResource.swift in Sources */,
+				7D3E28C300F48AFAF807F52896BD1832 /* FontResource.swift in Sources */,
+				C43B05507D12703CF2A7473198C3CD71 /* Foundation+Migration.swift in Sources */,
+				8555DEC3EEB0CCB6DAC586B8DD19630D /* Identifier.swift in Sources */,
+				C9703D591AC44FF5140CA66918041E7D /* ImageResource.swift in Sources */,
+				47041EE462502B55F6A82C3C14DD7307 /* NibResource+UIKit.swift in Sources */,
+				13FE89B67CBF38A25979FB393648C57F /* NibResource.swift in Sources */,
+				00EC197334CC2C857EFC25CF091EAFE7 /* R.swift.Library-dummy.m in Sources */,
+				1903941011E5F211610E5F16F9C6A564 /* ReuseIdentifierProtocol.swift in Sources */,
+				C06BF6CCC68CABA1FF7A1BD7002B59E7 /* StoryboardResource.swift in Sources */,
+				96DB343B8E68748DB794F0EDE0E2AE4B /* StoryboardResourceWithInitialController+UIKit.swift in Sources */,
+				62FA25F75147D6C1FDA793C529C38D6E /* StoryboardSegueIdentifierProtocol.swift in Sources */,
+				FEBB81648021E5559D2AB07342BF7B79 /* StoryboardViewControllerResource.swift in Sources */,
+				44CC72922091F5C45C7229296C79A110 /* StringResource.swift in Sources */,
+				5AC1A48D591402E3DB5FF4A8F870DC66 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */,
+				B30F3C39AA633141B7FF7A48276E525B /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */,
+				13542A50B85456CD7BED44BA42FA6679 /* UIFont+FontResource.swift in Sources */,
+				CECB00B717930E9C5A9B169100C5904A /* UIImage+ImageResource.swift in Sources */,
+				AFEC85758A3F5D03BF9779449B2DFAE5 /* UIKit+Migration.swift in Sources */,
+				6E01982D6D75F7E9EFCD6778745459B0 /* UINib+NibResource.swift in Sources */,
+				D746C9B8AD36C896A2269244FCD9D790 /* UIStoryboard+StoryboardResource.swift in Sources */,
+				36735175116A61A774786E18D2C611DC /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */,
+				53FE448FCFB25E7A723027DC7E696CE2 /* UITableView+ReuseIdentifierProtocol.swift in Sources */,
+				4910BA35916A414BAA9330D7714D347F /* UIViewController+NibResource.swift in Sources */,
+				062C49E02A8552EB74675A5963CCBB3D /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */,
+				A33DC8BA31865B46FA8CF33CE847D52A /* Validatable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CF382547B68DB4995BADC8A3D1E412D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8067FE610C4F698EADD8A6A198196BEB /* Pods-TimerH2OTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6810D9B8A8683489DF8C73ECAD4B4195 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7680A25D904517F97E2256739CD80848 /* Pods-TimerH2O-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		571742F24302E903FBE1D1B6FA1B4C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = R.swift.Library;
+			target = 3CBA0DC393AA096C9B0E51FE2ACFBED6 /* R.swift.Library */;
+			targetProxy = 4F33EE26F316C719589FB90D5A4CD294 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10825E2BB43207AD66B991B0D7FA5914 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12D4AC3B06423B6568D8DADE8B3EDB9 /* Pods-TimerH2O.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2O/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2O/Pods-TimerH2O.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2O;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		27119AF5B262E1B354791A19A4A9F159 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690CA0BCF9FCE8278D0DAC611816734F /* Pods-TimerH2OTests.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2OTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2OTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		4AA69DE8314479A1253355EF02F0C304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D26621DBE84C71C62B1196CA56AEE84 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		573892F4EBB38F8D3B23C5F15B3C005D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A89812FABA3E37A6ACCC120CA63E7E6 /* Pods-TimerH2OTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2OTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2OTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5EFCA6C0083E41C4A4B73B64AFE23D2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDCF07F7B79B5CD65F52B8842D6E8C24 /* Pods-TimerH2OTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2OTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2OTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		790F96BFAFF8287FE93CA68AE5D65786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D26621DBE84C71C62B1196CA56AEE84 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B7FCF6EFB2ED6EE519711603D330AF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43919EAA1B6E54DC3F782F537A01DBD /* Pods-TimerH2O.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2O/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2O/Pods-TimerH2O.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2O;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A967E0A7A4A47A97F0FB52C040864353 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D26621DBE84C71C62B1196CA56AEE84 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		B583E7B2F4210B9DC3871D84CBA65C35 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Test;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA2D11864C24331E78FCE7D5500F98EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B952C401AEF0A0AE55E90F9FAAE26BE4 /* Pods-TimerH2O.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimerH2O/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimerH2O/Pods-TimerH2O.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TimerH2O;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EA15D89D003908F6207F1489228CD67 /* Build configuration list for PBXNativeTarget "Pods-TimerH2OTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				573892F4EBB38F8D3B23C5F15B3C005D /* Debug */,
+				5EFCA6C0083E41C4A4B73B64AFE23D2C /* Release */,
+				27119AF5B262E1B354791A19A4A9F159 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				B583E7B2F4210B9DC3871D84CBA65C35 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1C33D03F7D8CE1151F726BAD34406E3 /* Build configuration list for PBXNativeTarget "Pods-TimerH2O" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA2D11864C24331E78FCE7D5500F98EE /* Debug */,
+				7B7FCF6EFB2ED6EE519711603D330AF5 /* Release */,
+				10825E2BB43207AD66B991B0D7FA5914 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEAFB991739BB293EDCBC3CD55358780 /* Build configuration list for PBXNativeTarget "R.swift.Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				790F96BFAFF8287FE93CA68AE5D65786 /* Debug */,
+				4AA69DE8314479A1253355EF02F0C304 /* Release */,
+				A967E0A7A4A47A97F0FB52C040864353 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
