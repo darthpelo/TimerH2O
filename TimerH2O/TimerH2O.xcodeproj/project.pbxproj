@@ -17,6 +17,10 @@
 		D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */; };
 		D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */; };
 		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
+		D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */; };
+		D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */; };
+		D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C831DC29BF900692768 /* LocalDataTests.swift */; };
+		D9E34C861DC2A00700692768 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,9 @@
 		D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OHistoryViewController.swift; path = History/ViewControllers/TH2OHistoryViewController.swift; sourceTree = "<group>"; };
 		D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerViewController.swift; path = Timer/ViewControllers/TH2OTimerViewController.swift; sourceTree = "<group>"; };
 		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Controllers/SessionManager.swift; sourceTree = "<group>"; };
+		D9E34C831DC29BF900692768 /* LocalDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTests.swift; sourceTree = "<group>"; };
+		D9E34C851DC2A00700692768 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,14 +118,17 @@
 		D98476C61DBD622F009F92B3 /* TimerH2O */ = {
 			isa = PBXGroup;
 			children = (
-				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
+				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
+				D9D0AEC51DBEA77300B6A8EE /* Controllers */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
 				D98476F51DBD6382009F92B3 /* History */,
+				D9D0AEC41DBEA76E00B6A8EE /* Models */,
 				D98476FA1DBD63F5009F92B3 /* Protocols */,
 				D98476F31DBD6340009F92B3 /* Storyboards */,
 				D98476F21DBD6334009F92B3 /* Support */,
 				D98476F41DBD6379009F92B3 /* Timer */,
+				D9E34C851DC2A00700692768 /* Constants.swift */,
 			);
 			path = TimerH2O;
 			sourceTree = "<group>";
@@ -128,6 +138,7 @@
 			children = (
 				D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */,
 				D98476E01DBD622F009F92B3 /* Info.plist */,
+				D9E34C831DC29BF900692768 /* LocalDataTests.swift */,
 			);
 			path = TimerH2OTests;
 			sourceTree = "<group>";
@@ -220,6 +231,21 @@
 			children = (
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D9D0AEC41DBEA76E00B6A8EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D9D0AEC51DBEA77300B6A8EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,7 +474,9 @@
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
+				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
+				D9E34C861DC2A00700692768 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */,
+				D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D98476DF1DBD622F009F92B3 /* TimerH2OTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

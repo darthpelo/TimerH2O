@@ -14,6 +14,9 @@ class TH2OTimerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if SessionManager().sessionStart() {
+            self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
