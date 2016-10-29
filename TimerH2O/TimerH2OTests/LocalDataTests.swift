@@ -35,9 +35,7 @@ class LocalDataTests: XCTestCase {
 
     func testTimeIntervalTests() {
         let timer: Double = 15 // Second
-        
         SessionManager().newTimeInterval(second: timer)
-        
         XCTAssertEqual(SessionManager().timeInterval(), timer)
     }
 

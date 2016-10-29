@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */; };
 		D5B5AF73E60B7568FB3288C2 /* Pods_TimerH2OTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */; };
+		D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12DF1DC536BE0047FCB6 /* Presenter.swift */; };
+		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
+		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
+		D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
 		D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476C71DBD622F009F92B3 /* AppDelegate.swift */; };
 		D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476CD1DBD622F009F92B3 /* Main.storyboard */; };
 		D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98476D01DBD622F009F92B3 /* Assets.xcassets */; };
@@ -21,6 +25,7 @@
 		D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */; };
 		D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C831DC29BF900692768 /* LocalDataTests.swift */; };
 		D9E34C861DC2A00700692768 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
+		D9E34C881DC2B01A00692768 /* TH20SetSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C871DC2B01A00692768 /* TH20SetSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,10 @@
 		A70CFCF885A5A8CDB62EE55E /* Pods-TimerH2OTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2O.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O.release.xcconfig"; sourceTree = "<group>"; };
 		C5D760F7D58F7109337C9BC3 /* Pods-TimerH2OTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.test.xcconfig"; sourceTree = "<group>"; };
+		D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
+		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
+		D94A12E41DC53A8C0047FCB6 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		D98476C41DBD622F009F92B3 /* TimerH2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerH2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98476C71DBD622F009F92B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98476CE1DBD622F009F92B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +68,7 @@
 		D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Controllers/SessionManager.swift; sourceTree = "<group>"; };
 		D9E34C831DC29BF900692768 /* LocalDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTests.swift; sourceTree = "<group>"; };
 		D9E34C851DC2A00700692768 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D9E34C871DC2B01A00692768 /* TH20SetSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH20SetSessionViewController.swift; path = Timer/ViewControllers/TH20SetSessionViewController.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +105,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D94A12E31DC53A7D0047FCB6 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				D94A12E41DC53A8C0047FCB6 /* Converter.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
 		D98476BB1DBD622E009F92B3 = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +136,8 @@
 		D98476C61DBD622F009F92B3 /* TimerH2O */ = {
 			isa = PBXGroup;
 			children = (
+				D94A12E31DC53A7D0047FCB6 /* Functions */,
 				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
-				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D9D0AEC51DBEA77300B6A8EE /* Controllers */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
 				D98476F51DBD6382009F92B3 /* History */,
@@ -155,9 +173,11 @@
 		D98476F21DBD6334009F92B3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D98476E91DBD625C009F92B3 /* TimerH2O.entitlements */,
 				D98476D01DBD622F009F92B3 /* Assets.xcassets */,
 				D98476D51DBD622F009F92B3 /* Info.plist */,
+				D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 		D98476F41DBD6379009F92B3 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				D94A12DF1DC536BE0047FCB6 /* Presenter.swift */,
 				D98476F91DBD63F0009F92B3 /* Views */,
 				D98476F71DBD63E0009F92B3 /* ViewControllers */,
 			);
@@ -201,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */,
+				D9E34C871DC2B01A00692768 /* TH20SetSessionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -222,6 +244,7 @@
 		D98476FA1DBD63F5009F92B3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D94A12E11DC537190047FCB6 /* ViewProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -473,9 +496,13 @@
 			files = (
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
+				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
+				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
+				D9E34C881DC2B01A00692768 /* TH20SetSessionViewController.swift in Sources */,
+				D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */,
 				D9E34C861DC2A00700692768 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +513,7 @@
 			files = (
 				D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */,
 				D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */,
+				D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */,
 				D98476DF1DBD622F009F92B3 /* TimerH2OTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

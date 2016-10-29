@@ -21,16 +21,11 @@ class TimerH2OTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAmountConverter() {
+        let str = ["0", "3", "0"]
+        
+        let result: Double = 30
+        
+        XCTAssertEqual(convert(amount: str), result)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
