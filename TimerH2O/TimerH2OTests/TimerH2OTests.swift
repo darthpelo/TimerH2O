@@ -24,7 +24,7 @@ class TimerH2OTests: XCTestCase {
     func testAmountConverter() {
         let str = ["0", "3", "0"]
         
-        let result: Double = 30
+        let result = 30
         
         XCTAssertEqual(convert(amount: str), result)
     }

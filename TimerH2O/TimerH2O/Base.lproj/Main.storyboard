@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -144,30 +144,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Y3-AN-jSX">
-                                        <connections>
-                                            <outlet property="dataSource" destination="Kza-wV-z4y" id="XGw-XF-sTO"/>
-                                            <outlet property="delegate" destination="Kza-wV-z4y" id="2F5-N8-TmN"/>
-                                        </connections>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-XS-bu8">
-                                        <state key="normal" title="Done"/>
-                                        <connections>
-                                            <action selector="pickerDonePressed:" destination="Kza-wV-z4y" eventType="touchUpInside" id="8xz-pH-RM3"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="4Y3-AN-jSX" firstAttribute="top" secondItem="tcY-NO-B8D" secondAttribute="bottom" constant="8" id="7cj-IB-kv3"/>
-                                    <constraint firstItem="YhB-XS-bu8" firstAttribute="centerX" secondItem="4Y3-AN-jSX" secondAttribute="centerX" id="AdX-dh-bdq"/>
-                                    <constraint firstItem="4Y3-AN-jSX" firstAttribute="centerX" secondItem="qhu-QV-CFv" secondAttribute="centerX" id="GPy-qf-7ac"/>
                                     <constraint firstItem="tcY-NO-B8D" firstAttribute="height" secondItem="aya-uB-iMG" secondAttribute="height" id="Neg-7a-QhO"/>
                                     <constraint firstItem="aya-uB-iMG" firstAttribute="centerX" secondItem="qhu-QV-CFv" secondAttribute="centerX" id="T3Z-aj-cFm"/>
                                     <constraint firstItem="aya-uB-iMG" firstAttribute="top" secondItem="qhu-QV-CFv" secondAttribute="top" id="b4z-BO-xjx"/>
                                     <constraint firstItem="tcY-NO-B8D" firstAttribute="centerX" secondItem="aya-uB-iMG" secondAttribute="centerX" id="bZE-mz-Iil"/>
                                     <constraint firstItem="mZd-yr-8G7" firstAttribute="centerX" secondItem="qhu-QV-CFv" secondAttribute="centerX" id="cFd-yW-Klo"/>
-                                    <constraint firstItem="YhB-XS-bu8" firstAttribute="bottom" secondItem="4Y3-AN-jSX" secondAttribute="bottom" id="ec4-9t-cjX"/>
                                     <constraint firstAttribute="bottom" secondItem="mZd-yr-8G7" secondAttribute="bottom" constant="8" id="hdC-IC-N4g"/>
                                     <constraint firstItem="aya-uB-iMG" firstAttribute="width" secondItem="qhu-QV-CFv" secondAttribute="width" id="kbv-ZH-jwy"/>
                                     <constraint firstItem="tcY-NO-B8D" firstAttribute="top" secondItem="aya-uB-iMG" secondAttribute="bottom" constant="8" id="wDQ-Wo-Dxl"/>
@@ -191,8 +175,6 @@
                         <outlet property="cancelButton" destination="meh-J2-1pa" id="K0a-FP-l4i"/>
                         <outlet property="doneButton" destination="oLd-7R-VkW" id="BdB-dJ-UfG"/>
                         <outlet property="intervalView" destination="tcY-NO-B8D" id="XAk-af-KG7"/>
-                        <outlet property="pickerView" destination="4Y3-AN-jSX" id="xSc-rr-vaH"/>
-                        <outlet property="pickerViewTop" destination="7cj-IB-kv3" id="rak-c3-qFb"/>
                         <outlet property="titleLabel" destination="iph-NB-CwE" id="ZyX-E8-CKK"/>
                         <outlet property="waterAmountLabel" destination="cbK-0h-TGH" id="Ycd-TA-Tjs"/>
                         <outlet property="waterView" destination="aya-uB-iMG" id="fRN-Jy-tYc"/>

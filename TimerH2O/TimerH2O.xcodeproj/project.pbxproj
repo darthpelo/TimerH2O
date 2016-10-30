@@ -13,6 +13,9 @@
 		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
 		D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
+		D94A12E81DC548ED0047FCB6 /* TH2OPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94A12E71DC548ED0047FCB6 /* TH2OPickerView.xib */; };
+		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */; };
+		D94A12EC1DC54AE90047FCB6 /* TH2OPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OPickerView.swift */; };
 		D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476C71DBD622F009F92B3 /* AppDelegate.swift */; };
 		D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476CD1DBD622F009F92B3 /* Main.storyboard */; };
 		D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98476D01DBD622F009F92B3 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
 		D94A12E41DC53A8C0047FCB6 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		D94A12E71DC548ED0047FCB6 /* TH2OPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TH2OPickerView.xib; sourceTree = "<group>"; };
+		D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionrVCExtensions.swift; sourceTree = "<group>"; };
+		D94A12EB1DC54AE90047FCB6 /* TH2OPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OPickerView.swift; path = Views/TH2OPickerView.swift; sourceTree = "<group>"; };
 		D98476C41DBD622F009F92B3 /* TimerH2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerH2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98476C71DBD622F009F92B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98476CE1DBD622F009F92B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			children = (
 				D98476CD1DBD622F009F92B3 /* Main.storyboard */,
 				D98476D21DBD622F009F92B3 /* LaunchScreen.storyboard */,
+				D94A12E71DC548ED0047FCB6 /* TH2OPickerView.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 			children = (
 				D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */,
 				D9E34C871DC2B01A00692768 /* TH20SetSessionViewController.swift */,
+				D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 		D98476F91DBD63F0009F92B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D94A12EB1DC54AE90047FCB6 /* TH2OPickerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98476D41DBD622F009F92B3 /* LaunchScreen.storyboard in Resources */,
+				D94A12E81DC548ED0047FCB6 /* TH2OPickerView.xib in Resources */,
 				D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */,
 				D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */,
 			);
@@ -494,6 +504,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */,
+				D94A12EC1DC54AE90047FCB6 /* TH2OPickerView.swift in Sources */,
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
@@ -569,6 +581,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -619,6 +632,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -647,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A6B6FA5799AF62B45980304 /* Pods-TimerH2O.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
@@ -661,6 +676,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
@@ -722,6 +738,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -750,6 +767,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 226E02B0C9303CFE5007B4AD /* Pods-TimerH2O.test.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
