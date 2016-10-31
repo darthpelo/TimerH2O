@@ -50,7 +50,7 @@
         <!--Set Session View Controller-->
         <scene sceneID="XyE-Lu-vA9">
             <objects>
-                <viewController id="Kza-wV-z4y" customClass="TH20SetSessionViewController" customModule="TimerH2O" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kza-wV-z4y" customClass="TH2OSetSessionViewController" customModule="TimerH2O" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OjL-10-Lvk"/>
                         <viewControllerLayoutGuide type="bottom" id="b1F-zC-PaJ"/>

@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TH2OPickerView" customModule="TimerH2O" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TH2OWaterPickerView" customModule="TimerH2O" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEU-d5-TCA">
@@ -39,6 +39,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9SL-oA-vVh">
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAH-MD-4LW">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="8Dz-5R-Jna"/>
+                            </constraints>
                             <state key="normal" title="Button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -71,9 +74,8 @@
             <connections>
                 <outlet property="doneButton" destination="cAH-MD-4LW" id="fgS-ob-MOA"/>
                 <outlet property="pickerTitleLabel" destination="PmN-03-BuD" id="wfy-Ex-uPB"/>
-                <outlet property="pickerView" destination="ieG-8o-JqV" id="D5o-eB-rNS"/>
             </connections>
-            <point key="canvasLocation" x="24.5" y="-126"/>
+            <point key="canvasLocation" x="24.5" y="-142"/>
         </view>
     </objects>
 </document>

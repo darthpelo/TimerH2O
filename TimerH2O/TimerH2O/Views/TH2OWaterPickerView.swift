@@ -1,5 +1,5 @@
 //
-//  TH2OPickerView.swift
+//  TH2OWaterPickerView.swift
 //  TimerH2O
 //
 //  Created by Alessio Roberto on 29/10/16.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class TH2OPickerView: UIView {
+class TH2OWaterPickerView: UIView {
 
     @IBOutlet weak var pickerTitleLabel: UILabel!
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var doneButton: UIButton!
     
     fileprivate let numbers = (0...9).map{"\($0)"}
@@ -30,8 +29,8 @@ class TH2OPickerView: UIView {
         doneAmount?(a)
     }
     
-    func loaPickerView() -> TH2OPickerView? {
-        guard let view = R.nib.tH2OPickerView.firstView(owner: self) else {
+    func loadPickerView() -> TH2OWaterPickerView? {
+        guard let view = R.nib.tH2OWaterPickerView.firstView(owner: self) else {
             return nil
         }
         
@@ -45,10 +44,13 @@ class TH2OPickerView: UIView {
         parentView = onView
         self.frame.origin.y = onView.frame.size.height
         
+        pickerTitleLabel.text = NSLocalizedString("Water", comment: "")
+        doneButton.setTitle(NSLocalizedString("Done", comment: ""), for: .normal)
+        
         UIApplication.shared.keyWindow?.addSubview(self)
     }
     
-    func pickerView(isToShow show: Bool) {
+    func isTo(show: Bool) {
         UIView.animate(withDuration:0.3,
                        animations: { [weak self] in
                         if show {
@@ -68,7 +70,7 @@ class TH2OPickerView: UIView {
     }
 }
 
-extension TH2OPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
+extension TH2OWaterPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }

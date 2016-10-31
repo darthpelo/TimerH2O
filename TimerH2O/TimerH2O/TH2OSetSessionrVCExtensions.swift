@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 
-extension TH20SetSessionViewController: UIGestureRecognizerDelegate {
+extension TH2OSetSessionViewController: UIGestureRecognizerDelegate {
     func handleTapWaterView() {
-        waterPickerView?.pickerView(isToShow: true)
+        waterPickerView?.isTo(show: true)
+    }
+    
+    func handleTapIntervalView() {
+        timerPickerView?.isTo(show: true)
     }
 }
 
-extension TH20SetSessionViewController: ViewProtocol {
+extension TH2OSetSessionViewController: ViewProtocol {
     
 }
