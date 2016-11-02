@@ -13,21 +13,21 @@ class TH2OTimerPickerView: UIView {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    typealias DoneListener = (Date) -> ()
+    typealias DoneListener = (TimeInterval) -> ()
     var doneListener: DoneListener?
-    private var selectedDate: Date?
+    private var countDownDuration: TimeInterval?
     private var parentView: UIView?
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        guard let selectedDate = selectedDate else {
+        guard let countDownDuration = countDownDuration else {
             return
         }
         
-        doneListener?(selectedDate)
+        doneListener?(countDownDuration)
     }
     
     @IBAction func valueChanged(_ sender: AnyObject) {
-        selectedDate = datePicker.date
+        self.countDownDuration = datePicker.countDownDuration
     }
     
     func loadDatePickerView() -> TH2OTimerPickerView? {

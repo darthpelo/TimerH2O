@@ -26,7 +26,7 @@
                         <constraint firstItem="xZB-Pc-5ZL" firstAttribute="centerY" secondItem="seG-B0-0sM" secondAttribute="centerY" id="ead-zZ-CGv"/>
                     </constraints>
                 </view>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK6-Uy-9c3">
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IK6-Uy-9c3">
                     <date key="date" timeIntervalSinceReferenceDate="499561260.39799303">
                         <!--2016-10-30 23:01:00 +0000-->
                     </date>
