@@ -17,7 +17,6 @@ class TH2OWaterPickerView: UIView {
     fileprivate var amount = ["0","0","0"]
     
     typealias DoneAmount = (Int) -> ()
-    typealias DoneTimeInterval = (Double) -> ()
     
     fileprivate var doneAmount: DoneAmount?
     private var parentView: UIView?
@@ -52,11 +51,11 @@ class TH2OWaterPickerView: UIView {
     
     func isTo(show: Bool) {
         UIView.animate(withDuration:0.3,
-                       animations: { [weak self] in
+                       animations: {
                         if show {
-                            self?.frame.origin.y = self!.parentView!.center.y
+                            self.frame.origin.y = self.parentView!.frame.size.height - self.frame.size.height
                         } else {
-                            self?.frame.origin.y = self!.parentView!.frame.size.height
+                            self.frame.origin.y = self.parentView!.frame.size.height
                         }
             },completion: nil)
     }

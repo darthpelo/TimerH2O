@@ -14,13 +14,16 @@ class TH2OSetSessionViewController: UIViewController {
     @IBOutlet weak var waterView: UIView!
     @IBOutlet weak var waterAmountLabel: UILabel!
     @IBOutlet weak var intervalView: UIView!
+    @IBOutlet weak var intervalLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
     lazy var presenter: Presenter = Presenter(view: self)
     
-    var waterPickerView: TH2OWaterPickerView?
-    var timerPickerView: TH2OTimerPickerView?
+    public var waterPickerView: TH2OWaterPickerView?
+    public var timerPickerView: TH2OTimerPickerView?
+    private var water: Int?
+    private var interval: TimeInterval?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,19 +44,30 @@ class TH2OSetSessionViewController: UIViewController {
         self.performSegue(withIdentifier: R.segue.tH2OSetSessionViewController.backToTimerVC, sender: self)
     }
 
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        guard let water = self.water, let interval = self.interval else {
+            return
+        }
+        presenter.save(model: Model(water: water, interval: interval))
+        presenter.startSession()
+        self.performSegue(withIdentifier: R.segue.tH2OSetSessionViewController.backToTimerVC, sender: self)
+    }
+    
     private func configureWaterPickerView() {
         waterPickerView = TH2OWaterPickerView().loadPickerView()
-        waterPickerView?.configure(onView: self.view, withCallback: { [weak self] selectedAmount in
-            self?.waterAmountLabel.text = "\(selectedAmount)cl"
-            self?.waterPickerView?.isTo(show: false)
+        waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
+            self.water = selectedAmount
+            self.waterAmountLabel.text = "\(selectedAmount) cl"
+            self.waterPickerView?.isTo(show: false)
         })
     }
     
     private func configureTimerPickerView() {
         timerPickerView = TH2OTimerPickerView().loadDatePickerView()
-        timerPickerView?.configure(onView: self.view, withCallback: { [weak self] selectedTimer in
-            print(selectedTimer)
-            self?.timerPickerView?.isTo(show: false)
+        timerPickerView?.configure(onView: self.view, withCallback: { selectedTimer in
+            self.interval = selectedTimer
+            self.intervalLabel.text = "\(Int(selectedTimer/60)) min"
+            self.timerPickerView?.isTo(show: false)
         })
     }
 }

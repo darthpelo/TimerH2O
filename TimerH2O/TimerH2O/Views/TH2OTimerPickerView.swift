@@ -53,7 +53,7 @@ class TH2OTimerPickerView: UIView {
         UIView.animate(withDuration:0.3,
                        animations: {
                         if show {
-                            self.frame.origin.y = self.parentView!.center.y
+                            self.frame.origin.y = self.parentView!.frame.size.height - self.frame.size.height
                         } else {
                             self.frame.origin.y = self.parentView!.frame.size.height
                         }

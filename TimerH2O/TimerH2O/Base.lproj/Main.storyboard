@@ -141,6 +141,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-7R-VkW">
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="doneButtonPressed:" destination="Kza-wV-z4y" eventType="touchUpInside" id="DNL-jz-ccW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -174,6 +177,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="meh-J2-1pa" id="K0a-FP-l4i"/>
                         <outlet property="doneButton" destination="oLd-7R-VkW" id="BdB-dJ-UfG"/>
+                        <outlet property="intervalLabel" destination="VhL-fy-6vu" id="ybh-fW-3sR"/>
                         <outlet property="intervalView" destination="tcY-NO-B8D" id="XAk-af-KG7"/>
                         <outlet property="titleLabel" destination="iph-NB-CwE" id="ZyX-E8-CKK"/>
                         <outlet property="waterAmountLabel" destination="cbK-0h-TGH" id="Ycd-TA-Tjs"/>
