@@ -10,4 +10,13 @@ import Foundation
 
 struct Presenter {
     weak var view: ViewProtocol?
+    
+    func save(model: Model) {
+        SessionManager().newAmountOf(water: Double(model.water))
+        SessionManager().newTimeInterval(second: model.interval)
+    }
+    
+    func startSession() {
+        SessionManager().newSession(isStart: true)
+    }
 }
