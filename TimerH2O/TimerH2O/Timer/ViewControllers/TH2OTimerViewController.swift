@@ -12,9 +12,16 @@ class TH2OTimerViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
     
-    fileprivate var countDown = 10
+    fileprivate var countDown: TimeInterval = 0
     
     lazy var presenter: Presenter = Presenter(view: self)
+    
+    //TODO: - temporary
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        SessionManager().newSession(isStart: false)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -25,13 +32,16 @@ class TH2OTimerViewController: UIViewController {
             presenter.startSession()
         }
         
-        timerLabel.text = "\(countDown)"
+        timerLabel.text = "\(convert(second: countDown))"
     }
 
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
     }
     
-    @IBAction func unwindToTimer(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
+        countDown = SessionManager().timeInterval()
+        timerLabel.text = "\(convert(second: countDown))"
+    }
     
 }
 
@@ -43,6 +53,6 @@ extension TH2OTimerViewController: ViewProtocol {
             presenter.stopSession()
         }
         
-        timerLabel.text = "\(countDown)"
+        timerLabel.text = "\(convert(second: countDown))"
     }
 }

@@ -28,4 +28,17 @@ class TimerH2OTests: XCTestCase {
         
         XCTAssertEqual(convert(amount: str), result)
     }
+    
+    func testTimeConverter() {
+        let x:TimeInterval = 3600
+        
+        var result = convert(second: x-1)
+        
+        XCTAssertEqual(result, 60)
+        
+        result = convert(second: x-60)
+        
+        XCTAssertEqual(result, 59)
+    }
+
 }
