@@ -6,6 +6,8 @@ target 'TimerH2O' do
   use_frameworks!
   # Pods for TimerH2O 
   pod 'R.swift'
+  pod 'Fabric'
+  pod 'Crashlytics'
   target 'TimerH2OTests' do
     inherit! :search_paths
     # Pods for testing
