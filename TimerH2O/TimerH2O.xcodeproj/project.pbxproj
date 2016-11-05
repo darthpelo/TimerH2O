@@ -297,12 +297,13 @@
 			buildConfigurationList = D98476E31DBD622F009F92B3 /* Build configuration list for PBXNativeTarget "TimerH2O" */;
 			buildPhases = (
 				EE8C63A2C819964165093239 /* [CP] Check Pods Manifest.lock */,
-				D9D0AEC11DBEA45500B6A8EE /* ShellScript */,
+				D9D0AEC11DBEA45500B6A8EE /* R.swift */,
 				D98476C01DBD622F009F92B3 /* Sources */,
 				D98476C11DBD622F009F92B3 /* Frameworks */,
 				D98476C21DBD622F009F92B3 /* Resources */,
 				0A4F92545730379030B0B94C /* [CP] Embed Pods Frameworks */,
 				86CBBE7828731696C30CD7C3 /* [CP] Copy Pods Resources */,
+				D90753341DCDED5200AB6FCC /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -464,13 +465,28 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D9D0AEC11DBEA45500B6A8EE /* ShellScript */ = {
+		D90753341DCDED5200AB6FCC /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f92187a6ad939c214258ffa2c9f03c6cc0a3d74d cf62acf20c611275d4126ffa3579a0861887c27a7a90007def0a96e8c0519d01";
+		};
+		D9D0AEC11DBEA45500B6A8EE /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
