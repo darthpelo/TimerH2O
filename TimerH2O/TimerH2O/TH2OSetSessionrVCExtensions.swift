@@ -20,5 +20,9 @@ extension TH2OSetSessionViewController: UIGestureRecognizerDelegate {
 }
 
 extension TH2OSetSessionViewController: ViewProtocol {
+    internal func updateCounter() {
+        
+    }
+
     
 }

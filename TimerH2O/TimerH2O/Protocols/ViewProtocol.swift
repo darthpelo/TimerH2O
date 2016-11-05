@@ -9,4 +9,5 @@
 import Foundation
 
 protocol ViewProtocol: class {
+    func updateCounter()
 }

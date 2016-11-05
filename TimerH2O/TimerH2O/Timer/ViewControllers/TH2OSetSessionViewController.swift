@@ -49,7 +49,6 @@ class TH2OSetSessionViewController: UIViewController {
             return
         }
         presenter.save(model: Model(water: water, interval: interval))
-        presenter.startSession()
         self.performSegue(withIdentifier: R.segue.tH2OSetSessionViewController.backToTimerVC, sender: self)
     }
     
