@@ -24,6 +24,7 @@
 		D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */; };
 		D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */; };
 		D9941F831DCBE64200918C14 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F821DCBE64200918C14 /* model.swift */; };
+		D9941F851DCBF7A200918C14 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 		D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */; };
 		D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */; };
 		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
@@ -32,6 +33,8 @@
 		D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C831DC29BF900692768 /* LocalDataTests.swift */; };
 		D9E34C861DC2A00700692768 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
 		D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */; };
+		D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */; };
+		D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,7 @@
 		D98476FC1DBD6456009F92B3 /* TH2OHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OHistoryViewController.swift; path = History/ViewControllers/TH2OHistoryViewController.swift; sourceTree = "<group>"; };
 		D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerViewController.swift; path = Timer/ViewControllers/TH2OTimerViewController.swift; sourceTree = "<group>"; };
 		D9941F821DCBE64200918C14 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		D9941F841DCBF7A200918C14 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TH2OTimePickerView.xib; path = Views/TH2OTimePickerView.xib; sourceTree = "<group>"; };
 		D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerPickerView.swift; path = Views/TH2OTimerPickerView.swift; sourceTree = "<group>"; };
 		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -81,6 +85,7 @@
 		D9E34C831DC29BF900692768 /* LocalDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTests.swift; sourceTree = "<group>"; };
 		D9E34C851DC2A00700692768 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OSetSessionViewController.swift; path = Timer/ViewControllers/TH2OSetSessionViewController.swift; sourceTree = "<group>"; };
+		D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +174,7 @@
 				D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */,
 				D98476E01DBD622F009F92B3 /* Info.plist */,
 				D9E34C831DC29BF900692768 /* LocalDataTests.swift */,
+				D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */,
 			);
 			path = TimerH2OTests;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
+				D9941F841DCBF7A200918C14 /* Timer.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -533,6 +540,7 @@
 				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */,
 				D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */,
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
+				D9941F851DCBF7A200918C14 /* Timer.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
 				D9941F831DCBE64200918C14 /* model.swift in Sources */,
@@ -551,8 +559,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */,
 				D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */,
 				D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */,
+				D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */,
 				D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */,
 				D98476DF1DBD622F009F92B3 /* TimerH2OTests.swift in Sources */,
 			);

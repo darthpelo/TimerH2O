@@ -14,9 +14,19 @@ struct Presenter {
     func save(model: Model) {
         SessionManager().newAmountOf(water: Double(model.water))
         SessionManager().newTimeInterval(second: model.interval)
+        SessionManager().newSession(isStart: true)
     }
     
     func startSession() {
-        SessionManager().newSession(isStart: true)
+        TimerManager.sharedInstance.start()
+        
+        TimerManager.sharedInstance.scheduledTimer = {
+            self.view?.updateCounter()
+        }
+    }
+    
+    func stopSession() {
+        SessionManager().newSession(isStart: false)
+        TimerManager.sharedInstance.stop()
     }
 }

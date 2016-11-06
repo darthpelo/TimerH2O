@@ -31,11 +31,11 @@ struct SessionManager {
         return UserDefaults.standard.double(forKey: StorageKey.amountOfWater.rawValue)
     }
     
-    func newTimeInterval(second: Double) {
+    func newTimeInterval(second: TimeInterval) {
         UserDefaults.standard.set(second, forKey: StorageKey.timeInterval.rawValue)
     }
     
-    func timeInterval() -> Double {
+    func timeInterval() -> TimeInterval {
         return UserDefaults.standard.double(forKey: StorageKey.timeInterval.rawValue)
     }
 }
