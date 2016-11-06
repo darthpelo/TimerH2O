@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 struct Presenter {
     weak var view: ViewProtocol?
@@ -23,10 +24,41 @@ struct Presenter {
         TimerManager.sharedInstance.scheduledTimer = {
             self.view?.updateCounter()
         }
+        
+        scheduleLocalNotification(timeInterval: SessionManager().timeInterval())
     }
     
     func stopSession() {
         SessionManager().newSession(isStart: false)
         TimerManager.sharedInstance.stop()
+    }
+}
+
+extension Presenter {
+    fileprivate func scheduleLocalNotification(timeInterval: TimeInterval) {
+        // Create Notification Content
+        if #available(iOS 10.0, *) {
+            let notificationContent = UNMutableNotificationContent()
+            
+            // Configure Notification Content
+            notificationContent.title = "Cocoacasts"
+            notificationContent.subtitle = "Local Notifications"
+            notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
+            
+            // Add Trigger
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+            
+            // Create Notification Request
+            let notificationRequest = UNNotificationRequest(identifier: "cocoacasts_local_notification", content: notificationContent, trigger: notificationTrigger)
+            
+            // Add Request to User Notification Center
+            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+                if let error = error {
+                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

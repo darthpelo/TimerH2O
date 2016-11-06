@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */; };
 		D5B5AF73E60B7568FB3288C2 /* Pods_TimerH2OTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */; };
+		D90753371DCF6EC900AB6FCC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90753351DCF6EC900AB6FCC /* UserNotifications.framework */; };
+		D90753381DCF6EC900AB6FCC /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90753361DCF6EC900AB6FCC /* UserNotificationsUI.framework */; };
+		D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90753391DCF8AA100AB6FCC /* Notifications.swift */; };
 		D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12DF1DC536BE0047FCB6 /* Presenter.swift */; };
 		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
@@ -55,6 +58,9 @@
 		A70CFCF885A5A8CDB62EE55E /* Pods-TimerH2OTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C19D231A68BE7BE0BD83A312 /* Pods-TimerH2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2O.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O.release.xcconfig"; sourceTree = "<group>"; };
 		C5D760F7D58F7109337C9BC3 /* Pods-TimerH2OTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.test.xcconfig"; sourceTree = "<group>"; };
+		D90753351DCF6EC900AB6FCC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		D90753361DCF6EC900AB6FCC /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		D90753391DCF8AA100AB6FCC /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90753371DCF6EC900AB6FCC /* UserNotifications.framework in Frameworks */,
+				D90753381DCF6EC900AB6FCC /* UserNotificationsUI.framework in Frameworks */,
 				0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D94A12E41DC53A8C0047FCB6 /* Converter.swift */,
+				D90753391DCF8AA100AB6FCC /* Notifications.swift */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -154,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				D94A12E31DC53A7D0047FCB6 /* Functions */,
-				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
 				D9D0AEC51DBEA77300B6A8EE /* Controllers */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
 				D98476F51DBD6382009F92B3 /* History */,
@@ -163,6 +171,7 @@
 				D98476F31DBD6340009F92B3 /* Storyboards */,
 				D98476F21DBD6334009F92B3 /* Support */,
 				D98476F41DBD6379009F92B3 /* Timer */,
+				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
 				D9E34C851DC2A00700692768 /* Constants.swift */,
 			);
 			path = TimerH2O;
@@ -182,6 +191,8 @@
 		D98476EA1DBD625C009F92B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D90753351DCF6EC900AB6FCC /* UserNotifications.framework */,
+				D90753361DCF6EC900AB6FCC /* UserNotificationsUI.framework */,
 				25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */,
 				1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */,
 			);
@@ -545,6 +556,7 @@
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
 				D9941F831DCBE64200918C14 /* model.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
+				D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */,
 				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,

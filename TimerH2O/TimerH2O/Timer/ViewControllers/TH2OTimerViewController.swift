@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class TH2OTimerViewController: UIViewController {
 
@@ -21,15 +22,25 @@ class TH2OTimerViewController: UIViewController {
         super.viewDidLoad()
         
         SessionManager().newSession(isStart: false)
+        
+        // Configure User Notification Center
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !SessionManager().sessionStart() {
-            self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
-        } else {
+        notificationsSettings()
+        
+        if SessionManager().sessionStart() {
             presenter.startSession()
+        } else {
+            self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
+            presenter.stopSession()
         }
         
         timerLabel.text = "\(convert(second: countDown))"
@@ -55,4 +66,13 @@ extension TH2OTimerViewController: ViewProtocol {
         
         timerLabel.text = "\(convert(second: countDown))"
     }
+}
+
+extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
 }
