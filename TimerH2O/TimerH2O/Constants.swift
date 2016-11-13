@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct TH2OConstants {
+    struct UserNotification {
+        static let notificationRequest = "timerh2o_local_notification"
+    }
+}

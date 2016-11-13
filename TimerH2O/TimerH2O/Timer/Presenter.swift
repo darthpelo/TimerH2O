@@ -41,15 +41,15 @@ extension Presenter {
             let notificationContent = UNMutableNotificationContent()
             
             // Configure Notification Content
-            notificationContent.title = "Cocoacasts"
-            notificationContent.subtitle = "Local Notifications"
-            notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
+            notificationContent.title = "TimerH2O"
+            notificationContent.subtitle = NSLocalizedString("localnotification.subtitle", comment: "")
+//            notificationContent.body = "In this tutorial, you learn how to schedule local notifications with the User Notifications framework."
             
             // Add Trigger
             let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
             
             // Create Notification Request
-            let notificationRequest = UNNotificationRequest(identifier: "cocoacasts_local_notification", content: notificationContent, trigger: notificationTrigger)
+            let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest, content: notificationContent, trigger: notificationTrigger)
             
             // Add Request to User Notification Center
             UNUserNotificationCenter.current().add(notificationRequest) { (error) in

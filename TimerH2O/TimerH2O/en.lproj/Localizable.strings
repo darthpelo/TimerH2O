@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TimerH2O
+
+  Created by Alessio Roberto on 06/11/16.
+  Copyright © 2016 Alessio Roberto. All rights reserved.
+*/
+
+"setsession.title.label" = "Set how much water you drink during the day and the time that must elapse between each glass of water.";
+"setsession.amount.label" = "Amount of water per day.";
+"setsession.interval.label" = "Interval between any glass of water";
+
+"localnotification.subtitle" = "It's time to drink!";
