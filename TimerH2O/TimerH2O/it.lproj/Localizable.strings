@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TimerH2O
+
+  Created by Alessio Roberto on 06/11/16.
+  Copyright © 2016 Alessio Roberto. All rights reserved.
+*/
+
+"setsession.title.label" = "Imposta quanta acqua vuoi bere durante la giornata ed il tempo che deve intercorrere tra ogni bicchiere di acqua.";
+"setsession.amount.label" = "Quantità di acqua che vuoi bere durante il giorno.";
+"setsession.interval.label" = "Intervallo di tempo da ogni bicchiere di acqua.";
+
+"localnotification.subtitle" = "E' ora di bere";

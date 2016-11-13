@@ -12,8 +12,10 @@ class TH2OSetSessionViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var waterView: UIView!
+    @IBOutlet weak var waterAmountTextLabel: UILabel!
     @IBOutlet weak var waterAmountLabel: UILabel!
     @IBOutlet weak var intervalView: UIView!
+    @IBOutlet weak var intervalTextLabel: UILabel!
     @IBOutlet weak var intervalLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -22,8 +24,9 @@ class TH2OSetSessionViewController: UIViewController {
     
     public var waterPickerView: TH2OWaterPickerView?
     public var timerPickerView: TH2OTimerPickerView?
-    private var water: Int?
-    private var interval: TimeInterval?
+    
+    fileprivate var water: Int?
+    fileprivate var interval: TimeInterval?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,7 @@ class TH2OSetSessionViewController: UIViewController {
         tapTimer.delegate = self
         intervalView.addGestureRecognizer(tapTimer)
         
+        configureLabels()
         configureWaterPickerView()
         configureTimerPickerView()
     }
@@ -51,8 +55,16 @@ class TH2OSetSessionViewController: UIViewController {
         presenter.save(model: Model(water: water, interval: interval))
         self.performSegue(withIdentifier: R.segue.tH2OSetSessionViewController.backToTimerVC, sender: self)
     }
+}
+
+extension TH2OSetSessionViewController {
+    fileprivate func configureLabels() {
+        titleLabel.text = NSLocalizedString("setsession.title.label", comment: "")
+        waterAmountTextLabel.text = NSLocalizedString("setsession.amount.label", comment: "")
+        intervalTextLabel.text = NSLocalizedString("setsession.interval.label", comment: "")
+    }
     
-    private func configureWaterPickerView() {
+    fileprivate func configureWaterPickerView() {
         waterPickerView = TH2OWaterPickerView().loadPickerView()
         waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
             self.water = selectedAmount
@@ -61,7 +73,7 @@ class TH2OSetSessionViewController: UIViewController {
         })
     }
     
-    private func configureTimerPickerView() {
+    fileprivate func configureTimerPickerView() {
         timerPickerView = TH2OTimerPickerView().loadDatePickerView()
         timerPickerView?.configure(onView: self.view, withCallback: { selectedTimer in
             self.interval = selectedTimer
