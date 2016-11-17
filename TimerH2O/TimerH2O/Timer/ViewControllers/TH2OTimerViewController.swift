@@ -12,7 +12,7 @@ import UserNotifications
 class TH2OTimerViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
-        
+    
     lazy var presenter: Presenter = Presenter(view: self)
     
     //TODO: - temporary
@@ -27,6 +27,10 @@ class TH2OTimerViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +53,13 @@ class TH2OTimerViewController: UIViewController {
         timerLabel.text = "\(minutes(from: SessionManager().timeInterval()))"
     }
     
+    func didEnterBackground() {
+        TimerManager.sharedInstance.stop()
+    }
+    
+    func didBecomeActive() {
+//        startTimer()
+    }
 }
 
 extension TH2OTimerViewController: ViewProtocol {

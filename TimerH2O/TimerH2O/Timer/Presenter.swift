@@ -20,7 +20,7 @@ struct Presenter {
     
     func startSession() {
         TimerManager.sharedInstance.start()
-        
+        let when = Date(timeIntervalSinceNow: SessionManager().timeInterval())
         SessionManager().new(countDown: SessionManager().timeInterval())
         
         TimerManager.sharedInstance.scheduledTimer = {
