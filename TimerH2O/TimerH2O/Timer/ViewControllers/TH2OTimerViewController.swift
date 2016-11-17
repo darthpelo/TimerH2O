@@ -43,7 +43,7 @@ class TH2OTimerViewController: UIViewController {
             presenter.stopSession()
         }
         
-        timerLabel.text = "\(convert(second: countDown))"
+        timerLabel.text = "\(minutes(from: countDown))"
     }
 
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
@@ -51,20 +51,20 @@ class TH2OTimerViewController: UIViewController {
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
         countDown = SessionManager().timeInterval()
-        timerLabel.text = "\(convert(second: countDown))"
+        timerLabel.text = "\(minutes(from: countDown))"
     }
     
 }
 
 extension TH2OTimerViewController: ViewProtocol {
-    internal func updateCounter() {
-        countDown -= 1
+    internal func update(countDown: TimeInterval) {
+        self.countDown = countDown
         
-        if countDown == 0 {
+        if self.countDown == 0 {
             presenter.stopSession()
         }
         
-        timerLabel.text = "\(convert(second: countDown))"
+        timerLabel.text = "\(minutes(from: self.countDown))"
     }
 }
 

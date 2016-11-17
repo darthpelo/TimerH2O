@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ViewProtocol: class {
-    func updateCounter()
+    func update(countDown: TimeInterval)
 }
