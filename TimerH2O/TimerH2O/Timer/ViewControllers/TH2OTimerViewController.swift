@@ -12,9 +12,7 @@ import UserNotifications
 class TH2OTimerViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
-    
-    fileprivate var countDown: TimeInterval = 0
-    
+        
     lazy var presenter: Presenter = Presenter(view: self)
     
     //TODO: - temporary
@@ -42,29 +40,24 @@ class TH2OTimerViewController: UIViewController {
             self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
             presenter.stopSession()
         }
-        
-        timerLabel.text = "\(minutes(from: countDown))"
     }
 
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
-        countDown = SessionManager().timeInterval()
-        timerLabel.text = "\(minutes(from: countDown))"
+        timerLabel.text = "\(minutes(from: SessionManager().timeInterval()))"
     }
     
 }
 
 extension TH2OTimerViewController: ViewProtocol {
     internal func update(countDown: TimeInterval) {
-        self.countDown = countDown
-        
-        if self.countDown == 0 {
+        if countDown == 0 {
             presenter.stopSession()
         }
         
-        timerLabel.text = "\(minutes(from: self.countDown))"
+        timerLabel.text = "\(minutes(from: countDown))"
     }
 }
 

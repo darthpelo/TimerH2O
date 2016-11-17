@@ -12,6 +12,7 @@ enum StorageKey: String {
     case amountOfWater = "com.alessioroberto.amountOfWater"
     case sessionStart = "com.alessioroberto.sessionStart"
     case timeInterval =  "com.alessioroberto.timeInterval"
+    case countDown = "com.alessioroberto.countDown"
 }
 
 struct SessionManager {
@@ -37,5 +38,13 @@ struct SessionManager {
     
     func timeInterval() -> TimeInterval {
         return UserDefaults.standard.double(forKey: StorageKey.timeInterval.rawValue)
+    }
+    
+    func new(countDown: TimeInterval) {
+        UserDefaults.standard.set(countDown, forKey: StorageKey.countDown.rawValue)
+    }
+    
+    func countDown() -> TimeInterval {
+        return UserDefaults.standard.double(forKey: StorageKey.countDown.rawValue)
     }
 }

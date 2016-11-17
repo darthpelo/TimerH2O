@@ -21,8 +21,12 @@ struct Presenter {
     func startSession() {
         TimerManager.sharedInstance.start()
         
+        SessionManager().new(countDown: SessionManager().timeInterval())
+        
         TimerManager.sharedInstance.scheduledTimer = {
-            self.view?.update(countDown: SessionManager().timeInterval())
+            let countDown = SessionManager().countDown() - 1
+            self.view?.update(countDown: countDown)
+            SessionManager().new(countDown: countDown)
         }
         
 //        scheduleLocalNotification(timeInterval: SessionManager().timeInterval())
