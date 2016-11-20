@@ -19,7 +19,7 @@ class TH2OTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SessionManager().newSession(isStart: false)
+//        SessionManager().newSession(isStart: false)
         
         // Configure User Notification Center
         if #available(iOS 10.0, *) {
@@ -54,11 +54,21 @@ class TH2OTimerViewController: UIViewController {
     }
     
     func didEnterBackground() {
-        TimerManager.sharedInstance.stop()
+        presenter.stopTimer()
+        presenter.startLocalNotification()
     }
     
     func didBecomeActive() {
-//        startTimer()
+        if #available(iOS 10.0, *) {
+            if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()) {
+                if timeInterval > 0 {
+                    self.presenter.startTimer(timeInterval)
+                } else {
+                    print("tempo scaduto")
+                }
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
+        }
     }
 }
 
