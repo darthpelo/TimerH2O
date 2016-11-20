@@ -20,7 +20,9 @@ struct Presenter {
     
     func startSession() {
         TimerManager.sharedInstance.start()
+        // TODO: - check time zone
         let when = Date(timeIntervalSinceNow: SessionManager().timeInterval())
+        print(when)
         SessionManager().new(countDown: SessionManager().timeInterval())
         
         TimerManager.sharedInstance.scheduledTimer = {

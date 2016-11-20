@@ -39,4 +39,13 @@ class LocalDataTests: XCTestCase {
         XCTAssertEqual(SessionManager().timeInterval(), timer)
     }
 
+    func testSaveDate() {
+        let date = Date()
+        SessionManager().new(endTimer: date)
+        
+        let result = SessionManager().endTimer()
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result, date)
+    }
+
 }
