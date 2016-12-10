@@ -9,16 +9,15 @@
 import UIKit
 import UserNotifications
 
-class TH2OTimerViewController: UIViewController {
+class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
     
     lazy var presenter: Presenter = Presenter(view: self)
     
-    //TODO: - temporary
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //TODO: - temporary
 //        SessionManager().newSession(isStart: false)
         
         // Configure User Notification Center
@@ -28,9 +27,7 @@ class TH2OTimerViewController: UIViewController {
             // Fallback on earlier versions
         }
         
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        setupNotification()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +38,7 @@ class TH2OTimerViewController: UIViewController {
         if SessionManager().sessionStart() {
             presenter.startSession()
         } else {
-            self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
+            newSession()
             presenter.stopSession()
         }
     }
@@ -50,7 +47,7 @@ class TH2OTimerViewController: UIViewController {
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
-        timerLabel.text = "\(minutes(from: SessionManager().timeInterval()))"
+        setTimerLabel(with: SessionManager().timeInterval())
     }
     
     func didEnterBackground() {
@@ -60,12 +57,11 @@ class TH2OTimerViewController: UIViewController {
     
     func didBecomeActive() {
         if #available(iOS 10.0, *) {
-            if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()) {
-                if timeInterval > 0 {
+            if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
                     self.presenter.startTimer(timeInterval)
-                } else {
-                    print("tempo scaduto")
-                }
+            } else {
+                print("tempo scaduto")
+                presenter.stopSession()
             }
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
@@ -77,8 +73,7 @@ extension TH2OTimerViewController: ViewProtocol {
         if countDown == 0 {
             presenter.stopSession()
         }
-        
-        timerLabel.text = "\(minutes(from: countDown))"
+        setTimerLabel(with: countDown)
     }
 }
 
