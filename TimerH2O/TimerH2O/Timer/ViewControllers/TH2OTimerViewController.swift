@@ -9,19 +9,16 @@
 import UIKit
 import UserNotifications
 
-class TH2OTimerViewController: UIViewController {
+class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
     
-    fileprivate var countDown: TimeInterval = 0
-    
     lazy var presenter: Presenter = Presenter(view: self)
     
-    //TODO: - temporary
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        SessionManager().newSession(isStart: false)
+        //TODO: - temporary
+//        SessionManager().newSession(isStart: false)
         
         // Configure User Notification Center
         if #available(iOS 10.0, *) {
@@ -29,6 +26,8 @@ class TH2OTimerViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        setupNotification()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,32 +38,42 @@ class TH2OTimerViewController: UIViewController {
         if SessionManager().sessionStart() {
             presenter.startSession()
         } else {
-            self.performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC, sender: self)
+            newSession()
             presenter.stopSession()
         }
-        
-        timerLabel.text = "\(convert(second: countDown))"
     }
 
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
-        countDown = SessionManager().timeInterval()
-        timerLabel.text = "\(convert(second: countDown))"
+        setTimerLabel(with: SessionManager().timeInterval())
     }
     
+    func didEnterBackground() {
+        presenter.stopTimer()
+        presenter.startLocalNotification()
+    }
+    
+    func didBecomeActive() {
+        if #available(iOS 10.0, *) {
+            if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
+                    self.presenter.startTimer(timeInterval)
+            } else {
+                print("tempo scaduto")
+                presenter.stopSession()
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
+        }
+    }
 }
 
 extension TH2OTimerViewController: ViewProtocol {
-    internal func updateCounter() {
-        countDown -= 1
-        
+    internal func update(countDown: TimeInterval) {
         if countDown == 0 {
             presenter.stopSession()
         }
-        
-        timerLabel.text = "\(convert(second: countDown))"
+        setTimerLabel(with: countDown)
     }
 }
 

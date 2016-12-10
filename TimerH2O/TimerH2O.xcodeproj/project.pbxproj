@@ -21,6 +21,8 @@
 		D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */; };
 		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */; };
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
+		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
+		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
 		D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476C71DBD622F009F92B3 /* AppDelegate.swift */; };
 		D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476CD1DBD622F009F92B3 /* Main.storyboard */; };
 		D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98476D01DBD622F009F92B3 /* Assets.xcassets */; };
@@ -73,6 +75,8 @@
 		D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TH2OWaterPickerView.xib; sourceTree = "<group>"; };
 		D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionrVCExtensions.swift; sourceTree = "<group>"; };
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
+		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
+		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
 		D98476C41DBD622F009F92B3 /* TimerH2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerH2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98476C71DBD622F009F92B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98476CE1DBD622F009F92B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 		D98476FA1DBD63F5009F92B3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D963E04C1DFC0DF3005B67F4 /* Configurable.swift */,
+				D963E04E1DFC133C005B67F4 /* Seguible.swift */,
 				D94A12E11DC537190047FCB6 /* ViewProtocol.swift */,
 			);
 			name = Protocols;
@@ -367,7 +373,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Alessio Roberto";
 				TargetAttributes = {
 					D98476C31DBD622F009F92B3 = {
@@ -563,8 +569,10 @@
 				D9941F851DCBF7A200918C14 /* Timer.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
+				D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */,
 				D9941F831DCBE64200918C14 /* model.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
+				D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */,
 				D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */,
 				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,

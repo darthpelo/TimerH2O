@@ -16,7 +16,7 @@ func convert(amount: [String]) -> Int? {
     return Int(result)
 }
 
-func convert(second: TimeInterval) -> Int {
+func minutes(from second: TimeInterval) -> Int {
     let x = round(second/60)
     return Int(x)
 }

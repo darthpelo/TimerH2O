@@ -24,14 +24,14 @@ public class TimerManager {
     private var timer = Timer()
     
     func start() {
-        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sentNot), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sendNotification), userInfo: nil, repeats: true)
     }
     
     func stop() {
         self.timer.invalidate()
     }
     
-    @objc func sentNot() {
-        scheduledTimer!()
+    @objc func sendNotification() {
+        scheduledTimer?()
     }
 }
