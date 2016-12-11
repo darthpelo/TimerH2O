@@ -8,16 +8,17 @@
 
 import Foundation
 
+/// Convert a [String] in a format ["x", "x", "x"] in an Int.
+///
+/// For example ["1", "0", "0"] = 100.
+///
+/// - Parameter amount: The array that rappresent a number
+/// - Returns: The number
 func convert(amount: [String]) -> Int? {
     var result: String = ""
     for c in amount {
         result = result + c
     }
     return Int(result)
-}
-
-func minutes(from second: TimeInterval) -> Int {
-    let x = round(second/60)
-    return Int(x)
 }
 

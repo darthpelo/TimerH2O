@@ -19,7 +19,16 @@ extension Configurable where Self: TH2OTimerViewController {
     }
     
     internal func setTimerLabel(with timerInterval: TimeInterval) {
-        timerLabel.text = "\(minutes(from: timerInterval))"
+        timerLabel.text = timerInterval.toString()
+    }
+    
+    internal func configureWaterPickerView() {
+        waterPickerView = TH2OWaterPickerView().loadPickerView()
+        waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
+            self.presenter.update(water: Double(selectedAmount))
+            self.waterPickerView?.isTo(show: false)
+            self.presenter.startSession()
+        })
     }
 }
 

@@ -11,3 +11,5 @@
 "setsession.interval.label" = "Intervallo di tempo da ogni bicchiere di acqua.";
 
 "localnotification.subtitle" = "E' ora di bere";
+
+"timerview.stopbutton" = "I drank!";

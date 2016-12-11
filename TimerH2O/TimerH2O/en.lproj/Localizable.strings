@@ -11,3 +11,5 @@
 "setsession.interval.label" = "Interval between any glass of water";
 
 "localnotification.subtitle" = "It's time to drink!";
+
+"timerview.stopbutton" = "Ho bevuto!";

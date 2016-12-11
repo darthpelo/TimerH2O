@@ -12,11 +12,19 @@ import UserNotifications
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var stopTimerButton: UIButton! {
+        didSet {
+            stopTimerButton.setTitle(NSLocalizedString("timerview.stopbutton", comment: ""), for: .normal)
+        }
+    }
+    
+    public var waterPickerView: TH2OWaterPickerView?
     
     lazy var presenter: Presenter = Presenter(view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //TODO: - temporary
 //        SessionManager().newSession(isStart: false)
         
@@ -36,14 +44,18 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         notificationsSettings()
         
         if SessionManager().sessionStart() {
+            configureWaterPickerView()
             presenter.startSession()
         } else {
             newSession()
+            //TODO: - check if necessary
             presenter.stopSession()
         }
     }
 
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
+        presenter.stopSession()
+        showWaterPicker()
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
@@ -60,18 +72,29 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
                     self.presenter.startTimer(timeInterval)
             } else {
-                print("tempo scaduto")
                 presenter.stopSession()
+                DispatchQueue.main.async { [weak self] in
+                    self?.showWaterPicker()
+                }
             }
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
+    }
+    
+    //MARK: - Private
+    fileprivate func showWaterPicker() {
+        waterPickerView?.isTo(show: true)
     }
 }
 
 extension TH2OTimerViewController: ViewProtocol {
     internal func update(countDown: TimeInterval) {
+        NSLog("count down \(countDown)")
         if countDown == 0 {
             presenter.stopSession()
+            DispatchQueue.main.async { [weak self] in
+                self?.showWaterPicker()
+            }
         }
         setTimerLabel(with: countDown)
     }

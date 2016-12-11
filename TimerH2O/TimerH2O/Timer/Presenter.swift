@@ -55,6 +55,12 @@ struct Presenter {
             SessionManager().new(countDown: countDown)
         }
     }
+    
+    func update(water amount: Double) {
+        var actualAmount = SessionManager().amountOfWater()
+        actualAmount -= amount
+        SessionManager().newAmountOf(water: actualAmount)
+    }
 }
 
 extension Presenter {

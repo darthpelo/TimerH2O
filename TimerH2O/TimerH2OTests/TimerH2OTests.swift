@@ -29,16 +29,15 @@ class TimerH2OTests: XCTestCase {
         XCTAssertEqual(convert(amount: str), result)
     }
     
-    func testTimeConverter() {
-        let x:TimeInterval = 3600
+    func testStringConverter() {
+        var x: TimeInterval = 3600
         
-        var result = minutes(from: x-1)
+        let result = x.toString()
         
-        XCTAssertEqual(result, 60)
-        
-        result = minutes(from: x-60)
-        
-        XCTAssertEqual(result, 59)
+        XCTAssertEqual(result, "01:00:00")
+        x = 29
+        XCTAssertEqual(x.toString(), "00:00:29")
     }
+
 
 }

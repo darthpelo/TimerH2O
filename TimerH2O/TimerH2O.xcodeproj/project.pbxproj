@@ -19,7 +19,7 @@
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
 		D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
 		D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */; };
-		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */; };
+		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */; };
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
@@ -40,6 +40,7 @@
 		D9E34C841DC29BF900692768 /* LocalDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C831DC29BF900692768 /* LocalDataTests.swift */; };
 		D9E34C861DC2A00700692768 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
 		D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */; };
+		D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */; };
 		D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */; };
 		D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -73,7 +74,7 @@
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
 		D94A12E41DC53A8C0047FCB6 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TH2OWaterPickerView.xib; sourceTree = "<group>"; };
-		D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionrVCExtensions.swift; sourceTree = "<group>"; };
+		D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionVCExtensions.swift; sourceTree = "<group>"; };
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		D9E34C831DC29BF900692768 /* LocalDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataTests.swift; sourceTree = "<group>"; };
 		D9E34C851DC2A00700692768 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OSetSessionViewController.swift; path = Timer/ViewControllers/TH2OSetSessionViewController.swift; sourceTree = "<group>"; };
+		D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = Extensions/TimeInterval.swift; sourceTree = "<group>"; };
 		D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,7 +266,7 @@
 			children = (
 				D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */,
 				D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */,
-				D94A12E91DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift */,
+				D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				D90753431DCF978D00AB6FCC /* UView.swift */,
+				D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -563,7 +566,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionrVCExtensions.swift in Sources */,
+				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */,
+				D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */,
 				D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */,
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D9941F851DCBF7A200918C14 /* Timer.swift in Sources */,
