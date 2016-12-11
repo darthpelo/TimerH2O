@@ -10,4 +10,5 @@ import Foundation
 
 protocol ViewProtocol: class {
     func update(countDown: TimeInterval)
+    func setTimerLabel(with string: String)
 }

@@ -12,4 +12,5 @@
 
 "localnotification.subtitle" = "E' ora di bere";
 
-"timerview.stopbutton" = "I drank!";
+"timerview.stop.button" = "Ho bevuto!";
+"timerview.timer.label.finish" = "Ciclo finito";

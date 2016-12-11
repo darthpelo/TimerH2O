@@ -14,7 +14,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var stopTimerButton: UIButton! {
         didSet {
-            stopTimerButton.setTitle(NSLocalizedString("timerview.stopbutton", comment: ""), for: .normal)
+            stopTimerButton.setTitle(NSLocalizedString("timerview.stop.button", comment: ""), for: .normal)
         }
     }
     
@@ -48,6 +48,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             presenter.startSession()
         } else {
             newSession()
+            timerLabel.text = NSLocalizedString("timerview.timer.label.finish", comment: "")
             //TODO: - check if necessary
             presenter.stopSession()
         }
@@ -68,6 +69,8 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     func didBecomeActive() {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         if #available(iOS 10.0, *) {
             if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
                     self.presenter.startTimer(timeInterval)
@@ -77,6 +80,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
                     self?.showWaterPicker()
                 }
             }
+            
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
     }
@@ -89,14 +93,18 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
 extension TH2OTimerViewController: ViewProtocol {
     internal func update(countDown: TimeInterval) {
-        NSLog("count down \(countDown)")
         if countDown == 0 {
             presenter.stopSession()
             DispatchQueue.main.async { [weak self] in
                 self?.showWaterPicker()
             }
+        } else {
+            setTimerLabel(with: countDown)
         }
-        setTimerLabel(with: countDown)
+    }
+    
+    internal func setTimerLabel(with string: String) {
+        timerLabel.text = string
     }
 }
 

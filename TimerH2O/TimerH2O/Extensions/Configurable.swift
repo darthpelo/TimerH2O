@@ -27,7 +27,6 @@ extension Configurable where Self: TH2OTimerViewController {
         waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
             self.presenter.update(water: Double(selectedAmount))
             self.waterPickerView?.isTo(show: false)
-            self.presenter.startSession()
         })
     }
 }

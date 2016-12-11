@@ -59,7 +59,13 @@ struct Presenter {
     func update(water amount: Double) {
         var actualAmount = SessionManager().amountOfWater()
         actualAmount -= amount
-        SessionManager().newAmountOf(water: actualAmount)
+        if actualAmount > 0 {
+            SessionManager().newAmountOf(water: actualAmount)
+            startSession()
+        } else {
+            stopSession()
+            self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish", comment: ""))
+        }
     }
 }
 
@@ -76,6 +82,8 @@ extension Presenter {
                 notificationContent.title = "TimerH2O"
                 //            notificationContent.subtitle = NSLocalizedString("localnotification.subtitle", comment: "")
                 notificationContent.body = NSLocalizedString("localnotification.subtitle", comment: "")
+                notificationContent.sound = UNNotificationSound.default()
+                notificationContent.badge = 1
                 
                 // Add Trigger
                 let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
