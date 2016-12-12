@@ -382,7 +382,7 @@
 					D98476C31DBD622F009F92B3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GK5S624D99;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
 								enabled = 0;
@@ -749,6 +749,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "be59fbe6-eabc-4c7f-9e95-80fc4ea17495";
+				PROVISIONING_PROFILE_SPECIFIER = development;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -759,11 +761,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -850,11 +855,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Test;
