@@ -12,6 +12,11 @@ import UserNotifications
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var startNewSessionButton: UIButton! {
+        didSet {
+            startNewSessionButton.setTitle("Start", for: .normal)
+        }
+    }
     @IBOutlet weak var stopTimerButton: UIButton! {
         didSet {
             stopTimerButton.setTitle(NSLocalizedString("timerview.stop.button", comment: ""), for: .normal)
@@ -24,9 +29,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //TODO: - temporary
-//        SessionManager().newSession(isStart: false)
         
         // Configure User Notification Center
         if #available(iOS 10.0, *) {
@@ -47,16 +49,20 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             configureWaterPickerView()
             presenter.startSession()
         } else {
-            newSession()
             timerLabel.text = NSLocalizedString("timerview.timer.label.finish", comment: "")
-            //TODO: - check if necessary
-            presenter.stopSession()
         }
     }
 
-    @IBAction func drinkButtonPressed(_ sender: AnyObject) {
+    @IBAction func newSessionPressed(_ sender: Any) {
         presenter.stopSession()
-        showWaterPicker()
+        newSession()
+    }
+    
+    @IBAction func drinkButtonPressed(_ sender: AnyObject) {
+        if SessionManager().sessionStart() {
+            presenter.stopSession()
+            showWaterPicker()
+        }
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {

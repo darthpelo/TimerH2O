@@ -28,23 +28,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhM-4i-uJF">
-                                <rect key="frame" x="164.5" y="237.5" width="46" height="30"/>
+                                <rect key="frame" x="165" y="238" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="drinkButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hxY-zp-OTi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5l-5H-zNG">
+                                <rect key="frame" x="164" y="547" width="46" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nqm-8b-fhh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="newSessionPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Vrm-w9-9M1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="X5l-5H-zNG" secondAttribute="bottom" constant="27" id="5bL-Qa-Pbt"/>
                             <constraint firstItem="Dgy-f0-Qye" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nwb-ce-Cvw"/>
                             <constraint firstItem="Dgy-f0-Qye" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="92" id="OQ0-NZ-kQz"/>
                             <constraint firstItem="nhM-4i-uJF" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="VdU-oc-Gox"/>
                             <constraint firstItem="nhM-4i-uJF" firstAttribute="top" secondItem="Dgy-f0-Qye" secondAttribute="bottom" constant="125.5" id="YCz-5X-yyK"/>
+                            <constraint firstItem="X5l-5H-zNG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="uxL-EU-XSX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="startNewSessionButton" destination="X5l-5H-zNG" id="gBz-Sd-SMt"/>
                         <outlet property="stopTimerButton" destination="nhM-4i-uJF" id="CLT-4I-KPw"/>
                         <outlet property="timerLabel" destination="Dgy-f0-Qye" id="dYa-aj-x08"/>
                         <segue destination="Kza-wV-z4y" kind="presentation" identifier="NewSessionVC" id="paF-Jw-H38"/>
