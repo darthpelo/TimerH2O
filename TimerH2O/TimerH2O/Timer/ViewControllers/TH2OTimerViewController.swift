@@ -49,7 +49,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             configureWaterPickerView()
             presenter.startSession()
         } else {
-            timerLabel.text = NSLocalizedString("timerview.timer.label.finish", comment: "")
+            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
         }
     }
 

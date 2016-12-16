@@ -64,7 +64,7 @@ struct Presenter {
             startSession()
         } else {
             stopSession()
-            self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish", comment: ""))
+            self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
         }
     }
 }
