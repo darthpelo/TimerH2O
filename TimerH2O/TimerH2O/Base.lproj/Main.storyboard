@@ -44,19 +44,28 @@
                                     <action selector="newSessionPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Vrm-w9-9M1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-Xv-19E">
+                                <rect key="frame" x="167" y="128" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="X5l-5H-zNG" secondAttribute="bottom" constant="27" id="5bL-Qa-Pbt"/>
+                            <constraint firstItem="PZy-Xv-19E" firstAttribute="centerX" secondItem="Dgy-f0-Qye" secondAttribute="centerX" id="LNo-HG-Ujw"/>
                             <constraint firstItem="Dgy-f0-Qye" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nwb-ce-Cvw"/>
                             <constraint firstItem="Dgy-f0-Qye" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="92" id="OQ0-NZ-kQz"/>
                             <constraint firstItem="nhM-4i-uJF" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="VdU-oc-Gox"/>
                             <constraint firstItem="nhM-4i-uJF" firstAttribute="top" secondItem="Dgy-f0-Qye" secondAttribute="bottom" constant="125.5" id="YCz-5X-yyK"/>
+                            <constraint firstItem="PZy-Xv-19E" firstAttribute="top" secondItem="Dgy-f0-Qye" secondAttribute="bottom" constant="16" id="iRY-6L-6bO"/>
                             <constraint firstItem="X5l-5H-zNG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="uxL-EU-XSX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="amountLabe" destination="PZy-Xv-19E" id="dBB-nh-TC4"/>
                         <outlet property="startNewSessionButton" destination="X5l-5H-zNG" id="gBz-Sd-SMt"/>
                         <outlet property="stopTimerButton" destination="nhM-4i-uJF" id="CLT-4I-KPw"/>
                         <outlet property="timerLabel" destination="Dgy-f0-Qye" id="dYa-aj-x08"/>

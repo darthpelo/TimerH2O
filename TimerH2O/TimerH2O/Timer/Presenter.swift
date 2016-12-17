@@ -27,7 +27,8 @@ struct Presenter {
         
         TimerManager.sharedInstance.scheduledTimer = {
             let countDown = SessionManager().countDown() - 1
-            self.view?.update(countDown: countDown)
+            let amount = SessionManager().amountOfWater()
+            self.view?.update(countDown: countDown, amount: amount)
             SessionManager().new(countDown: countDown)
         }
     }
@@ -51,7 +52,8 @@ struct Presenter {
         
         TimerManager.sharedInstance.scheduledTimer = {
             let countDown = SessionManager().countDown() - 1
-            self.view?.update(countDown: countDown)
+            let amount = SessionManager().amountOfWater()
+            self.view?.update(countDown: countDown, amount: amount)
             SessionManager().new(countDown: countDown)
         }
     }
@@ -61,6 +63,7 @@ struct Presenter {
         actualAmount -= amount
         if actualAmount > 0 {
             SessionManager().newAmountOf(water: actualAmount)
+            self.view?.setAmountLabel(with: actualAmount.toString())
             startSession()
         } else {
             stopSession()

@@ -12,6 +12,7 @@ import UserNotifications
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var amountLabe: UILabel!
     @IBOutlet weak var startNewSessionButton: UIButton! {
         didSet {
             startNewSessionButton.setTitle("Start", for: .normal)
@@ -98,19 +99,25 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 }
 
 extension TH2OTimerViewController: ViewProtocol {
-    internal func update(countDown: TimeInterval) {
+    internal func update(countDown: TimeInterval, amount: Double) {
         if countDown == 0 {
             presenter.stopSession()
             DispatchQueue.main.async { [weak self] in
                 self?.showWaterPicker()
+                self?.setAmountLabel(with: amount)
             }
         } else {
             setTimerLabel(with: countDown)
+            setAmountLabel(with: amount)
         }
     }
     
     internal func setTimerLabel(with string: String) {
         timerLabel.text = string
+    }
+    
+    internal func setAmountLabel(with string: String) {
+        amountLabe.text = string
     }
 }
 
