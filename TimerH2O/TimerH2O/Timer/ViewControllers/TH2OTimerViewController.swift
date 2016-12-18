@@ -37,21 +37,22 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         } else {
             // Fallback on earlier versions
         }
-        
-        setupNotification()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+//        setupNotification()
         notificationsSettings()
-        
-        if SessionManager().sessionStart() {
-            configureWaterPickerView()
-            presenter.startSession()
-        } else {
-            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
-        }
+
+        setAmountLabel(with: SessionManager().amountOfWater())
+                
+//        if SessionManager().sessionStart() {
+//            configureWaterPickerView()
+//            presenter.startSession()
+//        } else {
+//            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
+//        }
     }
 
     @IBAction func newSessionPressed(_ sender: Any) {
@@ -60,14 +61,17 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
-        if SessionManager().sessionStart() {
-            presenter.stopSession()
+        if SessionManager().sessionIsStart() && SessionManager().intervalIsStart() {
+            presenter.endInterval()
             showWaterPicker()
         }
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
         setTimerLabel(with: SessionManager().timeInterval())
+        configureWaterPickerView()
+        presenter.startSession()
+        presenter.startInterval()
     }
     
     func didEnterBackground() {

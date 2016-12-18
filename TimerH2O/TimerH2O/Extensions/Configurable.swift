@@ -23,7 +23,7 @@ extension Configurable where Self: TH2OTimerViewController {
     }
     
     internal func setAmountLabel(with amount: Double) {
-        amountLabe.text = amount.toString()
+        amountLabe.text = "\(amount)"
     }
     
     internal func configureWaterPickerView() {

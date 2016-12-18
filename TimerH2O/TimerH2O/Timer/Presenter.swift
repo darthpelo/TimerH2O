@@ -15,10 +15,19 @@ struct Presenter {
     func save(model: Model) {
         SessionManager().newAmountOf(water: Double(model.water))
         SessionManager().newTimeInterval(second: model.interval)
-        SessionManager().newSession(isStart: true)
     }
     
     func startSession() {
+        SessionManager().newSession(isStart: true)
+    }
+    
+    func stopSession() {
+        SessionManager().newSession(isStart: false)
+        endInterval()
+        stopTimer()
+    }
+    
+    func startTimer() {
         TimerManager.sharedInstance.start()
         
         let endTime = Date(timeIntervalSinceNow: SessionManager().timeInterval())
@@ -32,18 +41,18 @@ struct Presenter {
             SessionManager().new(countDown: countDown)
         }
     }
-    
-    func stopSession() {
-        SessionManager().newSession(isStart: false)
-        TimerManager.sharedInstance.stop()
-    }
-    
     func stopTimer() {
         TimerManager.sharedInstance.stop()
     }
     
-    func startLocalNotification() {
-        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+    func startInterval() {
+        SessionManager().newInterval(isStart: true)
+        startTimer()
+    }
+    
+    func endInterval() {
+        SessionManager().newInterval(isStart: false)
+        TimerManager.sharedInstance.stop()
     }
     
     func startTimer(_ endTimer: TimeInterval) {
@@ -64,12 +73,17 @@ struct Presenter {
         if actualAmount > 0 {
             SessionManager().newAmountOf(water: actualAmount)
             self.view?.setAmountLabel(with: actualAmount.toString())
-            startSession()
+            startInterval()
         } else {
             stopSession()
             self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
         }
     }
+    
+    func startLocalNotification() {
+        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+    }
+    
 }
 
 extension Presenter {

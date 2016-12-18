@@ -20,6 +20,10 @@ extension TH2OSetSessionViewController: UIGestureRecognizerDelegate {
 }
 
 extension TH2OSetSessionViewController: ViewProtocol {
+    internal func setAmountLabel(with string: String) {}
+
+    internal func update(countDown: TimeInterval, amount: Double) {}
+
     internal func setTimerLabel(with string: String) {}
 
     internal func update(countDown: TimeInterval) {}
