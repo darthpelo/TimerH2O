@@ -15,9 +15,18 @@ enum StorageKey: String {
     case timeInterval =  "com.alessioroberto.timeInterval"
     case countDown = "com.alessioroberto.countDown"
     case endTimer = "com.alessioroberto.endTimer"
+    case killed = "com.alessioroberto.killed"
 }
 
 struct SessionManager {
+    func application(isKilled: Bool) {
+        UserDefaults.standard.set(isKilled, forKey: StorageKey.killed.rawValue)
+    }
+    
+    func applicationWasKilled() -> Bool {
+        return UserDefaults.standard.bool(forKey: StorageKey.killed.rawValue)
+    }
+    
     func newSession(isStart: Bool) {
         UserDefaults.standard.set(isStart, forKey: StorageKey.sessionStart.rawValue)
     }
@@ -27,11 +36,11 @@ struct SessionManager {
     }
     
     func newInterval(isStart: Bool) {
-        UserDefaults.standard.set(isStart, forKey: StorageKey.sessionStart.rawValue)
+        UserDefaults.standard.set(isStart, forKey: StorageKey.intervaStart.rawValue)
     }
     
     func intervalIsStart() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.sessionStart.rawValue)
+        return UserDefaults.standard.bool(forKey: StorageKey.intervaStart.rawValue)
     }
     
     func newAmountOf(water: Double) {

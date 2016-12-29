@@ -376,7 +376,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Alessio Roberto";
 				TargetAttributes = {
 					D98476C31DBD622F009F92B3 = {
@@ -770,8 +770,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
-				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
+				PROVISIONING_PROFILE = "5dc40ede-4982-4ad2-8243-f94e2b020bfa";
+				PROVISIONING_PROFILE_SPECIFIER = Vendita;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

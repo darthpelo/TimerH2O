@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import Crashlytics
+
 
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
@@ -42,8 +44,15 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        setupNotification()
+        setupNotification()
         notificationsSettings()
+        
+        if SessionManager().applicationWasKilled() {
+            Answers.logCustomEvent(withName: "Application Was Killed", customAttributes: ["VC":"TH2OTimerViewController", "Function":"viewDidAppear"])
+
+            didBecomeActive()
+            SessionManager().application(isKilled: false)
+        }
 
         setAmountLabel(with: SessionManager().amountOfWater())
                 
@@ -80,7 +89,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     func didBecomeActive() {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+//        UIApplication.shared.applicationIconBadgeNumber = 0
         
         if #available(iOS 10.0, *) {
             if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
@@ -92,7 +101,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
                 }
             }
             
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
+//            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
     }
     
