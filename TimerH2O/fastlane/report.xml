@@ -2,33 +2,35 @@
 <testsuites>
   <testsuite name="fastlane.lanes">
     
+    
+    
       
-      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.000448">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.000414">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000182">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000209">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: increment_build_number" time="0.841659">
+      <testcase classname="fastlane.lanes" name="2: increment_build_number" time="0.881896">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: changelog_from_git_commits" time="0.029153">
+      <testcase classname="fastlane.lanes" name="3: changelog_from_git_commits" time="0.030805">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: gym" time="30.52436">
+      <testcase classname="fastlane.lanes" name="4: gym" time="33.215165">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: crashlytics" time="11.673324">
+      <testcase classname="fastlane.lanes" name="5: crashlytics" time="6.039786">
         
       </testcase>
     
