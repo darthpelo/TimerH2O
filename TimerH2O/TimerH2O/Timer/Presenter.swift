@@ -18,10 +18,12 @@ struct Presenter {
     }
     
     func startSession() {
+        AnswerManager().log(event: "StartSessoin")
         SessionManager().newSession(isStart: true)
     }
     
     func stopSession() {
+        AnswerManager().log(event: "StopSession")
         SessionManager().newSession(isStart: false)
         endInterval()
         stopTimer()
