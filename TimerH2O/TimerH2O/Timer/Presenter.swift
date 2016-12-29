@@ -15,10 +15,19 @@ struct Presenter {
     func save(model: Model) {
         SessionManager().newAmountOf(water: Double(model.water))
         SessionManager().newTimeInterval(second: model.interval)
-        SessionManager().newSession(isStart: true)
     }
     
     func startSession() {
+        SessionManager().newSession(isStart: true)
+    }
+    
+    func stopSession() {
+        SessionManager().newSession(isStart: false)
+        endInterval()
+        stopTimer()
+    }
+    
+    func startTimer() {
         TimerManager.sharedInstance.start()
         
         let endTime = Date(timeIntervalSinceNow: SessionManager().timeInterval())
@@ -27,22 +36,23 @@ struct Presenter {
         
         TimerManager.sharedInstance.scheduledTimer = {
             let countDown = SessionManager().countDown() - 1
-            self.view?.update(countDown: countDown)
+            let amount = SessionManager().amountOfWater()
+            self.view?.update(countDown: countDown, amount: amount)
             SessionManager().new(countDown: countDown)
         }
     }
-    
-    func stopSession() {
-        SessionManager().newSession(isStart: false)
-        TimerManager.sharedInstance.stop()
-    }
-    
     func stopTimer() {
         TimerManager.sharedInstance.stop()
     }
     
-    func startLocalNotification() {
-        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+    func startInterval() {
+        SessionManager().newInterval(isStart: true)
+        startTimer()
+    }
+    
+    func endInterval() {
+        SessionManager().newInterval(isStart: false)
+        TimerManager.sharedInstance.stop()
     }
     
     func startTimer(_ endTimer: TimeInterval) {
@@ -51,7 +61,8 @@ struct Presenter {
         
         TimerManager.sharedInstance.scheduledTimer = {
             let countDown = SessionManager().countDown() - 1
-            self.view?.update(countDown: countDown)
+            let amount = SessionManager().amountOfWater()
+            self.view?.update(countDown: countDown, amount: amount)
             SessionManager().new(countDown: countDown)
         }
     }
@@ -61,12 +72,18 @@ struct Presenter {
         actualAmount -= amount
         if actualAmount > 0 {
             SessionManager().newAmountOf(water: actualAmount)
-            startSession()
+            self.view?.setAmountLabel(with: actualAmount.toString())
+            startInterval()
         } else {
             stopSession()
             self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
         }
     }
+    
+    func startLocalNotification() {
+        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+    }
+    
 }
 
 extension Presenter {

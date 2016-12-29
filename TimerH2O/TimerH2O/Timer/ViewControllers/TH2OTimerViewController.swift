@@ -8,10 +8,13 @@
 
 import UIKit
 import UserNotifications
+import Crashlytics
+
 
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var amountLabe: UILabel!
     @IBOutlet weak var startNewSessionButton: UIButton! {
         didSet {
             startNewSessionButton.setTitle("Start", for: .normal)
@@ -36,21 +39,29 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         } else {
             // Fallback on earlier versions
         }
-        
-        setupNotification()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        setupNotification()
         notificationsSettings()
         
-        if SessionManager().sessionStart() {
-            configureWaterPickerView()
-            presenter.startSession()
-        } else {
-            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
+        if SessionManager().applicationWasKilled() {
+            Answers.logCustomEvent(withName: "Application Was Killed", customAttributes: ["VC":"TH2OTimerViewController", "Function":"viewDidAppear"])
+
+            didBecomeActive()
+            SessionManager().application(isKilled: false)
         }
+
+        setAmountLabel(with: SessionManager().amountOfWater())
+                
+//        if SessionManager().sessionStart() {
+//            configureWaterPickerView()
+//            presenter.startSession()
+//        } else {
+//            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
+//        }
     }
 
     @IBAction func newSessionPressed(_ sender: Any) {
@@ -59,14 +70,17 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
-        if SessionManager().sessionStart() {
-            presenter.stopSession()
+        if SessionManager().sessionIsStart() && SessionManager().intervalIsStart() {
+            presenter.endInterval()
             showWaterPicker()
         }
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
         setTimerLabel(with: SessionManager().timeInterval())
+        configureWaterPickerView()
+        presenter.startSession()
+        presenter.startInterval()
     }
     
     func didEnterBackground() {
@@ -75,7 +89,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     func didBecomeActive() {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+//        UIApplication.shared.applicationIconBadgeNumber = 0
         
         if #available(iOS 10.0, *) {
             if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
@@ -87,7 +101,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
                 }
             }
             
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
+//            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
     }
     
@@ -98,19 +112,25 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 }
 
 extension TH2OTimerViewController: ViewProtocol {
-    internal func update(countDown: TimeInterval) {
+    internal func update(countDown: TimeInterval, amount: Double) {
         if countDown == 0 {
             presenter.stopSession()
             DispatchQueue.main.async { [weak self] in
                 self?.showWaterPicker()
+                self?.setAmountLabel(with: amount)
             }
         } else {
             setTimerLabel(with: countDown)
+            setAmountLabel(with: amount)
         }
     }
     
     internal func setTimerLabel(with string: String) {
         timerLabel.text = string
+    }
+    
+    internal func setAmountLabel(with string: String) {
+        amountLabe.text = string
     }
 }
 

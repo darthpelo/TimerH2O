@@ -24,7 +24,9 @@ public class TimerManager {
     private var timer = Timer()
     
     func start() {
-        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sendNotification), userInfo: nil, repeats: true)
+        if self.timer.isValid == false {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(sendNotification), userInfo: nil, repeats: true)
+        }
     }
     
     func stop() {
