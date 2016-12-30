@@ -8,7 +8,6 @@
 
 import UIKit
 import UserNotifications
-import Crashlytics
 
 
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
@@ -43,13 +42,13 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        AnswerManager().log(event: "TimerViewController")
         
         setupNotification()
         notificationsSettings()
         
         if SessionManager().applicationWasKilled() {
-            Answers.logCustomEvent(withName: "Application Was Killed", customAttributes: ["VC":"TH2OTimerViewController", "Function":"viewDidAppear"])
-
+            AnswerManager().log(event: "Application Was Killed", withCustomAttributes: ["VC":"TH2OTimerViewController", "Function":"viewDidAppear"])
             didBecomeActive()
             SessionManager().application(isKilled: false)
         }
@@ -65,12 +64,14 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
 
     @IBAction func newSessionPressed(_ sender: Any) {
+        AnswerManager().log(event: "newSessionPressed")
         presenter.stopSession()
         newSession()
     }
     
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
         if SessionManager().sessionIsStart() && SessionManager().intervalIsStart() {
+            AnswerManager().log(event: "drinkButtonPressed")
             presenter.endInterval()
             showWaterPicker()
         }

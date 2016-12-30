@@ -43,6 +43,7 @@
 		D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */; };
 		D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */; };
 		D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
+		D9FD85B21E15676700CC25D4 /* AnswerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD85B11E15676700CC25D4 /* AnswerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OSetSessionViewController.swift; path = Timer/ViewControllers/TH2OSetSessionViewController.swift; sourceTree = "<group>"; };
 		D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = Extensions/TimeInterval.swift; sourceTree = "<group>"; };
 		D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		D9FD85B11E15676700CC25D4 /* AnswerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerManager.swift; path = Controllers/AnswerManager.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -319,6 +321,7 @@
 			children = (
 				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
 				D9941F841DCBF7A200918C14 /* Timer.swift */,
+				D9FD85B11E15676700CC25D4 /* AnswerManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				D90753441DCF978D00AB6FCC /* UView.swift in Sources */,
 				D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */,
 				D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */,
+				D9FD85B21E15676700CC25D4 /* AnswerManager.swift in Sources */,
 				D9E34C861DC2A00700692768 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

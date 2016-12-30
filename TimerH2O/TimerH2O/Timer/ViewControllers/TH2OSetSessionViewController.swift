@@ -36,13 +36,20 @@ class TH2OSetSessionViewController: UIViewController, Configurable, Seguible {
         configureWaterPickerView()
         configureTimerPickerView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnswerManager().log(event: "SetSessionViewController")
+    }
 
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         backToTimer()
+        AnswerManager().log(event: "CancelButtonPressed")
     }
 
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
         manageDoneRequest()
+        AnswerManager().log(event: "DoneButtonPressed")
     }
 }
 
