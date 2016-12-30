@@ -10,9 +10,9 @@ import Foundation
 import UserNotifications
 
 enum Snooze: Double {
-    case Five = 5.0
-    case Fifteen = 15.0
-    case Thirty = 30.0
+    case Five = 300.0
+    case Fifteen = 900.0
+    case Thirty = 1800.0
 }
 
 func notificationsSettings() {
@@ -66,7 +66,8 @@ func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
         notificationContent.categoryIdentifier = TH2OConstants.UserNotification.timerCategory
         
         // Add Trigger
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerTime(snooze, endTime), repeats: false)
+        let value = triggerTime(snooze, endTime)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: value, repeats: false)
         
         // Create Notification Request
         let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
