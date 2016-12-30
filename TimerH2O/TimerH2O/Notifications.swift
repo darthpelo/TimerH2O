@@ -9,6 +9,12 @@
 import Foundation
 import UserNotifications
 
+enum Snooze: Double {
+    case Five = 5.0
+    case Fifteen = 15.0
+    case Thirty = 30.0
+}
+
 func notificationsSettings() {
     // Request Notification Settings
     if #available(iOS 10.0, *) {
@@ -26,11 +32,17 @@ func notificationsSettings() {
         let drink = UNNotificationAction(identifier: TH2OConstants.UserNotification.drinkAction,
                                          title: NSLocalizedString("usernotification.drink", comment: ""),
                                          options: [.authenticationRequired, .foreground])
-        let snooze = UNNotificationAction(identifier: TH2OConstants.UserNotification.snoozeAction,
-                                          title: NSLocalizedString("usernotification.snooze", comment: ""),
+        let snooze5 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze5Action,
+                                          title: NSLocalizedString("usernotification.snooze.5", comment: ""),
                                           options: [.destructive])
+        let snooze15 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze15Action,
+                                           title: NSLocalizedString("usernotification.snooze.15", comment: ""),
+                                           options: [.destructive])
+        let snooze30 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze30Action,
+                                           title: NSLocalizedString("usernotification.snooze.30", comment: ""),
+                                           options: [.destructive])
         let category = UNNotificationCategory(identifier: TH2OConstants.UserNotification.timerCategory,
-                                              actions: [drink, snooze],
+                                              actions: [drink, snooze5, snooze15, snooze30],
                                               intentIdentifiers: [],
                                               options: [])
 
@@ -40,7 +52,7 @@ func notificationsSettings() {
     }
 }
 
-func localNotificationRequest(endTime: Date? = nil) {
+func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
     if #available(iOS 10.0, *) {
         
         let notificationContent = UNMutableNotificationContent()
@@ -54,7 +66,7 @@ func localNotificationRequest(endTime: Date? = nil) {
         notificationContent.categoryIdentifier = TH2OConstants.UserNotification.timerCategory
         
         // Add Trigger
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerTime(endTime), repeats: false)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerTime(snooze, endTime), repeats: false)
         
         // Create Notification Request
         let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
@@ -86,9 +98,9 @@ private func requestAuthorization(completionHandler: @escaping (_ success: Bool)
     }
 }
 
-private func triggerTime(_ endTime: Date?) -> TimeInterval {
+private func triggerTime(_ snooze: Snooze?, _ endTime: Date?) -> TimeInterval {
     guard let endTime = endTime else {
-        return 120
+        return (snooze?.rawValue)!
     }
     
     return endTime.timeIntervalSince(Date())

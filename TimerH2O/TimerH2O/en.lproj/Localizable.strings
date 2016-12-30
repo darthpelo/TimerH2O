@@ -21,4 +21,6 @@
 "timerview.timer.label.finish_presenter" = "Great!\nYou finished all the water!";
 
 "usernotification.drink" = "Drink";
-"usernotification.snooze" = "Snooze - 2 minutes";
+"usernotification.snooze.5" = "Snooze - 5 minutes";
+"usernotification.snooze.15" = "Snooze - 15 minutes";
+"usernotification.snooze.30" = "Snooze - 30 minutes";

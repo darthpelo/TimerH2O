@@ -102,8 +102,8 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         }
     }
     
-    fileprivate func snozee() {
-        localNotificationRequest()
+    fileprivate func snozee(_ time: Snooze) {
+        localNotificationRequest(snooze: time)
     }
 }
 
@@ -155,8 +155,12 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
             completionHandler(timerCheck())
         case TH2OConstants.UserNotification.drinkAction:
             completionHandler(timerCheck())
-        case TH2OConstants.UserNotification.snoozeAction:
-            completionHandler(snozee())
+        case TH2OConstants.UserNotification.snooze5Action:
+            completionHandler(snozee(Snooze.Five))
+        case TH2OConstants.UserNotification.snooze15Action:
+            completionHandler(snozee(Snooze.Fifteen))
+        case TH2OConstants.UserNotification.snooze30Action:
+            completionHandler(snozee(Snooze.Thirty))
         default:
             completionHandler()
         }

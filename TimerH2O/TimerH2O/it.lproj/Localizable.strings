@@ -22,4 +22,6 @@
 "timerview.timer.label.finish_presenter" = "Complimenti!\nHai bevuto tutta l'acqua!";
 
 "usernotification.drink" = "Ho Bevuto";
-"usernotification.snooze" = "Ritarda 2 minuti";
+"usernotification.snooze.5" = "Ritarda 5 minuti";
+"usernotification.snooze.15" = "Ritarda 15 minuti";
+"usernotification.snooze.30" = "Ritarda 30 minuti";
