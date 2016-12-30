@@ -28,7 +28,7 @@ platform :ios do
              build_secret: 'cf62acf20c611275d4126ffa3579a0861887c27a7a90007def0a96e8c0519d01',
                    emails: emails,
                    groups: groups,
-                    notes: "Forgot timer bug fixed" + changelog, # Check out the changelog_from_git_commits action
+                    notes: "changelog:\n"changelog, # Check out the changelog_from_git_commits action
             notifications: true) # Should this distribution notify your testers via email?
 
     # for all available options run `fastlane action crashlytics`

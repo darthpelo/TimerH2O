@@ -101,6 +101,10 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             }
         }
     }
+    
+    fileprivate func snozee() {
+        localNotificationRequest()
+    }
 }
 
 extension TH2OTimerViewController: ViewProtocol {
@@ -123,6 +127,10 @@ extension TH2OTimerViewController: ViewProtocol {
     internal func setAmountLabel(with string: String) {
         amountLabe.text = string
     }
+    
+    internal func startButton(isEbable: Bool) {
+        startNewSessionButton.isEnabled = isEbable
+    }
 }
 
 extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
@@ -132,6 +140,26 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let actionIdentifier = response.actionIdentifier
+        
+        switch actionIdentifier {
+        case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
+            completionHandler()
+        case UNNotificationDefaultActionIdentifier: // App was opened from notification
+            completionHandler(timerCheck())
+        case TH2OConstants.UserNotification.drinkAction:
+            completionHandler(timerCheck())
+        case TH2OConstants.UserNotification.snoozeAction:
+            completionHandler(snozee())
+        default:
+            completionHandler()
+        }
     }
     
 }

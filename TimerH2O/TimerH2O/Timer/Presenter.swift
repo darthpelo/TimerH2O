@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UserNotifications
 
 struct Presenter {
     weak var view: ViewProtocol?
@@ -20,11 +19,13 @@ struct Presenter {
     func startSession() {
         AnswerManager().log(event: "StartSessoin")
         SessionManager().newSession(isStart: true)
+        self.view?.startButton(isEbable: false)
     }
     
     func stopSession() {
         AnswerManager().log(event: "StopSession")
         SessionManager().newSession(isStart: false)
+        SessionManager().newAmountOf(water: 0)
         endInterval()
         stopTimer()
     }
@@ -74,12 +75,14 @@ struct Presenter {
             startInterval()
         } else {
             stopSession()
+            self.view?.startButton(isEbable: true)
             self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
         }
         
         updateAmountLabel(actualAmount)
     }
     
+    //MARK: - Private
     private func updateCountDown() {
         let countDown = SessionManager().countDown() - 1
         SessionManager().new(countDown: countDown)

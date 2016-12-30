@@ -19,3 +19,6 @@
 "timerview.stop.button" = "I drank!";
 "timerview.timer.label.finish_vc" = "Finish from VC";
 "timerview.timer.label.finish_presenter" = "Great!\nYou finished all the water!";
+
+"usernotification.drink" = "Drink";
+"usernotification.snooze" = "Snooze - 2 minutes";

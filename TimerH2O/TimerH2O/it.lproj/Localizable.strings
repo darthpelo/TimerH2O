@@ -20,3 +20,6 @@
 "timerview.stop.button" = "Ho bevuto!";
 "timerview.timer.label.finish_vc" = "Finish from VC";
 "timerview.timer.label.finish_presenter" = "Complimenti!\nHai bevuto tutta l'acqua!";
+
+"usernotification.drink" = "Ho Bevuto";
+"usernotification.snooze" = "Ritarda 2 minuti";

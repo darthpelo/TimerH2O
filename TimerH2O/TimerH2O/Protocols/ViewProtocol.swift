@@ -12,4 +12,5 @@ protocol ViewProtocol: class {
     func update(countDown: TimeInterval, amount: Double)
     func setTimerLabel(with string: String)
     func setAmountLabel(with string: String)
+    func startButton(isEbable: Bool)
 }

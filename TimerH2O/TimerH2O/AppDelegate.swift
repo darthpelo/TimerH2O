@@ -54,29 +54,7 @@ extension AppDelegate {
             // Time interval
             let timeInterval = endtime.timeIntervalSince(Date())
             if timeInterval >= 0 {
-                let notificationContent = UNMutableNotificationContent()
-                
-                // Configure Notification Content
-                notificationContent.title = "TimerH2O"
-                //            notificationContent.subtitle = NSLocalizedString("localnotification.subtitle", comment: "")
-                notificationContent.body = NSLocalizedString("localnotification.subtitle", comment: "")
-                notificationContent.sound = UNNotificationSound.default()
-                notificationContent.badge = 1
-                
-                // Add Trigger
-                let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-                
-                // Create Notification Request
-                let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
-                                                                content: notificationContent,
-                                                                trigger: notificationTrigger)
-                
-                // Add Request to User Notification Center
-                UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-                    if let error = error {
-                        print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-                    }
-                }
+                localNotificationRequest(endTime: endtime)
             }
         } else {
             // Fallback on earlier versions
