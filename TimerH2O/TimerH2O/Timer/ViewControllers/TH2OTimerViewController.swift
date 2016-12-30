@@ -47,20 +47,12 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         setupNotification()
         notificationsSettings()
         
-        if SessionManager().applicationWasKilled() {
-            AnswerManager().log(event: "Application Was Killed", withCustomAttributes: ["VC":"TH2OTimerViewController", "Function":"viewDidAppear"])
-            didBecomeActive()
-            SessionManager().application(isKilled: false)
+        if SessionManager().sessionIsStart() {
+            configureWaterPickerView()
+            timerCheck()
         }
 
         setAmountLabel(with: SessionManager().amountOfWater())
-                
-//        if SessionManager().sessionStart() {
-//            configureWaterPickerView()
-//            presenter.startSession()
-//        } else {
-//            timerLabel.text = NSLocalizedString("timerview.timer.label.finish_vc", comment: "")
-//        }
     }
 
     @IBAction func newSessionPressed(_ sender: Any) {
@@ -86,23 +78,11 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     func didEnterBackground() {
         presenter.stopTimer()
-        presenter.startLocalNotification()
     }
     
     func didBecomeActive() {
-//        UIApplication.shared.applicationIconBadgeNumber = 0
-        
         if #available(iOS 10.0, *) {
-            if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
-                    self.presenter.startTimer(timeInterval)
-            } else {
-                presenter.stopSession()
-                DispatchQueue.main.async { [weak self] in
-                    self?.showWaterPicker()
-                }
-            }
-            
-//            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
+            timerCheck()
         }
     }
     
@@ -110,19 +90,29 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     fileprivate func showWaterPicker() {
         waterPickerView?.isTo(show: true)
     }
+    
+    fileprivate func timerCheck() {
+        if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
+            self.presenter.startTimer(timeInterval)
+        } else {
+            presenter.endInterval()
+            DispatchQueue.main.async { [weak self] in
+                self?.showWaterPicker()
+            }
+        }
+    }
 }
 
 extension TH2OTimerViewController: ViewProtocol {
     internal func update(countDown: TimeInterval, amount: Double) {
-        if countDown == 0 {
-            presenter.stopSession()
+        if countDown <= 0 {
+            presenter.endInterval()
             DispatchQueue.main.async { [weak self] in
                 self?.showWaterPicker()
                 self?.setAmountLabel(with: amount)
             }
         } else {
             setTimerLabel(with: countDown)
-            setAmountLabel(with: amount)
         }
     }
     
@@ -138,7 +128,9 @@ extension TH2OTimerViewController: ViewProtocol {
 extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
     }
     

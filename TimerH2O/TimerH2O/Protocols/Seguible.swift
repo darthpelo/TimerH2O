@@ -18,6 +18,6 @@ extension Seguible where Self: TH2OSetSessionViewController {
 
 extension Seguible where Self: TH2OTimerViewController {
     internal func newSession() {
-        performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC.identifier, sender: self)
+        performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC.identifier, sender: nil)
     }
 }

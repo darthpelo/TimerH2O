@@ -38,6 +38,4 @@ class TimerH2OTests: XCTestCase {
         x = 29
         XCTAssertEqual(x.toString(), "00:00:29")
     }
-
-
 }

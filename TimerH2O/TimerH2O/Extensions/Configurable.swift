@@ -14,7 +14,6 @@ protocol Configurable {}
 extension Configurable where Self: TH2OTimerViewController {
     internal func setupNotification() {
         let notificationCenter = NotificationCenter.default
-//        notificationCenter.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         notificationCenter.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
@@ -28,9 +27,10 @@ extension Configurable where Self: TH2OTimerViewController {
     
     internal func configureWaterPickerView() {
         waterPickerView = TH2OWaterPickerView().loadPickerView()
-        waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
-            self.presenter.update(water: Double(selectedAmount))
-            self.waterPickerView?.isTo(show: false)
+        
+        waterPickerView?.configure(onView: self.view, withCallback: { [weak self] selectedAmount in
+            self?.presenter.update(water: Double(selectedAmount))
+            self?.waterPickerView?.isTo(show: false)
         })
     }
 }
@@ -70,4 +70,3 @@ extension Configurable where Self: TH2OSetSessionViewController {
         })
     }
 }
-

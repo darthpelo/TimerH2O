@@ -40,11 +40,14 @@ class TH2OTimerPickerView: UIView {
     }
     
     
-    func configure(onView:UIView, withCallback: @escaping DoneListener) {
+    func configure(onView: UIView, withCallback: @escaping DoneListener) {
         doneListener = withCallback
         parentView = onView
         self.frame.origin.y = onView.frame.size.height
         datePicker.maximumDate = Date()
+        
+        pickerTitleLabel.text = NSLocalizedString("setsession.timepicker.title", comment: "")
+        doneButton.setTitle(NSLocalizedString("done", comment: ""), for: .normal)
         
         UIApplication.shared.keyWindow?.addSubview(self)
     }
@@ -54,9 +57,13 @@ class TH2OTimerPickerView: UIView {
                        animations: {
                         if show {
                             self.frame.origin.y = self.parentView!.frame.size.height - self.frame.size.height
+                            DispatchQueue.main.async {
+                                self.datePicker.countDownDuration = 60
+                                self.countDownDuration = 60
+                            }
                         } else {
                             self.frame.origin.y = self.parentView!.frame.size.height
                         }
-            },completion: nil)
+            }, completion: nil)
     }
 }

@@ -67,7 +67,9 @@ extension AppDelegate {
                 let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
                 
                 // Create Notification Request
-                let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest, content: notificationContent, trigger: notificationTrigger)
+                let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
+                                                                content: notificationContent,
+                                                                trigger: notificationTrigger)
                 
                 // Add Request to User Notification Center
                 UNUserNotificationCenter.current().add(notificationRequest) { (error) in
@@ -81,4 +83,3 @@ extension AppDelegate {
         }
     }
 }
-

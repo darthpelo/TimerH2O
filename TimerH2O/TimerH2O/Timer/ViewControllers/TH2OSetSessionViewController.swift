@@ -48,17 +48,17 @@ class TH2OSetSessionViewController: UIViewController, Configurable, Seguible {
     }
 
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        manageDoneRequest()
+        if manageDoneRequest() { backToTimer() }
         AnswerManager().log(event: "DoneButtonPressed")
     }
 }
 
 extension TH2OSetSessionViewController {
-    fileprivate func manageDoneRequest() {
+    fileprivate func manageDoneRequest() -> Bool {
         guard let water = self.water, let interval = self.interval else {
-            return
+            return false
         }
         presenter.save(model: Model(water: water, interval: interval))
-        backToTimer()
+        return true
     }
 }

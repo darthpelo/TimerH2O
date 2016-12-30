@@ -21,4 +21,3 @@ func convert(amount: [String]) -> Int? {
     }
     return Int(result)
 }
-

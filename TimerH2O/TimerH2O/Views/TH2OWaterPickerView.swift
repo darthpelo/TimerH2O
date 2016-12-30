@@ -13,8 +13,8 @@ class TH2OWaterPickerView: UIView {
     @IBOutlet weak var pickerTitleLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     
-    fileprivate let numbers = (0...9).map{"\($0)"}
-    fileprivate var amount = ["0","0","0"]
+    fileprivate let numbers = (0...9).map {"\($0)"}
+    fileprivate var amount = ["0", "0", "0"]
     
     typealias DoneAmount = (Int) -> ()
     
@@ -38,13 +38,13 @@ class TH2OWaterPickerView: UIView {
         return view
     }
     
-    func configure(onView:UIView, withCallback: @escaping DoneAmount) {
+    func configure(onView: UIView, withCallback: @escaping DoneAmount) {
         doneAmount = withCallback
         parentView = onView
         self.frame.origin.y = onView.frame.size.height
         
-        pickerTitleLabel.text = NSLocalizedString("Water", comment: "")
-        doneButton.setTitle(NSLocalizedString("Done", comment: ""), for: .normal)
+        pickerTitleLabel.text = NSLocalizedString("setsession.waterpicker.title", comment: "")
+        doneButton.setTitle(NSLocalizedString("done", comment: ""), for: .normal)
         
         UIApplication.shared.keyWindow?.addSubview(self)
     }
@@ -57,7 +57,7 @@ class TH2OWaterPickerView: UIView {
                         } else {
                             self.frame.origin.y = self.parentView!.frame.size.height
                         }
-            },completion: nil)
+            }, completion: nil)
     }
     
     private func convert(amount: [String]) -> Int? {

@@ -6,9 +6,13 @@
   Copyright © 2016 Alessio Roberto. All rights reserved.
 */
 
+"done" = "Done";
+
 "setsession.title.label" = "Set how much water you drink during the day and the time that must elapse between each glass of water.";
 "setsession.amount.label" = "Amount of water per day.";
 "setsession.interval.label" = "Interval between any glass of water";
+"setsession.waterpicker.title" = "Amount of water";
+"setsession.timepicker.title" = "Timer interval";
 
 "localnotification.subtitle" = "It's time to drink!";
 

@@ -37,10 +37,7 @@ struct Presenter {
         SessionManager().new(countDown: SessionManager().timeInterval())
         
         TimerManager.sharedInstance.scheduledTimer = {
-            let countDown = SessionManager().countDown() - 1
-            let amount = SessionManager().amountOfWater()
-            self.view?.update(countDown: countDown, amount: amount)
-            SessionManager().new(countDown: countDown)
+            self.updateCountDown()
         }
     }
     func stopTimer() {
@@ -48,11 +45,13 @@ struct Presenter {
     }
     
     func startInterval() {
+        AnswerManager().log(event: "StartInterval")
         SessionManager().newInterval(isStart: true)
         startTimer()
     }
     
     func endInterval() {
+        AnswerManager().log(event: "EndInterval")
         SessionManager().newInterval(isStart: false)
         TimerManager.sharedInstance.stop()
     }
@@ -62,63 +61,38 @@ struct Presenter {
         TimerManager.sharedInstance.start()
         
         TimerManager.sharedInstance.scheduledTimer = {
-            let countDown = SessionManager().countDown() - 1
-            let amount = SessionManager().amountOfWater()
-            self.view?.update(countDown: countDown, amount: amount)
-            SessionManager().new(countDown: countDown)
+            self.updateCountDown()
         }
     }
     
     func update(water amount: Double) {
         var actualAmount = SessionManager().amountOfWater()
+        
         actualAmount -= amount
+        
         if actualAmount > 0 {
-            SessionManager().newAmountOf(water: actualAmount)
-            self.view?.setAmountLabel(with: actualAmount.toString())
             startInterval()
         } else {
             stopSession()
             self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
         }
+        
+        updateAmountLabel(actualAmount)
     }
     
-    func startLocalNotification() {
-        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+    private func updateCountDown() {
+        let countDown = SessionManager().countDown() - 1
+        SessionManager().new(countDown: countDown)
+        self.view?.update(countDown: countDown,
+                          amount: SessionManager().amountOfWater())
     }
     
-}
-
-extension Presenter {
-    fileprivate func scheduleLocalNotification(endtime: Date) {
-        // Create Notification Content
-        if #available(iOS 10.0, *) {
-            // Time interval
-            let timeInterval = endtime.timeIntervalSince(Date())
-            if timeInterval >= 0 {
-                let notificationContent = UNMutableNotificationContent()
-                
-                // Configure Notification Content
-                notificationContent.title = "TimerH2O"
-                //            notificationContent.subtitle = NSLocalizedString("localnotification.subtitle", comment: "")
-                notificationContent.body = NSLocalizedString("localnotification.subtitle", comment: "")
-                notificationContent.sound = UNNotificationSound.default()
-                notificationContent.badge = 1
-                
-                // Add Trigger
-                let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-                
-                // Create Notification Request
-                let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest, content: notificationContent, trigger: notificationTrigger)
-                
-                // Add Request to User Notification Center
-                UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-                    if let error = error {
-                        print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-                    }
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
+    private func updateAmountLabel(_ actualAmount: Double) {
+        SessionManager().newAmountOf(water: amount(actualAmount))
+        self.view?.setAmountLabel(with: String(amount(actualAmount)))
+    }
+    
+    private func amount(_ level: Double) -> Double {
+        return level > 0 ? level : 0
     }
 }
