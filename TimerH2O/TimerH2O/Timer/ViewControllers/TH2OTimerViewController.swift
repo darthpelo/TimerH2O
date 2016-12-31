@@ -40,6 +40,15 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if SessionManager().sessionIsStart() {
+            startButton(isEbable: false)
+        } else {
+            startButton(isEbable: true)
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AnswerManager().log(event: "TimerViewController")
