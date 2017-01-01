@@ -347,18 +347,59 @@
                                 <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.21145932310000001" green="0.47767158770000001" blue="0.91522648360000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8k-u5-f5v">
+                                <rect key="frame" x="-0.5" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SessionCell" textLabel="hJc-pl-cxV" detailTextLabel="qub-vc-xL6" style="IBUITableViewCellStyleSubtitle" id="0qp-5s-gA3">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0qp-5s-gA3" id="WVk-7e-lSW">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hJc-pl-cxV">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qub-vc-xL6">
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="irH-ni-x5l"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="dOw-RU-iS3"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="V8k-u5-f5v" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="4ee-vG-j8e"/>
                             <constraint firstItem="Vbg-OI-BaM" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="6kU-oO-6d3"/>
                             <constraint firstItem="Vbg-OI-BaM" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="6yQ-OC-1zW"/>
+                            <constraint firstItem="V8k-u5-f5v" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="TSw-bL-rpV"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="V8k-u5-f5v" secondAttribute="bottom" id="oz1-z4-vqE"/>
+                            <constraint firstItem="V8k-u5-f5v" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="uwh-ml-Zxw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="graph" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="feJ-7E-qZr"/>
+                    <connections>
+                        <outlet property="tableView" destination="V8k-u5-f5v" id="YxQ-Su-TXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783.75" y="360.21126760563379"/>
+            <point key="canvasLocation" x="1722.4000000000001" y="359.37031484257875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -372,12 +413,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="uUu-gp-Zqe" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="3b3-7J-aqj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uUu-gp-Zqe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="graph" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MqL-PX-cte">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="QXN-Th-edf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jH6-6L-IrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783.20000000000005" y="359.37031484257875"/>
         </scene>
     </scenes>
     <resources>

@@ -12,9 +12,12 @@ struct Presenter {
     weak var view: ViewProtocol?
     weak var healthManager: HealthManager?
     
-    func save(model: Model) {
-        SessionManager().newAmountOf(water: Double(model.water))
-        SessionManager().newTimeInterval(second: model.interval)
+    func save(_ water: Int, _ interval: TimeInterval) {
+        let model = Model(idx: UUID().uuidString, water: water, interval: interval)
+        SessionManager().new(sessioId: model.idx)
+        SessionManager().newAmountOf(water: Double(water))
+        SessionManager().newTimeInterval(second: interval)
+        RealmManager().create(newSession: model)
     }
     
     func startSession() {
@@ -29,6 +32,7 @@ struct Presenter {
         SessionManager().newAmountOf(water: 0)
         endInterval()
         stopTimer()
+        RealmManager().updateSession(withEnd: Date())
     }
     
     func startTimer() {

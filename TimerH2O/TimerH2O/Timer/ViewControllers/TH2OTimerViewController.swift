@@ -69,7 +69,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBAction func newSessionPressed(_ sender: Any) {
         AnswerManager().log(event: "newSessionPressed")
-        presenter.stopSession()
+//        presenter.stopSession()
         newSession()
     }
     

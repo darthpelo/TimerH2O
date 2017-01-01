@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TH2OHistoryViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate var collection: Results<Session>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = NSLocalizedString("history", comment: "")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let list = RealmManager().loadAllSessions(), list.count > 0 else {
+            tableView.isHidden = true
+            return
+        }
+        
+        collection = list
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +50,29 @@ class TH2OHistoryViewController: UIViewController {
     }
     */
 
+}
+
+extension TH2OHistoryViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return collection?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.sessionCell.identifier, for: indexPath)
+        
+        guard let session = collection?[indexPath.row] else {
+            return cell
+        }
+        
+        cell.textLabel?.text = String(session.goal)
+        let start = DateFormatter.localizedString(from: session.start, dateStyle: .short, timeStyle: .short)
+        let end = DateFormatter.localizedString(from: session.end, dateStyle: .short, timeStyle: .short)
+        let date = "Start: \(start) End: \(end)"
+        cell.detailTextLabel?.text = date
+        return cell
+    }
+}
+
+extension TH2OHistoryViewController: UITableViewDelegate {
+    
 }

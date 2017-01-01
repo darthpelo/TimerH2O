@@ -58,7 +58,7 @@ extension TH2OSetSessionViewController {
         guard let water = self.water, let interval = self.interval else {
             return false
         }
-        presenter.save(model: Model(water: water, interval: interval))
+        presenter.save(water, interval)
         return true
     }
 }

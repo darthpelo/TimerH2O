@@ -8,6 +8,9 @@
 
 "done" = "Conferma";
 
+"timer" = "Timer";
+"history" = "Storico";
+
 "setsession.title.label" = "Imposta quanta acqua vuoi bere durante la giornata ed il tempo che deve intercorrere tra ogni bicchiere di acqua.";
 "setsession.amount.label" = "Quantità di acqua (mL) che vuoi bere durante il giorno.";
 "setsession.interval.label" = "Intervallo di tempo da ogni bicchiere di acqua.";
