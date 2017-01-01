@@ -8,10 +8,10 @@
 
 "done" = "Done";
 
-"setsession.title.label" = "Set how much water you drink during the day and the time that must elapse between each glass of water.";
-"setsession.amount.label" = "Amount of water per day.";
+"setsession.title.label" = "Set how much water you drink (mL) during the day and the time that must elapse between each glass of water.";
+"setsession.amount.label" = "Amount of water per day (mL)";
 "setsession.interval.label" = "Interval between any glass of water";
-"setsession.waterpicker.title" = "Amount of water";
+"setsession.waterpicker.title" = "Amount of water (mL)";
 "setsession.timepicker.title" = "Timer interval";
 
 "localnotification.subtitle" = "It's time to drink!";

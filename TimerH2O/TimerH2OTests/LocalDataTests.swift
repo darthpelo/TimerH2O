@@ -22,9 +22,9 @@ class LocalDataTests: XCTestCase {
     
     func testSessionInProgressTests() {
         SessionManager().newSession(isStart: true)
-        XCTAssertTrue(SessionManager().sessionStart())
+        XCTAssertTrue(SessionManager().sessionIsStart())
         SessionManager().newSession(isStart: false)
-        XCTAssertFalse(SessionManager().sessionStart())
+        XCTAssertFalse(SessionManager().sessionIsStart())
     }
 
     func testWaterSetupTests() {

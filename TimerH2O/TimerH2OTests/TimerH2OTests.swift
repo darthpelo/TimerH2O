@@ -22,7 +22,7 @@ class TimerH2OTests: XCTestCase {
     }
     
     func testAmountConverter() {
-        let str = ["0", "3", "0"]
+        let str = ["0", "0", "3", "0"]
         
         let result = 30
         

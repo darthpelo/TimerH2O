@@ -9,17 +9,17 @@
 "done" = "Conferma";
 
 "setsession.title.label" = "Imposta quanta acqua vuoi bere durante la giornata ed il tempo che deve intercorrere tra ogni bicchiere di acqua.";
-"setsession.amount.label" = "Quantità di acqua che vuoi bere durante il giorno.";
+"setsession.amount.label" = "Quantità di acqua (mL) che vuoi bere durante il giorno.";
 "setsession.interval.label" = "Intervallo di tempo da ogni bicchiere di acqua.";
 
-"setsession.waterpicker.title" = "Quantità di acqua";
+"setsession.waterpicker.title" = "Quantità di acqua (mL)";
 "setsession.timepicker.title" = "Intervallo";
 
 "localnotification.subtitle" = "E' ora di bere";
 
 "timerview.stop.button" = "Ho bevuto!";
 "timerview.timer.label.finish_vc" = "Finish from VC";
-"timerview.timer.label.finish_presenter" = "Complimenti!\nHai bevuto tutta l'acqua!";
+"timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obbiettivo della giornata!";
 
 "usernotification.drink" = "Ho Bevuto";
 "usernotification.snooze.5" = "Ritarda 5 minuti";

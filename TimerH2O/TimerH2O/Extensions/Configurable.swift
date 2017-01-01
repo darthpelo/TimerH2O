@@ -56,7 +56,7 @@ extension Configurable where Self: TH2OSetSessionViewController {
         waterPickerView = TH2OWaterPickerView().loadPickerView()
         waterPickerView?.configure(onView: self.view, withCallback: { selectedAmount in
             self.water = selectedAmount
-            self.waterAmountLabel.text = "\(selectedAmount) cl"
+            self.waterAmountLabel.text = "\(selectedAmount) mL"
             self.waterPickerView?.isTo(show: false)
         })
     }

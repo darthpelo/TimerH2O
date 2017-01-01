@@ -14,7 +14,7 @@ class TH2OWaterPickerView: UIView {
     @IBOutlet weak var doneButton: UIButton!
     
     fileprivate let numbers = (0...9).map {"\($0)"}
-    fileprivate var amount = ["0", "0", "0"]
+    fileprivate var amount = ["0", "0", "0", "0"]
     
     typealias DoneAmount = (Int) -> ()
     
@@ -71,7 +71,7 @@ class TH2OWaterPickerView: UIView {
 
 extension TH2OWaterPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return 4
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
