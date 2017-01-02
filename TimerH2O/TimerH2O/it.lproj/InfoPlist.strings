@@ -6,5 +6,5 @@
   Copyright © 2017 Alessio Roberto. All rights reserved.
 */
 
-"NSHealthShareUsageDescription" = "";
-"NSHealthUpdateUsageDescription" = "";
+"NSHealthShareUsageDescription" = "I dati richiesti vengono utilizzati solo all'interno dell'applicazione per tenere traccia della quantià di acqua assunta giornalmente.";
+"NSHealthUpdateUsageDescription" = "I dati richiesti vengono utilizzati solo all'interno dell'applicazione per tenere traccia della quantià di acqua assunta giornalmente.";
