@@ -64,7 +64,7 @@ extension TH2OHistoryViewController: UITableViewDataSource {
             return cell
         }
         
-        cell.textLabel?.text = String(session.goal)
+        cell.textLabel?.text = "Goal: " + String(session.goal) + " Real: " + String(session.amount)
         let start = DateFormatter.localizedString(from: session.start, dateStyle: .short, timeStyle: .short)
         let end = DateFormatter.localizedString(from: session.end, dateStyle: .short, timeStyle: .short)
         let date = "Start: \(start) End: \(end)"
