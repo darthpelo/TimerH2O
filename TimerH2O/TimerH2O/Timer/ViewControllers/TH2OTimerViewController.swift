@@ -9,7 +9,6 @@
 import UIKit
 import UserNotifications
 
-
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBOutlet weak var timerLabel: UILabel!
@@ -24,10 +23,11 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             stopTimerButton.setTitle(NSLocalizedString("timerview.stop.button", comment: ""), for: .normal)
         }
     }
+    @IBOutlet weak var appleHeathButton: UIButton!
     
     public var waterPickerView: TH2OWaterPickerView?
     
-    lazy var presenter: Presenter = Presenter(view: self)
+    lazy var presenter: Presenter = Presenter(view: self, healthManager: HealthManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +43,15 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        appleHeathButton.isHidden = presenter.healthKitIsAuthorized()
+
         if SessionManager().sessionIsStart() {
             startButton(isEbable: false)
         } else {
             startButton(isEbable: true)
         }
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         AnswerManager().log(event: "TimerViewController")
@@ -75,6 +78,12 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             AnswerManager().log(event: "drinkButtonPressed")
             presenter.endInterval()
             showWaterPicker()
+        }
+    }
+    
+    @IBAction func appleHealthButtonPressed(_ sender: Any) {
+        presenter.healthKitAuthorize { (authorize) in
+            self.appleHeathButton.isHidden = authorize
         }
     }
     

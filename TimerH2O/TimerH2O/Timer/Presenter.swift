@@ -10,6 +10,7 @@ import Foundation
 
 struct Presenter {
     weak var view: ViewProtocol?
+    weak var healthManager: HealthManager?
     
     func save(model: Model) {
         SessionManager().newAmountOf(water: Double(model.water))
@@ -98,4 +99,37 @@ struct Presenter {
     private func amount(_ level: Double) -> Double {
         return level > 0 ? level : 0
     }
+}
+
+extension Presenter {
+    func healthKitIsAuthorized() -> Bool {
+        guard let healthManager = healthManager else {
+            return false
+        }
+        return healthManager.isAuthorized()
+    }
+    
+    func healthKitAuthorize(completion: @escaping ((_ success: Bool) -> Void)) {
+        guard let healthManager = healthManager else {
+            completion(false)
+            return
+        }
+        
+        healthManager.authorizeHealthKit { (authorized, error) in
+            if authorized {
+                print("HealthKit authorization received.")
+                return completion(authorized)
+            } else {
+                print("HealthKit authorization denied!")
+                if error != nil {
+                    print("\(error)")
+                }
+                return completion(authorized)
+            }
+        }
+    }
+    
+//    fileprivate func saveToHealthKit(_ session: Session) {
+//        
+//    }
 }

@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  TimerH2O
+
+  Created by Alessio Roberto on 02/01/17.
+  Copyright © 2017 Alessio Roberto. All rights reserved.
+*/
+
+"NSHealthShareUsageDescription" = "";
+"NSHealthUpdateUsageDescription" = "";

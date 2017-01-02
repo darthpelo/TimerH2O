@@ -23,6 +23,9 @@
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
+		D9830F501E1A941800D9737F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9830F4F1E1A941800D9737F /* HealthKit.framework */; };
+		D9830F531E1A950500D9737F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9830F551E1A950500D9737F /* InfoPlist.strings */; };
+		D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9830F571E1A95B000D9737F /* HealthManager.swift */; };
 		D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476C71DBD622F009F92B3 /* AppDelegate.swift */; };
 		D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98476CD1DBD622F009F92B3 /* Main.storyboard */; };
 		D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98476D01DBD622F009F92B3 /* Assets.xcassets */; };
@@ -79,6 +82,10 @@
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
+		D9830F4F1E1A941800D9737F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		D9830F541E1A950500D9737F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9830F561E1A950600D9737F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9830F571E1A95B000D9737F /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = Controllers/HealthManager.swift; sourceTree = "<group>"; };
 		D98476C41DBD622F009F92B3 /* TimerH2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerH2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98476C71DBD622F009F92B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98476CE1DBD622F009F92B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90753371DCF6EC900AB6FCC /* UserNotifications.framework in Frameworks */,
+				D9830F501E1A941800D9737F /* HealthKit.framework in Frameworks */,
 				D90753381DCF6EC900AB6FCC /* UserNotificationsUI.framework in Frameworks */,
 				0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */,
 			);
@@ -203,6 +211,7 @@
 		D98476EA1DBD625C009F92B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9830F4F1E1A941800D9737F /* HealthKit.framework */,
 				D90753351DCF6EC900AB6FCC /* UserNotifications.framework */,
 				D90753361DCF6EC900AB6FCC /* UserNotificationsUI.framework */,
 				25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */,
@@ -221,6 +230,7 @@
 				D98476D51DBD622F009F92B3 /* Info.plist */,
 				D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */,
 				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
+				D9830F551E1A950500D9737F /* InfoPlist.strings */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -319,6 +329,7 @@
 		D9D0AEC51DBEA77300B6A8EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9830F571E1A95B000D9737F /* HealthManager.swift */,
 				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
 				D9941F841DCBF7A200918C14 /* Timer.swift */,
 				D9FD85B11E15676700CC25D4 /* AnswerManager.swift */,
@@ -392,7 +403,7 @@
 								enabled = 0;
 							};
 							com.apple.HealthKit = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -430,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98476D41DBD622F009F92B3 /* LaunchScreen.storyboard in Resources */,
+				D9830F531E1A950500D9737F /* InfoPlist.strings in Resources */,
 				D907533D1DCF93EC00AB6FCC /* Localizable.strings in Resources */,
 				D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */,
 				D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */,
@@ -602,6 +614,7 @@
 				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
+				D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
 				D90753441DCF978D00AB6FCC /* UView.swift in Sources */,
 				D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */,
@@ -642,6 +655,15 @@
 				D90753421DCF93FB00AB6FCC /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D9830F551E1A950500D9737F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9830F541E1A950500D9737F /* en */,
+				D9830F561E1A950600D9737F /* it */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		D98476CD1DBD622F009F92B3 /* Main.storyboard */ = {
@@ -766,13 +788,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "be59fbe6-eabc-4c7f-9e95-80fc4ea17495";
-				PROVISIONING_PROFILE_SPECIFIER = development;
+				PROVISIONING_PROFILE = "b6c5d947-f585-454d-9f34-c236311adead";
+				PROVISIONING_PROFILE_SPECIFIER = TimerH2O_Dev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -783,14 +806,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5dc40ede-4982-4ad2-8243-f94e2b020bfa";
-				PROVISIONING_PROFILE_SPECIFIER = Vendita;
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -877,6 +901,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
