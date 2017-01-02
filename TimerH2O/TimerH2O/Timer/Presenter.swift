@@ -30,13 +30,16 @@ struct Presenter {
     func stopSession() {
         AnswerManager().log(event: "StopSession")
         
-        RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
-        saveToHealthKit()
+        modelUpdate()
         
         SessionManager().newSession(isStart: false)
         SessionManager().newAmountOf(water: 0)
         endInterval()
         stopTimer()
+        
+        self.view?.startButton(isEnabled: true)
+        self.view?.stopTimerButton(isEnabled: false)
+        self.view?.setTimerLabel(with: R.string.localizable.timerviewTimerLabelFinish_presenter())
     }
     
     func startTimer() {
@@ -50,6 +53,16 @@ struct Presenter {
             self.updateCountDown()
         }
     }
+    
+    func startTimer(_ endTimer: TimeInterval) {
+        SessionManager().new(countDown: endTimer)
+        TimerManager.sharedInstance.start()
+        
+        TimerManager.sharedInstance.scheduledTimer = {
+            self.updateCountDown()
+        }
+    }
+    
     func stopTimer() {
         TimerManager.sharedInstance.stop()
     }
@@ -66,33 +79,27 @@ struct Presenter {
         TimerManager.sharedInstance.stop()
     }
     
-    func startTimer(_ endTimer: TimeInterval) {
-        SessionManager().new(countDown: endTimer)
-        TimerManager.sharedInstance.start()
-        
-        TimerManager.sharedInstance.scheduledTimer = {
-            self.updateCountDown()
-        }
-    }
-    
     func update(water amount: Double) {
         var actualAmount = SessionManager().amountOfWater()
         
         actualAmount -= amount
         SessionManager().newAmountOf(water: actualAmount)
+        
         if actualAmount > 0 {
             startInterval()
         } else {
             stopSession()
-            self.view?.startButton(isEnabled: true)
-            self.view?.stopTimerButton(isEnabled: false)
-            self.view?.setTimerLabel(with: R.string.localizable.timerviewTimerLabelFinish_presenter())
         }
         
         updateAmountLabel(actualAmount)
     }
     
     //MARK: - Private
+    private func modelUpdate() {
+        RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
+        saveToHealthKit()
+    }
+    
     private func updateCountDown() {
         let countDown = SessionManager().countDown() - 1
         SessionManager().new(countDown: countDown)

@@ -21,7 +21,8 @@
 
 "timerview.stop.button" = "I drank!";
 "timerview.start.button" = "New drink session"; 
-"timerview.timer.label.finish_vc" = "Finish from VC";
+"timerview.end.button" = "End session";
+"timerview.healtkit" = "Connect to Apple Health";
 "timerview.timer.label.finish_presenter" = "Great!\nYou finished all the water!";
 
 

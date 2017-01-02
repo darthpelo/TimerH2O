@@ -29,7 +29,7 @@ struct RealmManager {
             if let idx = SessionManager().sessionID(),
                 let session = realm.object(ofType: Session.self, forPrimaryKey: idx) {
                 try realm.write {
-                    session.amount = session.goal + abs(amount)
+                    session.amount = session.goal - amount
                     session.end = end
                 }
             }
@@ -41,7 +41,7 @@ struct RealmManager {
             // Get the default Realm
             let realm = try Realm()
             
-            return realm.objects(Session.self).filter("start != end").sorted(byProperty: "start")
+            return realm.objects(Session.self).filter("start != end").sorted(byProperty: "start", ascending: false)
         } catch {
             return nil
         }

@@ -21,8 +21,9 @@
 "localnotification.subtitle" = "E' ora di bere";
 
 "timerview.stop.button" = "Ho bevuto!";
-"timerview.start.button" = "Comincia nuova misurazione"; 
-"timerview.timer.label.finish_vc" = "Finish from VC";
+"timerview.start.button" = "Comincia nuova sessione";
+"timerview.end.button" = "Termina la sessione";
+"timerview.healtkit" = "Connetti ad Apple Salute";
 "timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obbiettivo della giornata!";
 
 "usernotification.drink" = "Ho Bevuto";
