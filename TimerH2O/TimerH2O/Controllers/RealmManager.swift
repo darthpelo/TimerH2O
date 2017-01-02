@@ -47,6 +47,17 @@ struct RealmManager {
         }
     }
     
+    func loadSession(withId id: String) -> Session? {
+        do {
+            // Get the default Realm
+            let realm = try Realm()
+            
+            return realm.object(ofType: Session.self, forPrimaryKey: id)
+        } catch {
+            return nil
+        }
+    }
+    
     private func write(_ object: Object) {
         do {
             // Get the default Realm

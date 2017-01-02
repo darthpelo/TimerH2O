@@ -46,10 +46,10 @@ final class HealthManager {
         }
     }
     
-    func saveWaterSample(_ water: Double, _ date: Date) {
+    func saveWaterSample(_ water: Double, startDate: Date, endDate: Date) {
         if let waterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater) {
             let waterQuantity = HKQuantity(unit: HKUnit.liter(), doubleValue: water)
-            let waterSample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: date, end: date)
+            let waterSample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: startDate, end: endDate)
             
             healthKitStore.save(waterSample, withCompletion: { (success, error) in
                 if( error != nil ) {

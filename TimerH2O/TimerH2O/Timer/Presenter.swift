@@ -30,6 +30,7 @@ struct Presenter {
         AnswerManager().log(event: "StopSession")
         
         RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
+        saveToHealthKit()
         
         SessionManager().newSession(isStart: false)
         SessionManager().newAmountOf(water: 0)
@@ -134,7 +135,10 @@ extension Presenter {
         }
     }
     
-//    fileprivate func saveToHealthKit(_ session: Session) {
-//        
-//    }
+    fileprivate func saveToHealthKit() {
+        if let id = SessionManager().sessionID(),
+            let session = RealmManager().loadSession(withId: id) {
+            healthManager?.saveWaterSample(session.amount/1000, startDate: session.start, endDate: session.end)
+        }
+    }
 }

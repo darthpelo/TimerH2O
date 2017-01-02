@@ -20,7 +20,7 @@ class TH2OSetSessionViewController: UIViewController, Configurable, Seguible {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
-    lazy var presenter: Presenter = Presenter(view: self)
+    lazy var presenter: Presenter = Presenter(view: self, healthManager: nil)
     
     public var waterPickerView: TH2OWaterPickerView?
     public var timerPickerView: TH2OTimerPickerView?
