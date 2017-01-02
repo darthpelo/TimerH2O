@@ -13,7 +13,7 @@ struct Presenter {
     weak var healthManager: HealthManager?
     
     func save(_ water: Int, _ interval: TimeInterval) {
-        let model = Model(idx: UUID().uuidString, water: water, interval: interval)
+        let model = Model(idx: UUID().uuidString, water: Double(water), interval: interval)
         SessionManager().new(sessioId: model.idx)
         SessionManager().newAmountOf(water: Double(water))
         SessionManager().newTimeInterval(second: interval)
@@ -28,11 +28,13 @@ struct Presenter {
     
     func stopSession() {
         AnswerManager().log(event: "StopSession")
+        
+        RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
+        
         SessionManager().newSession(isStart: false)
         SessionManager().newAmountOf(water: 0)
         endInterval()
         stopTimer()
-        RealmManager().updateSession(withEnd: Date())
     }
     
     func startTimer() {
@@ -75,7 +77,7 @@ struct Presenter {
         var actualAmount = SessionManager().amountOfWater()
         
         actualAmount -= amount
-        
+        SessionManager().newAmountOf(water: actualAmount)
         if actualAmount > 0 {
             startInterval()
         } else {
@@ -96,7 +98,6 @@ struct Presenter {
     }
     
     private func updateAmountLabel(_ actualAmount: Double) {
-        SessionManager().newAmountOf(water: amount(actualAmount))
         self.view?.setAmountLabel(with: String(amount(actualAmount)))
     }
     

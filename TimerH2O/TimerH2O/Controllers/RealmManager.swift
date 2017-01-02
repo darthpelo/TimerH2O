@@ -16,11 +16,12 @@ struct RealmManager {
         new.goal = session.water
         new.interval = session.interval
         new.start = Date()
+        new.end = new.start
         
         write(new)
     }
     
-    func updateSession(withEnd end: Date) {
+    func updateSession(withEnd end: Date, finalAmount amount: Double) {
         do {
             // Get the default Realm
             let realm = try Realm()
@@ -28,6 +29,7 @@ struct RealmManager {
             if let idx = SessionManager().sessionID(),
                 let session = realm.object(ofType: Session.self, forPrimaryKey: idx) {
                 try realm.write {
+                    session.amount = session.goal + abs(amount)
                     session.end = end
                 }
             }
@@ -39,7 +41,7 @@ struct RealmManager {
             // Get the default Realm
             let realm = try Realm()
             
-            return realm.objects(Session.self).sorted(byProperty: "start")
+            return realm.objects(Session.self).filter("start != end").sorted(byProperty: "start")
         } catch {
             return nil
         }

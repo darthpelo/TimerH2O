@@ -10,6 +10,6 @@ import Foundation
 
 struct Model {
     let idx: String
-    let water: Int
+    let water: Double
     let interval: TimeInterval
 }

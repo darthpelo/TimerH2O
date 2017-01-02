@@ -12,7 +12,8 @@ class Session: Object {
     dynamic var idx = "0"
     dynamic var start = Date(timeIntervalSince1970: 1)
     dynamic var end = Date(timeIntervalSince1970: 1)
-    dynamic var goal: Int = 0
+    dynamic var goal: Double = 0
+    dynamic var amount: Double = 0
     dynamic var interval: TimeInterval = 0
     dynamic var user: Person?
     
