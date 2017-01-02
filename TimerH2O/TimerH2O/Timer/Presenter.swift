@@ -76,6 +76,8 @@ struct Presenter {
     func endInterval() {
         AnswerManager().log(event: "EndInterval")
         SessionManager().newInterval(isStart: false)
+        SessionManager().new(endTimer: Date(timeIntervalSince1970: 1))
+        SessionManager().new(countDown: 0)
         TimerManager.sharedInstance.stop()
     }
     
