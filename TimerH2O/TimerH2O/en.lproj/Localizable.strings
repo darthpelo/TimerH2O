@@ -20,10 +20,17 @@
 "localnotification.subtitle" = "It's time to drink!";
 
 "timerview.stop.button" = "I drank!";
+"timerview.start.button" = "New drink session"; 
 "timerview.timer.label.finish_vc" = "Finish from VC";
 "timerview.timer.label.finish_presenter" = "Great!\nYou finished all the water!";
+
 
 "usernotification.drink" = "Drink";
 "usernotification.snooze.5" = "Snooze - 5 minutes";
 "usernotification.snooze.15" = "Snooze - 15 minutes";
 "usernotification.snooze.30" = "Snooze - 30 minutes";
+
+"history.cell.goal" = "Goal";
+"history.cell.amount" = "Final amount";
+"history.cell.start" = "Start";
+"history.cell.end" = "End";

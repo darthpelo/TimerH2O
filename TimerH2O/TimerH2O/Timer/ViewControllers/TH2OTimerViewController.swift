@@ -15,12 +15,12 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     @IBOutlet weak var amountLabe: UILabel!
     @IBOutlet weak var startNewSessionButton: UIButton! {
         didSet {
-            startNewSessionButton.setTitle("Start", for: .normal)
+            startNewSessionButton.setTitle(R.string.localizable.timerviewStartButton(), for: .normal)
         }
     }
     @IBOutlet weak var stopTimerButton: UIButton! {
         didSet {
-            stopTimerButton.setTitle(NSLocalizedString("timerview.stop.button", comment: ""), for: .normal)
+            stopTimerButton.setTitle(R.string.localizable.timerviewStopButton(), for: .normal)
         }
     }
     @IBOutlet weak var appleHeathButton: UIButton!
@@ -46,9 +46,11 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         appleHeathButton.isHidden = presenter.healthKitIsAuthorized()
 
         if SessionManager().sessionIsStart() {
-            startButton(isEbable: false)
+            startButton(isEnabled: false)
+            stopTimerButton(isEnabled: true)
         } else {
-            startButton(isEbable: true)
+            startButton(isEnabled: true)
+            stopTimerButton(isEnabled: false)
         }
     }
     
@@ -69,7 +71,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBAction func newSessionPressed(_ sender: Any) {
         AnswerManager().log(event: "newSessionPressed")
-//        presenter.stopSession()
         newSession()
     }
     
@@ -146,8 +147,12 @@ extension TH2OTimerViewController: ViewProtocol {
         amountLabe.text = string
     }
     
-    internal func startButton(isEbable: Bool) {
-        startNewSessionButton.isEnabled = isEbable
+    internal func startButton(isEnabled: Bool) {
+        startNewSessionButton.isEnabled = isEnabled
+    }
+    
+    internal func stopTimerButton(isEnabled: Bool) {
+        stopTimerButton.isEnabled = isEnabled
     }
 }
 

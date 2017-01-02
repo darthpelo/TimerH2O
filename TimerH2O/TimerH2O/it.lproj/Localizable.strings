@@ -21,6 +21,7 @@
 "localnotification.subtitle" = "E' ora di bere";
 
 "timerview.stop.button" = "Ho bevuto!";
+"timerview.start.button" = "Comincia nuova misurazione"; 
 "timerview.timer.label.finish_vc" = "Finish from VC";
 "timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obbiettivo della giornata!";
 
@@ -28,3 +29,8 @@
 "usernotification.snooze.5" = "Ritarda 5 minuti";
 "usernotification.snooze.15" = "Ritarda 15 minuti";
 "usernotification.snooze.30" = "Ritarda 30 minuti";
+
+"history.cell.goal" = "Obbiettivo";
+"history.cell.amount" = "Quantità finale";
+"history.cell.start" = "Da";
+"history.cell.end" = "A";

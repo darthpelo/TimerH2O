@@ -47,12 +47,12 @@ struct RealmManager {
         }
     }
     
-    func loadSession(withId id: String) -> Session? {
+    func loadSession(withId idx: String) -> Session? {
         do {
             // Get the default Realm
             let realm = try Realm()
             
-            return realm.object(ofType: Session.self, forPrimaryKey: id)
+            return realm.object(ofType: Session.self, forPrimaryKey: idx)
         } catch {
             return nil
         }

@@ -19,7 +19,7 @@ class TH2OHistoryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = NSLocalizedString("history", comment: "")
+        self.title = R.string.localizable.history()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,21 +58,33 @@ extension TH2OHistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.sessionCell.identifier, for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.sessionCell.identifier, for: indexPath)
+    
+        cell = setup(cell: cell, forRowAt: indexPath)
         
-        guard let session = collection?[indexPath.row] else {
-            return cell
-        }
-        
-        cell.textLabel?.text = "Goal: " + String(session.goal) + " Real: " + String(session.amount)
-        let start = DateFormatter.localizedString(from: session.start, dateStyle: .short, timeStyle: .short)
-        let end = DateFormatter.localizedString(from: session.end, dateStyle: .short, timeStyle: .short)
-        let date = "Start: \(start) End: \(end)"
-        cell.detailTextLabel?.text = date
         return cell
     }
 }
 
 extension TH2OHistoryViewController: UITableViewDelegate {
     
+}
+
+extension TH2OHistoryViewController {
+    fileprivate func setup(cell: UITableViewCell, forRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let session = collection?[indexPath.row] else {
+            return cell
+        }
+        
+        let goal = R.string.localizable.historyCellGoal()
+        let amount = R.string.localizable.historyCellAmount()
+        cell.textLabel?.text = "\(goal): " + String(session.goal) + " \(amount): " + String(session.amount)
+        
+        let start = DateFormatter.localizedString(from: session.start, dateStyle: .short, timeStyle: .short)
+        let end = DateFormatter.localizedString(from: session.end, dateStyle: .short, timeStyle: .short)
+        let date = "\(R.string.localizable.historyCellStart()): \(start) \(R.string.localizable.historyCellEnd()): \(end)"
+        cell.detailTextLabel?.text = date
+        
+        return cell
+    }
 }

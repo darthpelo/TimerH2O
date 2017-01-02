@@ -47,9 +47,9 @@ extension Configurable where Self: TH2OSetSessionViewController {
     }
     
     internal func configureLabels() {
-        titleLabel.text = NSLocalizedString("setsession.title.label", comment: "")
-        waterAmountTextLabel.text = NSLocalizedString("setsession.amount.label", comment: "")
-        intervalTextLabel.text = NSLocalizedString("setsession.interval.label", comment: "")
+        titleLabel.text = R.string.localizable.setsessionTitleLabel()
+        waterAmountTextLabel.text = R.string.localizable.setsessionAmountLabel()
+        intervalTextLabel.text = R.string.localizable.setsessionIntervalLabel()
     }
     
     internal func configureWaterPickerView() {

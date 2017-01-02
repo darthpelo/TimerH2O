@@ -30,16 +30,16 @@ func notificationsSettings() {
             }
         }
         let drink = UNNotificationAction(identifier: TH2OConstants.UserNotification.drinkAction,
-                                         title: NSLocalizedString("usernotification.drink", comment: ""),
+                                         title: R.string.localizable.usernotificationDrink(),
                                          options: [.authenticationRequired, .foreground])
         let snooze5 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze5Action,
-                                          title: NSLocalizedString("usernotification.snooze.5", comment: ""),
+                                          title: R.string.localizable.usernotificationSnooze5(),
                                           options: [.destructive])
         let snooze15 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze15Action,
-                                           title: NSLocalizedString("usernotification.snooze.15", comment: ""),
+                                           title: R.string.localizable.usernotificationSnooze15(),
                                            options: [.destructive])
         let snooze30 = UNNotificationAction(identifier: TH2OConstants.UserNotification.snooze30Action,
-                                           title: NSLocalizedString("usernotification.snooze.30", comment: ""),
+                                           title: R.string.localizable.usernotificationSnooze30(),
                                            options: [.destructive])
         let category = UNNotificationCategory(identifier: TH2OConstants.UserNotification.timerCategory,
                                               actions: [drink, snooze5, snooze15, snooze30],
@@ -60,7 +60,7 @@ func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
         // Configure Notification Content
         notificationContent.title = "TimerH2O"
         //            notificationContent.subtitle = NSLocalizedString("localnotification.subtitle", comment: "")
-        notificationContent.body = NSLocalizedString("localnotification.subtitle", comment: "")
+        notificationContent.body = R.string.localizable.localnotificationSubtitle()
         notificationContent.sound = UNNotificationSound.default()
         notificationContent.badge = 1
         notificationContent.categoryIdentifier = TH2OConstants.UserNotification.timerCategory

@@ -43,8 +43,8 @@ class TH2OWaterPickerView: UIView {
         parentView = onView
         self.frame.origin.y = onView.frame.size.height
         
-        pickerTitleLabel.text = NSLocalizedString("setsession.waterpicker.title", comment: "")
-        doneButton.setTitle(NSLocalizedString("done", comment: ""), for: .normal)
+        pickerTitleLabel.text = R.string.localizable.setsessionWaterpickerTitle()
+        doneButton.setTitle(R.string.localizable.done(), for: .normal)
         
         UIApplication.shared.keyWindow?.addSubview(self)
     }

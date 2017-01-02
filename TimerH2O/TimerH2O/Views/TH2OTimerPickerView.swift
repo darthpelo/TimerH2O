@@ -46,8 +46,8 @@ class TH2OTimerPickerView: UIView {
         self.frame.origin.y = onView.frame.size.height
         datePicker.maximumDate = Date()
         
-        pickerTitleLabel.text = NSLocalizedString("setsession.timepicker.title", comment: "")
-        doneButton.setTitle(NSLocalizedString("done", comment: ""), for: .normal)
+        pickerTitleLabel.text = R.string.localizable.setsessionTimepickerTitle()
+        doneButton.setTitle(R.string.localizable.done(), for: .normal)
         
         UIApplication.shared.keyWindow?.addSubview(self)
     }

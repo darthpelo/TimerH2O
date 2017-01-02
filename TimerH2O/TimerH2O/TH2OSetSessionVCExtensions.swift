@@ -20,7 +20,9 @@ extension TH2OSetSessionViewController: UIGestureRecognizerDelegate {
 }
 
 extension TH2OSetSessionViewController: ViewProtocol {
-    internal func startButton(isEbable: Bool) {}
+    internal func stopTimerButton(isEnabled: Bool) {}
+
+    internal func startButton(isEnabled isEbable: Bool) {}
 
     internal func setAmountLabel(with string: String) {}
 

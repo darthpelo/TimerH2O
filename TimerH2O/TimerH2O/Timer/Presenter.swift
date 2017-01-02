@@ -23,7 +23,8 @@ struct Presenter {
     func startSession() {
         AnswerManager().log(event: "StartSessoin")
         SessionManager().newSession(isStart: true)
-        self.view?.startButton(isEbable: false)
+        self.view?.startButton(isEnabled: false)
+        self.view?.stopTimerButton(isEnabled: true)
     }
     
     func stopSession() {
@@ -83,8 +84,9 @@ struct Presenter {
             startInterval()
         } else {
             stopSession()
-            self.view?.startButton(isEbable: true)
-            self.view?.setTimerLabel(with: NSLocalizedString("timerview.timer.label.finish_presenter", comment: ""))
+            self.view?.startButton(isEnabled: true)
+            self.view?.stopTimerButton(isEnabled: false)
+            self.view?.setTimerLabel(with: R.string.localizable.timerviewTimerLabelFinish_presenter())
         }
         
         updateAmountLabel(actualAmount)

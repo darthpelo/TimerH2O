@@ -52,7 +52,7 @@ final class HealthManager {
             let waterSample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: startDate, end: endDate)
             
             healthKitStore.save(waterSample, withCompletion: { (success, error) in
-                if( error != nil ) {
+                if error != nil {
                     print("Error saving water sample: \(error?.localizedDescription)")
                 } else {
                     print("Water sample saved successfully!")
