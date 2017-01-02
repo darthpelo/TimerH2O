@@ -39,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         AnswerManager().log(event: "Application Was Killed", withCustomAttributes: ["VC":"AppDelegate", "Function":"applicationWillTerminate"])
-        SessionManager().application(isKilled: true)
         TimerManager.sharedInstance.stop()
         scheduleLocalNotification(endtime: SessionManager().endTimer()!)
     }

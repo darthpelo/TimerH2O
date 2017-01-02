@@ -12,9 +12,12 @@ struct Presenter {
     weak var view: ViewProtocol?
     weak var healthManager: HealthManager?
     
-    func save(model: Model) {
-        SessionManager().newAmountOf(water: Double(model.water))
-        SessionManager().newTimeInterval(second: model.interval)
+    func save(_ water: Int, _ interval: TimeInterval) {
+        let model = Model(idx: UUID().uuidString, water: Double(water), interval: interval)
+        SessionManager().new(sessioId: model.idx)
+        SessionManager().newAmountOf(water: Double(water))
+        SessionManager().newTimeInterval(second: interval)
+        RealmManager().create(newSession: model)
     }
     
     func startSession() {
@@ -25,6 +28,10 @@ struct Presenter {
     
     func stopSession() {
         AnswerManager().log(event: "StopSession")
+        
+        RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
+        saveToHealthKit()
+        
         SessionManager().newSession(isStart: false)
         SessionManager().newAmountOf(water: 0)
         endInterval()
@@ -71,7 +78,7 @@ struct Presenter {
         var actualAmount = SessionManager().amountOfWater()
         
         actualAmount -= amount
-        
+        SessionManager().newAmountOf(water: actualAmount)
         if actualAmount > 0 {
             startInterval()
         } else {
@@ -92,7 +99,6 @@ struct Presenter {
     }
     
     private func updateAmountLabel(_ actualAmount: Double) {
-        SessionManager().newAmountOf(water: amount(actualAmount))
         self.view?.setAmountLabel(with: String(amount(actualAmount)))
     }
     
@@ -129,7 +135,10 @@ extension Presenter {
         }
     }
     
-//    fileprivate func saveToHealthKit(_ session: Session) {
-//        
-//    }
+    fileprivate func saveToHealthKit() {
+        if let id = SessionManager().sessionID(),
+            let session = RealmManager().loadSession(withId: id) {
+            healthManager?.saveWaterSample(session.amount/1000, startDate: session.start, endDate: session.end)
+        }
+    }
 }

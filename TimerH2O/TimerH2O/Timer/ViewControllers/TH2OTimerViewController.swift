@@ -26,8 +26,8 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     @IBOutlet weak var appleHeathButton: UIButton!
     
     public var waterPickerView: TH2OWaterPickerView?
-    
-    lazy var presenter: Presenter = Presenter(view: self, healthManager: HealthManager())
+    private let healthManager = HealthManager()
+    lazy var presenter: Presenter = Presenter(view: self, healthManager: self.healthManager)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
 
     @IBAction func newSessionPressed(_ sender: Any) {
         AnswerManager().log(event: "newSessionPressed")
-        presenter.stopSession()
+//        presenter.stopSession()
         newSession()
     }
     

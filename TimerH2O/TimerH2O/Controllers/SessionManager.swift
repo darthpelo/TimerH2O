@@ -15,18 +15,10 @@ enum StorageKey: String {
     case TimeInterval =  "com.alessioroberto.timeInterval"
     case CountDown = "com.alessioroberto.countDown"
     case EndTimer = "com.alessioroberto.endTimer"
-    case Killed = "com.alessioroberto.killed"
+    case SessionID = "com.alessioroberto.sessionid"
 }
 
 struct SessionManager {
-    func application(isKilled: Bool) {
-        UserDefaults.standard.set(isKilled, forKey: StorageKey.Killed.rawValue)
-    }
-    
-    func applicationWasKilled() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.Killed.rawValue)
-    }
-    
     func newSession(isStart: Bool) {
         UserDefaults.standard.set(isStart, forKey: StorageKey.SessionStart.rawValue)
     }
@@ -78,5 +70,13 @@ struct SessionManager {
         
         let date = when as? Date
         return date
+    }
+    
+    func new(sessioId: String) {
+        UserDefaults.standard.set(sessioId, forKey: StorageKey.SessionID.rawValue)
+    }
+    
+    func sessionID() -> String? {
+        return UserDefaults.standard.string(forKey: StorageKey.SessionID.rawValue)
     }
 }

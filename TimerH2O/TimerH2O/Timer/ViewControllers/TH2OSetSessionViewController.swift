@@ -20,7 +20,7 @@ class TH2OSetSessionViewController: UIViewController, Configurable, Seguible {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
-    lazy var presenter: Presenter = Presenter(view: self)
+    lazy var presenter: Presenter = Presenter(view: self, healthManager: nil)
     
     public var waterPickerView: TH2OWaterPickerView?
     public var timerPickerView: TH2OTimerPickerView?
@@ -58,7 +58,7 @@ extension TH2OSetSessionViewController {
         guard let water = self.water, let interval = self.interval else {
             return false
         }
-        presenter.save(model: Model(water: water, interval: interval))
+        presenter.save(water, interval)
         return true
     }
 }

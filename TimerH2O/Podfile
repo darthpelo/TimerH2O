@@ -9,6 +9,7 @@ target 'TimerH2O' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'RealmSwift'
+  #pod 'Charts'
 
   target 'TimerH2OTests' do
     inherit! :search_paths

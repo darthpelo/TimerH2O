@@ -14,6 +14,9 @@
 		D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90753391DCF8AA100AB6FCC /* Notifications.swift */; };
 		D907533D1DCF93EC00AB6FCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D907533F1DCF93EC00AB6FCC /* Localizable.strings */; };
 		D90753441DCF978D00AB6FCC /* UView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90753431DCF978D00AB6FCC /* UView.swift */; };
+		D91A05CB1E19434C0089E250 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CA1E19434C0089E250 /* Session.swift */; };
+		D91A05CD1E194D840089E250 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CC1E194D840089E250 /* Person.swift */; };
+		D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CE1E1951660089E250 /* RealmManager.swift */; };
 		D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12DF1DC536BE0047FCB6 /* Presenter.swift */; };
 		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
@@ -73,6 +76,9 @@
 		D90753411DCF93F100AB6FCC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90753421DCF93FB00AB6FCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D90753431DCF978D00AB6FCC /* UView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UView.swift; path = Extensions/UView.swift; sourceTree = "<group>"; };
+		D91A05CA1E19434C0089E250 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Model/Session.swift; sourceTree = "<group>"; };
+		D91A05CC1E194D840089E250 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Model/Person.swift; sourceTree = "<group>"; };
+		D91A05CE1E1951660089E250 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = Controllers/RealmManager.swift; sourceTree = "<group>"; };
 		D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
@@ -322,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				D9941F821DCBE64200918C14 /* model.swift */,
+				D91A05CA1E19434C0089E250 /* Session.swift */,
+				D91A05CC1E194D840089E250 /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -333,6 +341,7 @@
 				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
 				D9941F841DCBF7A200918C14 /* Timer.swift */,
 				D9FD85B11E15676700CC25D4 /* AnswerManager.swift */,
+				D91A05CE1E1951660089E250 /* RealmManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -608,6 +617,7 @@
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
 				D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */,
 				D9941F831DCBE64200918C14 /* model.swift in Sources */,
+				D91A05CD1E194D840089E250 /* Person.swift in Sources */,
 				D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */,
 				D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */,
 				D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */,
@@ -616,8 +626,10 @@
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
+				D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */,
 				D90753441DCF978D00AB6FCC /* UView.swift in Sources */,
 				D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */,
+				D91A05CB1E19434C0089E250 /* Session.swift in Sources */,
 				D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */,
 				D9FD85B21E15676700CC25D4 /* AnswerManager.swift in Sources */,
 				D9E34C861DC2A00700692768 /* Constants.swift in Sources */,
