@@ -38,6 +38,7 @@
 		D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */; };
 		D9941F831DCBE64200918C14 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F821DCBE64200918C14 /* model.swift */; };
 		D9941F851DCBF7A200918C14 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
+		D9A213251E1DAD670031FA80 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A213241E1DAD670031FA80 /* Encrypt.swift */; };
 		D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */; };
 		D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */; };
 		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
@@ -108,6 +109,7 @@
 		D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerViewController.swift; path = Timer/ViewControllers/TH2OTimerViewController.swift; sourceTree = "<group>"; };
 		D9941F821DCBE64200918C14 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		D9941F841DCBF7A200918C14 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		D9A213241E1DAD670031FA80 /* Encrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
 		D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TH2OTimePickerView.xib; path = Views/TH2OTimePickerView.xib; sourceTree = "<group>"; };
 		D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerPickerView.swift; path = Views/TH2OTimerPickerView.swift; sourceTree = "<group>"; };
 		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -162,6 +164,7 @@
 			children = (
 				D94A12E41DC53A8C0047FCB6 /* Converter.swift */,
 				D90753391DCF8AA100AB6FCC /* Notifications.swift */,
+				D9A213241E1DAD670031FA80 /* Encrypt.swift */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */,
+				D9A213251E1DAD670031FA80 /* Encrypt.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
 				D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */,
 				D90753441DCF978D00AB6FCC /* UView.swift in Sources */,

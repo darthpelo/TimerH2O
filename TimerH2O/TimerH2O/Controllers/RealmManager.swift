@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 struct RealmManager {
+    //MARK: - Public
     func create(newSession session: Model) {
         let new = Session()
         new.idx = session.idx
@@ -24,7 +25,7 @@ struct RealmManager {
     func updateSession(withEnd end: Date, finalAmount amount: Double) {
         do {
             // Get the default Realm
-            let realm = try Realm()
+            let realm = try loadRealm()
             
             if let idx = SessionManager().sessionID(),
                 let session = realm.object(ofType: Session.self, forPrimaryKey: idx) {
@@ -33,16 +34,19 @@ struct RealmManager {
                     session.end = end
                 }
             }
-        } catch {}
+        } catch {
+            log(text: "Open with wrong key: \(error)")
+        }
     }
     
     func loadAllSessions() -> Results<Session>? {
         do {
             // Get the default Realm
-            let realm = try Realm()
+            let realm = try loadRealm()
             
             return realm.objects(Session.self).filter("start != end").sorted(byProperty: "start", ascending: false)
         } catch {
+            log(text: "Open with wrong key: \(error)")
             return nil
         }
     }
@@ -50,23 +54,37 @@ struct RealmManager {
     func loadSession(withId idx: String) -> Session? {
         do {
             // Get the default Realm
-            let realm = try Realm()
+            let realm = try loadRealm()
             
             return realm.object(ofType: Session.self, forPrimaryKey: idx)
         } catch {
+            log(text: "Open with wrong key: \(error)")
             return nil
         }
+    }
+    
+    //MARK: - Private
+    private func loadRealm() throws -> Realm {
+        let configuration = Realm.Configuration(encryptionKey: try getKey())
+        let realm = try Realm(configuration: configuration)
+        return realm
     }
     
     private func write(_ object: Object) {
         do {
             // Get the default Realm
-            let realm = try Realm()
+            let realm = try loadRealm()
             
             // Add to the Realm inside a transaction
             try realm.write {
                 realm.add(object)
             }
-        } catch {}
+        } catch {
+            log(text: "Open with wrong key: \(error)")
+        }
+    }
+    
+    private func log(text: String) {
+        print(text + "\n\n")
     }
 }
