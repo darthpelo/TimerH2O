@@ -66,20 +66,22 @@ func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
         notificationContent.categoryIdentifier = TH2OConstants.UserNotification.timerCategory
         
         // Add Trigger
-        let value = triggerTime(snooze, endTime)
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: value, repeats: false)
-        
-        // Create Notification Request
-        let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
-                                                        content: notificationContent,
-                                                        trigger: notificationTrigger)
-        
-        // Add Request to User Notification Center
-        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-            if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+        if let value = triggerTime(snooze, endTime) {
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: value, repeats: false)
+            
+            // Create Notification Request
+            let notificationRequest = UNNotificationRequest(identifier: TH2OConstants.UserNotification.notificationRequest,
+                                                            content: notificationContent,
+                                                            trigger: notificationTrigger)
+            
+            // Add Request to User Notification Center
+            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+                if let error = error {
+                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                }
             }
         }
+        
     }
 }
 
@@ -99,9 +101,9 @@ private func requestAuthorization(completionHandler: @escaping (_ success: Bool)
     }
 }
 
-private func triggerTime(_ snooze: Snooze?, _ endTime: Date?) -> TimeInterval {
+private func triggerTime(_ snooze: Snooze?, _ endTime: Date?) -> TimeInterval? {
     guard let endTime = endTime else {
-        return (snooze?.rawValue)!
+        return (snooze?.rawValue)
     }
     
     return endTime.timeIntervalSince(Date())

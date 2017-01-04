@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         TimerManager.sharedInstance.stop()
-        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+        scheduleLocalNotification(SessionManager().endTimer())
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -40,20 +40,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         AnswerManager().log(event: "Application Was Killed", withCustomAttributes: ["VC":"AppDelegate", "Function":"applicationWillTerminate"])
         TimerManager.sharedInstance.stop()
-        scheduleLocalNotification(endtime: SessionManager().endTimer()!)
+        scheduleLocalNotification(SessionManager().endTimer())
     }
     
     
 }
 
 extension AppDelegate {
-    fileprivate func scheduleLocalNotification(endtime: Date) {
+    fileprivate func scheduleLocalNotification(_ endTime: Date?) {
+        guard let endTime = endTime else {
+            return
+        }
         // Create Notification Content
         if #available(iOS 10.0, *) {
             // Time interval
-            let timeInterval = endtime.timeIntervalSince(Date())
+            let timeInterval = endTime.timeIntervalSince(Date())
             if timeInterval >= 0 {
-                localNotificationRequest(endTime: endtime)
+                localNotificationRequest(endTime: endTime)
             }
         } else {
             // Fallback on earlier versions

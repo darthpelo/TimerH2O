@@ -53,16 +53,20 @@ class TH2OTimerPickerView: UIView {
     }
     
     func isTo(show: Bool) {
+        guard let height = parentView?.frame.size.height else {
+            return
+        }
+        
         UIView.animate(withDuration:0.3,
                        animations: {
                         if show {
-                            self.frame.origin.y = self.parentView!.frame.size.height - self.frame.size.height
+                            self.frame.origin.y = height - self.frame.size.height
                             DispatchQueue.main.async {
                                 self.datePicker.countDownDuration = 60
                                 self.countDownDuration = 60
                             }
                         } else {
-                            self.frame.origin.y = self.parentView!.frame.size.height
+                            self.frame.origin.y = height
                         }
             }, completion: nil)
     }
