@@ -32,7 +32,7 @@ platform :ios do
         export_method: 'ad-hoc')
 
     emails = values[:test_email] ? values[:test_email] : nil # You can list more emails here
-    groups = values[:test_email] ? nil : ['External'] # You can define groups on the web and reference them here
+    groups = values[:test_email] ? nil : ['External', 'Internal'] # You can define groups on the web and reference them here
 
     crashlytics(api_token: 'f92187a6ad939c214258ffa2c9f03c6cc0a3d74d',
              build_secret: 'cf62acf20c611275d4126ffa3579a0861887c27a7a90007def0a96e8c0519d01',
