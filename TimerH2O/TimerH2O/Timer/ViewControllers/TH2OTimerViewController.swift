@@ -114,7 +114,9 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     func didBecomeActive() {
         if #available(iOS 10.0, *) {
-            timerCheck()
+            if SessionManager().sessionIsStart() {
+                timerCheck()
+            }
         }
     }
     
