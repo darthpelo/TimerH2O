@@ -38,6 +38,7 @@
 		D98476FF1DBD647B009F92B3 /* TH2OTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */; };
 		D9941F831DCBE64200918C14 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F821DCBE64200918C14 /* model.swift */; };
 		D9941F851DCBF7A200918C14 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
+		D9A2132A1E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */; };
 		D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */; };
 		D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */; };
 		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
@@ -108,6 +109,7 @@
 		D98476FE1DBD647B009F92B3 /* TH2OTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerViewController.swift; path = Timer/ViewControllers/TH2OTimerViewController.swift; sourceTree = "<group>"; };
 		D9941F821DCBE64200918C14 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		D9941F841DCBF7A200918C14 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OMoreTableViewController.swift; path = More/ViewControllers/TH2OMoreTableViewController.swift; sourceTree = "<group>"; };
 		D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TH2OTimePickerView.xib; path = Views/TH2OTimePickerView.xib; sourceTree = "<group>"; };
 		D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerPickerView.swift; path = Views/TH2OTimerPickerView.swift; sourceTree = "<group>"; };
 		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -189,16 +191,17 @@
 		D98476C61DBD622F009F92B3 /* TimerH2O */ = {
 			isa = PBXGroup;
 			children = (
-				D94A12E31DC53A7D0047FCB6 /* Functions */,
+				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
 				D9D0AEC51DBEA77300B6A8EE /* Controllers */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
+				D94A12E31DC53A7D0047FCB6 /* Functions */,
 				D98476F51DBD6382009F92B3 /* History */,
 				D9D0AEC41DBEA76E00B6A8EE /* Models */,
+				D9A213261E1DB95B0031FA80 /* More */,
 				D98476FA1DBD63F5009F92B3 /* Protocols */,
 				D98476F31DBD6340009F92B3 /* Storyboards */,
 				D98476F21DBD6334009F92B3 /* Support */,
 				D98476F41DBD6379009F92B3 /* Timer */,
-				D98476C71DBD622F009F92B3 /* AppDelegate.swift */,
 			);
 			path = TimerH2O;
 			sourceTree = "<group>";
@@ -322,6 +325,22 @@
 				D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D9A213261E1DB95B0031FA80 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				D9A213281E1DB97C0031FA80 /* ViewControllers */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		D9A213281E1DB97C0031FA80 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D9D0AEC41DBEA76E00B6A8EE /* Models */ = {
@@ -611,6 +630,7 @@
 				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */,
 				D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */,
 				D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */,
+				D9A2132A1E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift in Sources */,
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D9941F851DCBF7A200918C14 /* Timer.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
