@@ -25,7 +25,7 @@ func notificationsSettings() {
                     guard success else { return }
                 })
             case .denied:
-                print("Application Not Allowed to Display Notifications")
+                NSLog("Application Not Allowed to Display Notifications")
             default:()
             }
         }
@@ -77,7 +77,7 @@ func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
             // Add Request to User Notification Center
             UNUserNotificationCenter.current().add(notificationRequest) { (error) in
                 if let error = error {
-                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                    NSLog("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
                 }
             }
         }
@@ -91,7 +91,7 @@ private func requestAuthorization(completionHandler: @escaping (_ success: Bool)
     if #available(iOS 10.0, *) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
             if let error = error {
-                print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+                NSLog("Request Authorization Failed (\(error), \(error.localizedDescription))")
             }
             
             completionHandler(success)
