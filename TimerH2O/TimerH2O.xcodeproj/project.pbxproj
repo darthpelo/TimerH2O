@@ -39,6 +39,7 @@
 		D9941F831DCBE64200918C14 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F821DCBE64200918C14 /* model.swift */; };
 		D9941F851DCBF7A200918C14 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 		D9A2132A1E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */; };
+		D9A2132C1E1E82110031FA80 /* TH2OAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2132B1E1E82110031FA80 /* TH2OAboutViewController.swift */; };
 		D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */; };
 		D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */; };
 		D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */; };
@@ -110,6 +111,7 @@
 		D9941F821DCBE64200918C14 /* model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		D9941F841DCBF7A200918C14 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OMoreTableViewController.swift; path = More/ViewControllers/TH2OMoreTableViewController.swift; sourceTree = "<group>"; };
+		D9A2132B1E1E82110031FA80 /* TH2OAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OAboutViewController.swift; path = More/ViewControllers/TH2OAboutViewController.swift; sourceTree = "<group>"; };
 		D9CA9B7D1DC7EA11003EFD4F /* TH2OTimePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TH2OTimePickerView.xib; path = Views/TH2OTimePickerView.xib; sourceTree = "<group>"; };
 		D9CA9B7F1DC7EBF4003EFD4F /* TH2OTimerPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OTimerPickerView.swift; path = Views/TH2OTimerPickerView.swift; sourceTree = "<group>"; };
 		D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */,
+				D9A2132B1E1E82110031FA80 /* TH2OAboutViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */,
 				D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */,
 				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
+				D9A2132C1E1E82110031FA80 /* TH2OAboutViewController.swift in Sources */,
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */,

@@ -13,7 +13,12 @@ class TH2OMoreTableViewController: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.about, sender: self)
+        default:
+            ()
+        }
     }
     // MARK: - Table view data source
 
@@ -26,12 +31,12 @@ class TH2OMoreTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.moreCell, for: indexPath)
 
         let info = dataSource[indexPath.row]
-        cell.textLabel?.text = info
+        cell?.textLabel?.text = info
         
-        return cell
+        return cell!
     }
 
     /*
