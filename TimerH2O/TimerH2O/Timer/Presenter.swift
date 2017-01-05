@@ -134,12 +134,10 @@ extension Presenter {
         
         healthManager.authorizeHealthKit { (authorized, error) in
             if authorized {
-                print("HealthKit authorization received.")
                 return completion(authorized)
             } else {
-                print("HealthKit authorization denied!")
                 if error != nil {
-                    print("\(error)")
+                    NSLog("\(error)")
                 }
                 return completion(authorized)
             }

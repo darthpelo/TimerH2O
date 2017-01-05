@@ -357,17 +357,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="8Ag-Vf-sdx"/>
                     <connections>
-                        <segue destination="1IQ-rT-usd" kind="show" identifier="About" id="qE6-33-JaQ"/>
+                        <segue destination="1IQ-rT-usd" kind="show" identifier="Acknowledgements" id="qE6-33-JaQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGn-gO-fFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="818" y="1161"/>
         </scene>
-        <!--About View Controller-->
+        <!--Third Party View Controller-->
         <scene sceneID="clR-t4-K6U">
             <objects>
-                <viewController id="1IQ-rT-usd" customClass="TH2OAboutViewController" customModule="TimerH2O" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1IQ-rT-usd" customClass="TH2OThirdPartyViewController" customModule="TimerH2O" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kQd-Gj-dnV"/>
                         <viewControllerLayoutGuide type="bottom" id="J6G-av-ttY"/>
@@ -395,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zn4-oS-Tiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835.625" y="1164.0845070422536"/>
+            <point key="canvasLocation" x="1826" y="1161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2SF-sa-crr">
