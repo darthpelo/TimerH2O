@@ -17,4 +17,8 @@ struct TH2OConstants {
         static let snooze30Action = "com.alessioroberto.snooze.30"
         static let timerCategory = "com.alessioroberto.timer"
     }
+    
+    struct Keychain {
+        static let keychainIdentifier = "com.alessioroberto.EncryptionKey"
+    }
 }
