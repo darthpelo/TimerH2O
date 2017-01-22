@@ -119,7 +119,7 @@ extension Configurable where Self: TH2OMoreDetailViewController {
 
 extension Configurable where Self: TH2OHealthDataViewController {
     internal func configureView() {
-        title = R.string.localizable.moreHealthData()
+        title = R.string.localizable.moreHealthDataTitle()
         
         firstLabel.text = R.string.localizable.moreHealthDataFirstLabel()
         secondLabel.text = R.string.localizable.moreHealthDataSecondLabel()

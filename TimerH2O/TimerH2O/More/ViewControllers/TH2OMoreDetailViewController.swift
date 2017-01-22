@@ -17,9 +17,9 @@ final class TH2OMoreDetailViewController: UIViewController, Configurable {
     let webView = WKWebView(frame: CGRect.zero)
     
     var type: MoreDetail?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         configureWebView()
     }

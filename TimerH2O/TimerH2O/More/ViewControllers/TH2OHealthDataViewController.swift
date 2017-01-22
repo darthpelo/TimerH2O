@@ -28,6 +28,11 @@ final class TH2OHealthDataViewController: UIViewController, Configurable {
         super.viewWillAppear(animated)
         
         healthSwitch.isOn = presenter.healthKitIsAuthorized()
+        
+        if presenter.healthKitIsAuthorized() {
+            healthSwitch.isHidden = true
+            switchLabel.isHidden = true
+        }
     }
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {

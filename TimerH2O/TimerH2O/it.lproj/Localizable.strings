@@ -38,7 +38,8 @@
 
 "more.acknowledgements" = "Riconoscimenti";
 "more.privacy" = "Privacy";
-"more.healthData" = "Apple Salute";
-"more.healthData.firstLabel" = "TimerH2O needs permission to access your Health Data";
-"more.healthData.secondLabel" = "TimerH2O is currently importing only water drink data from Health. Please go into Health app Sources if you want to  change individual settings";
-"more.healthData.switchLabel" = "Connect to TimerH2O";
+"more.healthData" = "Accesso a Salute";
+"more.healthData.title" = "Dati Salute";
+"more.healthData.firstLabel" = "TimerH2O necessita l'autorizzazione per accedere ai tuoi dati dell'applicazione Salute.";
+"more.healthData.secondLabel" = "TimerH2O importa dall'applicazione Salute unicamente i dati relativi alla quantità di acqua bevuta. Per cambiare le impostazioni accedi a Impostazioni > Privacy > Salute > TimerH2O.";
+"more.healthData.switchLabel" = "Collega TimerH2O";
