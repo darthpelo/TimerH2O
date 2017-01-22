@@ -8,24 +8,34 @@
 
 import UIKit
 
+enum MoreDetail {
+    case Acknowledgements
+    case Privacy
+}
+
 class TH2OMoreTableViewController: UITableViewController {
-    let dataSource = [R.string.localizable.moreAcknowledgements()]
+    let dataSource = [R.string.localizable.moreAcknowledgements(),
+                      R.string.localizable.morePrivacy()]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TH2OMoreDetailViewController, let a = tableView.indexPathForSelectedRow {
+            switch a.row {
+            case 0:
+                vc.type = MoreDetail.Acknowledgements
+            case 1:
+                vc.type = MoreDetail.Privacy
+            default:
+                ()
+            }
+        }
+    }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.acknowledgements, sender: self)
-        default:
-            ()
-        }
+        performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.details, sender: self)
     }
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }

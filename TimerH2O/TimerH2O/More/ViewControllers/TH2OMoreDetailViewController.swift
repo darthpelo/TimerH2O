@@ -1,5 +1,5 @@
 //
-//  TH2OThirdPartyViewController.swift
+//  TH2OMoreDetailViewController.swift
 //  TimerH2O
 //
 //  Created by Alessio Roberto on 05/01/17.
@@ -9,22 +9,23 @@
 import WebKit
 import UIKit
 
-class TH2OThirdPartyViewController: UIViewController, Configurable {
+class TH2OMoreDetailViewController: UIViewController, Configurable {
 
     @IBOutlet weak var webViewContainer: UIView!
     
     let webView = WKWebView(frame: CGRect.zero)
     
+    var type: MoreDetail?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.title = R.string.localizable.moreAcknowledgements()
         
         configureWebView()
     }
 }
+
 // MARK: - WKNavigationDelegate
-extension TH2OThirdPartyViewController: WKNavigationDelegate {
+extension TH2OMoreDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         NSLog(error.localizedDescription)
     }

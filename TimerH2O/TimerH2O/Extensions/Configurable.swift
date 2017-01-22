@@ -71,15 +71,44 @@ extension Configurable where Self: TH2OSetSessionViewController {
     }
 }
 
-extension Configurable where Self: TH2OThirdPartyViewController {
+extension Configurable where Self: TH2OMoreDetailViewController {
     internal func configureWebView() {
+        title = title(self.type)
+        
         webView.frame = self.webViewContainer.frame
         webViewContainer.addSubview(self.webView)
                 
-        if let url = URL.init(string: "http://www.alessioroberto.it/timerh2o/timerh2o.html") {
+        if let string = self.url(self.type),
+            let url = URL.init(string: string) {
             webView.navigationDelegate = self
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
             webView.load(request)
+        }
+    }
+    
+    private func title(_ type: MoreDetail?) -> String {
+        guard let type = type else {
+            return ""
+        }
+        
+        switch type {
+        case .Acknowledgements:
+            return R.string.localizable.moreAcknowledgements()
+        case .Privacy:
+            return R.string.localizable.morePrivacy()
+        }
+    }
+    
+    private func url(_ type: MoreDetail?) -> String? {
+        guard let type = type else {
+            return nil
+        }
+        
+        switch type {
+        case .Acknowledgements:
+            return "http://www.alessioroberto.it/timerh2o/timerh2o.html"
+        case .Privacy:
+            return "http://www.alessioroberto.it/timerh2o/privacy.html"
         }
     }
 }
