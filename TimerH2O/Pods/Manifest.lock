@@ -10,12 +10,14 @@ PODS:
   - Realm/Headers (2.1.2)
   - RealmSwift (2.1.2):
     - Realm (= 2.1.2)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - R.swift
   - RealmSwift
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
@@ -24,7 +26,8 @@ SPEC CHECKSUMS:
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 58c836071a279b8c402a7091dca15aaa3cdfe1fb
+PODFILE CHECKSUM: ca33f201d76ee7ac4a0f36a2a9d53a11965db120
 
 COCOAPODS: 1.1.1
