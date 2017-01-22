@@ -69,3 +69,4 @@ fastlane/test_output
 *.generated.swift
 /TimerH2O/TimerH2O/MyPlayground.playground
 /TimerH2O/fastlane/report.xml
+/TimerH2O/fastlane/Appfile

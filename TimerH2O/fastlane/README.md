@@ -16,9 +16,9 @@ Submit to internal testers using Crashlytics
 fastlane ios beta
 ```
 Submit to internal and external testers using Crashlytics
-### ios testflight
+### ios finalTest
 ```
-fastlane ios testflight
+fastlane ios finalTest
 ```
 Submit a new Beta Build to Apple TestFlight
 

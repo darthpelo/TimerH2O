@@ -17,6 +17,7 @@
 		D91A05CB1E19434C0089E250 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CA1E19434C0089E250 /* Session.swift */; };
 		D91A05CD1E194D840089E250 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CC1E194D840089E250 /* Person.swift */; };
 		D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CE1E1951660089E250 /* RealmManager.swift */; };
+		D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D92795A11E35062400623F9F /* Default-568h@2x.png */; };
 		D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12DF1DC536BE0047FCB6 /* Presenter.swift */; };
 		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
@@ -84,6 +85,7 @@
 		D91A05CA1E19434C0089E250 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Model/Session.swift; sourceTree = "<group>"; };
 		D91A05CC1E194D840089E250 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Model/Person.swift; sourceTree = "<group>"; };
 		D91A05CE1E1951660089E250 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = Controllers/RealmManager.swift; sourceTree = "<group>"; };
+		D92795A11E35062400623F9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		D98476BB1DBD622E009F92B3 = {
 			isa = PBXGroup;
 			children = (
+				D92795A11E35062400623F9F /* Default-568h@2x.png */,
 				D98476C61DBD622F009F92B3 /* TimerH2O */,
 				D98476DD1DBD622F009F92B3 /* TimerH2OTests */,
 				D98476C51DBD622F009F92B3 /* Products */,
@@ -485,6 +488,7 @@
 				D907533D1DCF93EC00AB6FCC /* Localizable.strings in Resources */,
 				D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */,
 				D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */,
+				D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */,
 				D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */,
 				D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */,
 			);
@@ -857,6 +861,7 @@
 				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
 				DEVELOPMENT_TEAM = GK5S624D99;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;

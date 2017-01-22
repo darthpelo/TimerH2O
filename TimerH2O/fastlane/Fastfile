@@ -48,13 +48,14 @@ platform :ios do
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
-  lane :testflight do
+  lane :finalTest do
     gym(scheme: "TimerH2O_BetaTest",
-        configuration: 'Test',
-        export_method: 'ad-hoc')
+        configuration: 'Test')
 
     pilot(
-      changelog: changelog # Check out the changelog_from_git_commits action
+      changelog: changelog, # Check out the changelog_from_git_commits action
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
     )
   end
 
