@@ -59,6 +59,17 @@ platform :ios do
     )
   end
 
+  desc "Create snapshot"
+  lane :snap do
+    snapshot(
+        languages:["en_US","it_IT"],
+        stop_after_first_error: true,
+        verbose: false,
+        devices:["iPhone 5s", "iPhone 6", "iPhone 7 Plus"],
+        clean: true
+    )
+  end
+  
   desc "Deploy a new version to the App Store"
   lane :release do
     gym(scheme: "TimerH2O")
