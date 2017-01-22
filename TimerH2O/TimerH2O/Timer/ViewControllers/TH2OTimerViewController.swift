@@ -28,11 +28,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             endSessionButton.setTitle(R.string.localizable.timerviewEndButton(), for: .normal)
         }
     }
-    @IBOutlet weak var appleHeathButton: UIButton! {
-        didSet {
-            appleHeathButton.setTitle(R.string.localizable.timerviewHealtkit(), for: .normal)
-        }
-    }
     
     public var waterPickerView: TH2OWaterPickerView?
     private let healthManager = HealthManager()
@@ -52,8 +47,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        appleHeathButton.isHidden = presenter.healthKitIsAuthorized()
-
         if SessionManager().sessionIsStart() {
             startButton(isEnabled: false)
             stopTimerButton(isEnabled: true)
@@ -93,12 +86,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     @IBAction func endSessionButtonPressed(_ sender: Any) {
         presenter.stopSession()
-    }
-    
-    @IBAction func appleHealthButtonPressed(_ sender: Any) {
-        presenter.healthKitAuthorize { (authorize) in
-            self.appleHeathButton.isHidden = authorize
-        }
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {

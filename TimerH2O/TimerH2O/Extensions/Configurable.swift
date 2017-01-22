@@ -96,6 +96,8 @@ extension Configurable where Self: TH2OMoreDetailViewController {
             return R.string.localizable.moreAcknowledgements()
         case .Privacy:
             return R.string.localizable.morePrivacy()
+        case .HealthData:
+            return R.string.localizable.moreHealthData()
         }
     }
     
@@ -109,6 +111,18 @@ extension Configurable where Self: TH2OMoreDetailViewController {
             return "http://www.alessioroberto.it/timerh2o/timerh2o.html"
         case .Privacy:
             return "http://www.alessioroberto.it/timerh2o/privacy.html"
+        default:
+            return nil
         }
+    }
+}
+
+extension Configurable where Self: TH2OHealthDataViewController {
+    internal func configureView() {
+        title = R.string.localizable.moreHealthData()
+        
+        firstLabel.text = R.string.localizable.moreHealthDataFirstLabel()
+        secondLabel.text = R.string.localizable.moreHealthDataSecondLabel()
+        switchLabel.text = R.string.localizable.moreHealthDataSwitchLabel()
     }
 }

@@ -118,7 +118,18 @@ struct Presenter {
     }
 }
 
-extension Presenter {
+extension Presenter {    
+    fileprivate func saveToHealthKit() {
+        if let id = SessionManager().sessionID(),
+            let session = RealmManager().loadSession(withId: id) {
+            healthManager?.saveWaterSample(session.amount/1000, startDate: session.start, endDate: session.end)
+        }
+    }
+}
+
+struct HealthPresenter {
+    weak var healthManager: HealthManager?
+    
     func healthKitIsAuthorized() -> Bool {
         guard let healthManager = healthManager else {
             return false
@@ -141,13 +152,6 @@ extension Presenter {
                 }
                 return completion(authorized)
             }
-        }
-    }
-    
-    fileprivate func saveToHealthKit() {
-        if let id = SessionManager().sessionID(),
-            let session = RealmManager().loadSession(withId: id) {
-            healthManager?.saveWaterSample(session.amount/1000, startDate: session.start, endDate: session.end)
         }
     }
 }

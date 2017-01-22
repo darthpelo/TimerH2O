@@ -50,6 +50,8 @@
 		D9E34C861DC2A00700692768 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
 		D9E34C881DC2B01A00692768 /* TH2OSetSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */; };
 		D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */; };
+		D9F5A61E1E34AC9900B71C9A /* SVProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */; };
+		D9F5A6201E34C25700B71C9A /* TH2OHealthDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5A61F1E34C25700B71C9A /* TH2OHealthDataViewController.swift */; };
 		D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */; };
 		D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 		D9FD85B21E15676700CC25D4 /* AnswerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD85B11E15676700CC25D4 /* AnswerManager.swift */; };
@@ -122,6 +124,8 @@
 		D9E34C851DC2A00700692768 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9E34C871DC2B01A00692768 /* TH2OSetSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OSetSessionViewController.swift; path = Timer/ViewControllers/TH2OSetSessionViewController.swift; sourceTree = "<group>"; };
 		D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = Extensions/TimeInterval.swift; sourceTree = "<group>"; };
+		D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVProgressHUD.swift; path = Extensions/SVProgressHUD.swift; sourceTree = "<group>"; };
+		D9F5A61F1E34C25700B71C9A /* TH2OHealthDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OHealthDataViewController.swift; path = More/ViewControllers/TH2OHealthDataViewController.swift; sourceTree = "<group>"; };
 		D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		D9FD85B11E15676700CC25D4 /* AnswerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerManager.swift; path = Controllers/AnswerManager.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 			children = (
 				D90753431DCF978D00AB6FCC /* UView.swift */,
 				D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */,
+				D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			children = (
 				D9A213291E1DB9BE0031FA80 /* TH2OMoreTableViewController.swift */,
 				D9A2132B1E1E82110031FA80 /* TH2OMoreDetailViewController.swift */,
+				D9F5A61F1E34C25700B71C9A /* TH2OHealthDataViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				D98476FD1DBD6456009F92B3 /* TH2OHistoryViewController.swift in Sources */,
 				D9941F851DCBF7A200918C14 /* Timer.swift in Sources */,
 				D98476C81DBD622F009F92B3 /* AppDelegate.swift in Sources */,
+				D9F5A6201E34C25700B71C9A /* TH2OHealthDataViewController.swift in Sources */,
 				D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */,
 				D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */,
 				D9941F831DCBE64200918C14 /* model.swift in Sources */,
@@ -649,6 +656,7 @@
 				D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */,
 				D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */,
 				D9A2132C1E1E82110031FA80 /* TH2OMoreDetailViewController.swift in Sources */,
+				D9F5A61E1E34AC9900B71C9A /* SVProgressHUD.swift in Sources */,
 				D9CA9B801DC7EBF4003EFD4F /* TH2OTimerPickerView.swift in Sources */,
 				D9D0AEC71DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9830F581E1A95B000D9737F /* HealthManager.swift in Sources */,

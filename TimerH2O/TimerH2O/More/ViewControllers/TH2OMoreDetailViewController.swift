@@ -8,8 +8,9 @@
 
 import WebKit
 import UIKit
+import SVProgressHUD
 
-class TH2OMoreDetailViewController: UIViewController, Configurable {
+final class TH2OMoreDetailViewController: UIViewController, Configurable {
 
     @IBOutlet weak var webViewContainer: UIView!
     
@@ -31,8 +32,12 @@ extension TH2OMoreDetailViewController: WKNavigationDelegate {
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         NSLog("Strat to load")
+        SVProgressHUD.show(withTitle: nil)
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         NSLog("finish to load")
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+        }
     }
 }
