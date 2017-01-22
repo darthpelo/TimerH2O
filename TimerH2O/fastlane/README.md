@@ -10,12 +10,24 @@ sudo gem install fastlane
 ```
 fastlane ios alpha
 ```
-
+Submit to internal testers using Crashlytics
 ### ios beta
 ```
 fastlane ios beta
 ```
+Submit to internal and external testers using Crashlytics
+### ios testflight
+```
+fastlane ios testflight
+```
+Submit a new Beta Build to Apple TestFlight
 
+This will also make sure the profile is up to date
+### ios release
+```
+fastlane ios release
+```
+Deploy a new version to the App Store
 
 ----
 

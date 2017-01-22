@@ -861,8 +861,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2O;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
-				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
+				PROVISIONING_PROFILE = "c8e2ee66-09cf-49ef-9355-7e246c8cd077";
+				PROVISIONING_PROFILE_SPECIFIER = TimerH2O_AppStore;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
