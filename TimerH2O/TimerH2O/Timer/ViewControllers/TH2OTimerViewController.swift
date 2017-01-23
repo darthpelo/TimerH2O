@@ -35,7 +35,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Configure User Notification Center
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -85,6 +85,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     @IBAction func endSessionButtonPressed(_ sender: Any) {
+        AnswerManager().log(event: "endSessionButtonPressed")
         presenter.stopSession()
     }
     
@@ -179,12 +180,16 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
         case UNNotificationDefaultActionIdentifier: // App was opened from notification
             completionHandler(timerCheck())
         case TH2OConstants.UserNotification.drinkAction:
+            AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.drinkAction])
             completionHandler(timerCheck())
         case TH2OConstants.UserNotification.snooze5Action:
+            AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze5Action])
             completionHandler(snozee(Snooze.Five))
         case TH2OConstants.UserNotification.snooze15Action:
+            AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze15Action])
             completionHandler(snozee(Snooze.Fifteen))
         case TH2OConstants.UserNotification.snooze30Action:
+            AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze30Action])
             completionHandler(snozee(Snooze.Thirty))
         default:
             completionHandler()

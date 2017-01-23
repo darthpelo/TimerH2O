@@ -29,6 +29,7 @@ func notificationsSettings() {
             default:()
             }
         }
+        
         let drink = UNNotificationAction(identifier: TH2OConstants.UserNotification.drinkAction,
                                          title: R.string.localizable.usernotificationDrink(),
                                          options: [.authenticationRequired, .foreground])
