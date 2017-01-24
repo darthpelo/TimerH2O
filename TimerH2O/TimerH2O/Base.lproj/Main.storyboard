@@ -48,6 +48,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5l-5H-zNG">
                                         <rect key="frame" x="0.0" y="46" width="46" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="start"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -167,6 +168,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" label="water">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="cbK-0h-TGH" firstAttribute="leading" secondItem="kQN-bF-ouA" secondAttribute="trailing" constant="-3.5" id="2Jm-3Q-Uaa"/>
                                             <constraint firstItem="kQN-bF-ouA" firstAttribute="leading" secondItem="aya-uB-iMG" secondAttribute="leading" constant="8" id="EKq-d9-1Jj"/>
@@ -207,6 +211,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" label="time">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="s33-y0-C5g" firstAttribute="top" secondItem="tcY-NO-B8D" secondAttribute="top" constant="12" id="E3n-zd-urD"/>
                                             <constraint firstItem="VhL-fy-6vu" firstAttribute="centerY" secondItem="s33-y0-C5g" secondAttribute="centerY" id="ESe-Ar-nXd"/>
@@ -252,6 +259,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-7R-VkW">
                                                 <rect key="frame" x="141" y="0.0" width="131" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" label="done"/>
                                                 <state key="normal" title="Done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
