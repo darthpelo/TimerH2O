@@ -30,33 +30,19 @@ class TimerH2OUITests: XCTestCase {
         super.tearDown()
     }
     
-//    func testSnapShots() {
-//        snapshot("0Home")
-//        let app = XCUIApplication()
-//        app.buttons["start"].tap()
-//        snapshot("1Session")
-//        let doneButton = app.buttons["done"]
-//        doneButton.tap()
-//        doneButton.tap()
-//        snapshot("2StartSession")
-//    }
-    
-    func testFoo() {
+    func testSecondFoo() {
+        
         let app = XCUIApplication()
         snapshot("0Home")
-        app.buttons["start"].tap()
-
-        app.otherElements["time"].tap()
-        
-        let doneButton = app.buttons["done"]
-        
+        let startNewDrinkSessionButton = app.buttons["start"]
+        startNewDrinkSessionButton.tap()
+        app.buttons["done"].tap()
         snapshot("1Session")
-        
-        doneButton.tap()
-        doneButton.tap()
-        
+        app.buttons["cancel"].tap()
+        startNewDrinkSessionButton.tap()
         snapshot("2StartSession")
+        app.buttons["end"].tap()
+        snapshot("3EndSession")
     }
-
     
 }

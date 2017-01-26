@@ -54,6 +54,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5l-5H-zNG">
                                         <rect key="frame" x="0.0" y="46" width="248" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Start new drink session" label="start"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
@@ -74,6 +75,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOf-Zy-N5W">
                                         <rect key="frame" x="0.0" y="92" width="248" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="end"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="1" green="0.045474315420000001" blue="0.12323122760000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -209,6 +211,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" label="water">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="cbK-0h-TGH" firstAttribute="leading" secondItem="kQN-bF-ouA" secondAttribute="trailing" constant="-3.5" id="2Jm-3Q-Uaa"/>
                                             <constraint firstItem="kQN-bF-ouA" firstAttribute="leading" secondItem="aya-uB-iMG" secondAttribute="leading" constant="8" id="EKq-d9-1Jj"/>
@@ -249,6 +254,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration" label="timer">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="s33-y0-C5g" firstAttribute="top" secondItem="tcY-NO-B8D" secondAttribute="top" constant="12" id="E3n-zd-urD"/>
                                             <constraint firstItem="VhL-fy-6vu" firstAttribute="centerY" secondItem="s33-y0-C5g" secondAttribute="centerY" id="ESe-Ar-nXd"/>
@@ -274,6 +282,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meh-J2-1pa">
                                                 <rect key="frame" x="0.0" y="0.0" width="131" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" label="cancel"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="1" green="0.045474315420000001" blue="0.12323122760000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -294,6 +303,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-7R-VkW">
                                                 <rect key="frame" x="141" y="0.0" width="131" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" label="done"/>
                                                 <state key="normal" title="Done"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
