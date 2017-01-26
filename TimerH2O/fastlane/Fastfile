@@ -59,23 +59,23 @@ platform :ios do
     )
   end
 
-  desc "Create snapshot"
-  lane :snap do
+  desc "Create screenshots"
+  lane :screenshots do
     snapshot(
-        languages:["en_US","it_IT"],
+        scheme: "TimerH2O_BetaTest",
+        languages:["it_IT", "en_US"],
         stop_after_first_error: true,
         verbose: false,
-        devices:["iPhone 5s", "iPhone 6", "iPhone 7 Plus"],
+        devices:["iPhone 5s", "iPhone 7", "iPhone 7 Plus"],
         clean: true
     )
   end
-  
+
   desc "Deploy a new version to the App Store"
   lane :release do
     gym(scheme: "TimerH2O")
 
     deliver(
-      force: true,
       app_version: "1.0"
     )
     # frameit

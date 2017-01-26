@@ -18,6 +18,8 @@
 		D91A05CD1E194D840089E250 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CC1E194D840089E250 /* Person.swift */; };
 		D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CE1E1951660089E250 /* RealmManager.swift */; };
 		D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D92795A11E35062400623F9F /* Default-568h@2x.png */; };
+		D92795AB1E369DEB00623F9F /* TimerH2OUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92795AA1E369DEB00623F9F /* TimerH2OUITests.swift */; };
+		D92795B41E369EB200623F9F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92795B31E369EB200623F9F /* SnapshotHelper.swift */; };
 		D94A12E01DC536BE0047FCB6 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12DF1DC536BE0047FCB6 /* Presenter.swift */; };
 		D94A12E21DC537190047FCB6 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E11DC537190047FCB6 /* ViewProtocol.swift */; };
 		D94A12E51DC53A8C0047FCB6 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E41DC53A8C0047FCB6 /* Converter.swift */; };
@@ -59,6 +61,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D92795AD1E369DEB00623F9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98476BC1DBD622E009F92B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D98476C31DBD622F009F92B3;
+			remoteInfo = TimerH2O;
+		};
 		D98476DB1DBD622F009F92B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98476BC1DBD622E009F92B3 /* Project object */;
@@ -86,6 +95,10 @@
 		D91A05CC1E194D840089E250 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Model/Person.swift; sourceTree = "<group>"; };
 		D91A05CE1E1951660089E250 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = Controllers/RealmManager.swift; sourceTree = "<group>"; };
 		D92795A11E35062400623F9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D92795A81E369DEB00623F9F /* TimerH2OUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerH2OUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D92795AA1E369DEB00623F9F /* TimerH2OUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerH2OUITests.swift; sourceTree = "<group>"; };
+		D92795AC1E369DEB00623F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D92795B31E369EB200623F9F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		D94A12DF1DC536BE0047FCB6 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = Timer/Presenter.swift; sourceTree = "<group>"; };
 		D94A12E11DC537190047FCB6 /* ViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewProtocol.swift; path = Protocols/ViewProtocol.swift; sourceTree = "<group>"; };
@@ -134,6 +147,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D92795A51E369DEB00623F9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98476C11DBD622F009F92B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +189,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D92795A91E369DEB00623F9F /* TimerH2OUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D92795B31E369EB200623F9F /* SnapshotHelper.swift */,
+				D92795AA1E369DEB00623F9F /* TimerH2OUITests.swift */,
+				D92795AC1E369DEB00623F9F /* Info.plist */,
+			);
+			path = TimerH2OUITests;
+			sourceTree = "<group>";
+		};
 		D94A12E31DC53A7D0047FCB6 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +215,7 @@
 				D92795A11E35062400623F9F /* Default-568h@2x.png */,
 				D98476C61DBD622F009F92B3 /* TimerH2O */,
 				D98476DD1DBD622F009F92B3 /* TimerH2OTests */,
+				D92795A91E369DEB00623F9F /* TimerH2OUITests */,
 				D98476C51DBD622F009F92B3 /* Products */,
 				D98476EA1DBD625C009F92B3 /* Frameworks */,
 				A627281D142BBAA29135AE10 /* Pods */,
@@ -196,6 +227,7 @@
 			children = (
 				D98476C41DBD622F009F92B3 /* TimerH2O.app */,
 				D98476DA1DBD622F009F92B3 /* TimerH2OTests.xctest */,
+				D92795A81E369DEB00623F9F /* TimerH2OUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,6 +415,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D92795A71E369DEB00623F9F /* TimerH2OUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D92795B21E369DEC00623F9F /* Build configuration list for PBXNativeTarget "TimerH2OUITests" */;
+			buildPhases = (
+				D92795A41E369DEB00623F9F /* Sources */,
+				D92795A51E369DEB00623F9F /* Frameworks */,
+				D92795A61E369DEB00623F9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D92795AE1E369DEB00623F9F /* PBXTargetDependency */,
+			);
+			name = TimerH2OUITests;
+			productName = TimerH2OUITests;
+			productReference = D92795A81E369DEB00623F9F /* TimerH2OUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D98476C31DBD622F009F92B3 /* TimerH2O */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98476E31DBD622F009F92B3 /* Build configuration list for PBXNativeTarget "TimerH2O" */;
@@ -433,10 +483,16 @@
 		D98476BC1DBD622E009F92B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Alessio Roberto";
 				TargetAttributes = {
+					D92795A71E369DEB00623F9F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GK5S624D99;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D98476C31DBD622F009F92B3;
+					};
 					D98476C31DBD622F009F92B3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GK5S624D99;
@@ -474,11 +530,19 @@
 			targets = (
 				D98476C31DBD622F009F92B3 /* TimerH2O */,
 				D98476D91DBD622F009F92B3 /* TimerH2OTests */,
+				D92795A71E369DEB00623F9F /* TimerH2OUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D92795A61E369DEB00623F9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98476C21DBD622F009F92B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -639,6 +703,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D92795A41E369DEB00623F9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92795AB1E369DEB00623F9F /* TimerH2OUITests.swift in Sources */,
+				D92795B41E369EB200623F9F /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D98476C01DBD622F009F92B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,6 +765,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D92795AE1E369DEB00623F9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D98476C31DBD622F009F92B3 /* TimerH2O */;
+			targetProxy = D92795AD1E369DEB00623F9F /* PBXContainerItemProxy */;
+		};
 		D98476DC1DBD622F009F92B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D98476C31DBD622F009F92B3 /* TimerH2O */;
@@ -739,6 +817,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D92795AF1E369DEC00623F9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GK5S624D99;
+				INFOPLIST_FILE = TimerH2OUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TimerH2O;
+			};
+			name = Debug;
+		};
+		D92795B01E369DEC00623F9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GK5S624D99;
+				INFOPLIST_FILE = TimerH2OUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TimerH2O;
+			};
+			name = Release;
+		};
+		D92795B11E369DEC00623F9F /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GK5S624D99;
+				INFOPLIST_FILE = TimerH2OUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TimerH2O;
+			};
+			name = Test;
+		};
 		D98476E11DBD622F009F92B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -986,6 +1112,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D92795B21E369DEC00623F9F /* Build configuration list for PBXNativeTarget "TimerH2OUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D92795AF1E369DEC00623F9F /* Debug */,
+				D92795B01E369DEC00623F9F /* Release */,
+				D92795B11E369DEC00623F9F /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D98476BF1DBD622E009F92B3 /* Build configuration list for PBXProject "TimerH2O" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
