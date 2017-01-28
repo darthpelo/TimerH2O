@@ -76,9 +76,8 @@ platform :ios do
     gym(scheme: "TimerH2O")
 
     deliver(
-      app_version: "1.0.1",
-      force: true,
-      overwrite_screenshots: true
+      app_version: "1.0.2",
+      force: true
     )
     # frameit
   end
