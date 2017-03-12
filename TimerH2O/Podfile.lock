@@ -1,5 +1,5 @@
 PODS:
-  - Crashlytics (3.8.3):
+  - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.10)
   - R.swift (3.1.0):
@@ -20,7 +20,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
   R.swift: 14400e5784224d1e4e59a8fc5549198c7e8fe360
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
@@ -30,4 +30,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ca33f201d76ee7ac4a0f36a2a9d53a11965db120
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
