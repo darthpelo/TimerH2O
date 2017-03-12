@@ -43,7 +43,7 @@ class TH2OSetSessionViewController: UIViewController, Configurable, Seguible {
     }
 
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
-        backToTimer()
+        dismiss(animated: true, completion: nil)        
         AnswerManager().log(event: "CancelButtonPressed")
     }
 
