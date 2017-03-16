@@ -76,7 +76,7 @@ platform :ios do
     gym(scheme: "TimerH2O")
 
     deliver(
-      app_version: "1.0.2",
+      app_version: "1.0.4",
       force: true
     )
     # frameit
