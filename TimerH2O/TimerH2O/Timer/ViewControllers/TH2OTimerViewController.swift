@@ -50,9 +50,11 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         if SessionManager().sessionIsStart() {
             startButton(isEnabled: false)
             stopTimerButton(isEnabled: true)
+            endSessionButton(isEnabled: true)
         } else {
             startButton(isEnabled: true)
             stopTimerButton(isEnabled: false)
+            endSessionButton(isEnabled: false)
         }
     }
     
@@ -156,6 +158,10 @@ extension TH2OTimerViewController: ViewProtocol {
     
     internal func stopTimerButton(isEnabled: Bool) {
         stopTimerButton.isEnabled = isEnabled
+    }
+    
+    internal func endSessionButton(isEnabled: Bool) {
+        endSessionButton.isEnabled = isEnabled
     }
 }
 

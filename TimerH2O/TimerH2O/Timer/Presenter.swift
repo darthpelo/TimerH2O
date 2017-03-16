@@ -25,6 +25,7 @@ struct Presenter {
         SessionManager().newSession(isStart: true)
         self.view?.startButton(isEnabled: false)
         self.view?.stopTimerButton(isEnabled: true)
+        self.view?.endSessionButton(isEnabled: true)
     }
     
     func stopSession() {
@@ -39,6 +40,7 @@ struct Presenter {
         
         self.view?.startButton(isEnabled: true)
         self.view?.stopTimerButton(isEnabled: false)
+        self.view?.endSessionButton(isEnabled: false)
         self.view?.setTimerLabel(with: R.string.localizable.timerviewTimerLabelFinish_presenter())
     }
     

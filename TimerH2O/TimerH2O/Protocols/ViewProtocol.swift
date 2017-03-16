@@ -14,4 +14,5 @@ protocol ViewProtocol: class {
     func setAmountLabel(with string: String)
     func startButton(isEnabled: Bool)
     func stopTimerButton(isEnabled: Bool)
+    func endSessionButton(isEnabled: Bool)
 }
