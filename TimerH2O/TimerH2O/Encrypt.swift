@@ -25,12 +25,12 @@
 import Foundation
 
 enum EncryptionError: Error {
-    case Empty
+    case empty
 }
 
 func getKey() throws -> Data {
     guard let keychainIdentifierData = TH2OConstants.Keychain.keychainIdentifier.data(using: String.Encoding.utf8, allowLossyConversion: false) else {
-        throw EncryptionError.Empty
+        throw EncryptionError.empty
     }
     
     // First check in the keychain for an existing key
@@ -49,13 +49,13 @@ func getKey() throws -> Data {
         if let data = dataTypeRef as? Data {
             return data
         } else {
-            throw EncryptionError.Empty
+            throw EncryptionError.empty
         }
     }
     
     // No pre-existing key from this application, so generate a new one
     guard let keyData = NSMutableData(length: 64) else {
-        throw EncryptionError.Empty
+        throw EncryptionError.empty
     }
     
     let result = SecRandomCopyBytes(kSecRandomDefault, 64, keyData.mutableBytes.bindMemory(to: UInt8.self, capacity: 64))

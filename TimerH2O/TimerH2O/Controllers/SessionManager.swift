@@ -9,62 +9,62 @@
 import Foundation
 
 enum StorageKey: String {
-    case AmountOfWater = "com.alessioroberto.amountOfWater"
-    case SessionStart = "com.alessioroberto.sessionStart"
-    case IntervalStart = "com.alessioroberto.intervalStart"
-    case TimeInterval =  "com.alessioroberto.timeInterval"
-    case CountDown = "com.alessioroberto.countDown"
-    case EndTimer = "com.alessioroberto.endTimer"
-    case SessionID = "com.alessioroberto.sessionid"
+    case amountOfWater = "com.alessioroberto.amountOfWater"
+    case sessionStart = "com.alessioroberto.sessionStart"
+    case intervalStart = "com.alessioroberto.intervalStart"
+    case timeInterval =  "com.alessioroberto.timeInterval"
+    case countDown = "com.alessioroberto.countDown"
+    case endTimer = "com.alessioroberto.endTimer"
+    case sessionID = "com.alessioroberto.sessionid"
 }
 
 struct SessionManager {
     func newSession(isStart: Bool) {
-        UserDefaults.standard.set(isStart, forKey: StorageKey.SessionStart.rawValue)
+        UserDefaults.standard.set(isStart, forKey: StorageKey.sessionStart.rawValue)
     }
     
     func sessionIsStart() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.SessionStart.rawValue)
+        return UserDefaults.standard.bool(forKey: StorageKey.sessionStart.rawValue)
     }
     
     func newInterval(isStart: Bool) {
-        UserDefaults.standard.set(isStart, forKey: StorageKey.IntervalStart.rawValue)
+        UserDefaults.standard.set(isStart, forKey: StorageKey.intervalStart.rawValue)
     }
     
     func intervalIsStart() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.IntervalStart.rawValue)
+        return UserDefaults.standard.bool(forKey: StorageKey.intervalStart.rawValue)
     }
     
     func newAmountOf(water: Double) {
-        UserDefaults.standard.set(water, forKey: StorageKey.AmountOfWater.rawValue)
+        UserDefaults.standard.set(water, forKey: StorageKey.amountOfWater.rawValue)
     }
     
     func amountOfWater() -> Double {
-        return UserDefaults.standard.double(forKey: StorageKey.AmountOfWater.rawValue)
+        return UserDefaults.standard.double(forKey: StorageKey.amountOfWater.rawValue)
     }
     
     func newTimeInterval(second: TimeInterval) {
-        UserDefaults.standard.set(second, forKey: StorageKey.TimeInterval.rawValue)
+        UserDefaults.standard.set(second, forKey: StorageKey.timeInterval.rawValue)
     }
     
     func timeInterval() -> TimeInterval {
-        return UserDefaults.standard.double(forKey: StorageKey.TimeInterval.rawValue)
+        return UserDefaults.standard.double(forKey: StorageKey.timeInterval.rawValue)
     }
     
     func new(countDown: TimeInterval) {
-        UserDefaults.standard.set(countDown, forKey: StorageKey.CountDown.rawValue)
+        UserDefaults.standard.set(countDown, forKey: StorageKey.countDown.rawValue)
     }
     
     func countDown() -> TimeInterval {
-        return UserDefaults.standard.double(forKey: StorageKey.CountDown.rawValue)
+        return UserDefaults.standard.double(forKey: StorageKey.countDown.rawValue)
     }
     
     func new(endTimer: Date) {
-        UserDefaults.standard.set(endTimer, forKey: StorageKey.EndTimer.rawValue)
+        UserDefaults.standard.set(endTimer, forKey: StorageKey.endTimer.rawValue)
     }
     
     func endTimer() -> Date? {
-        guard let when = UserDefaults.standard.object(forKey: StorageKey.EndTimer.rawValue) else {
+        guard let when = UserDefaults.standard.object(forKey: StorageKey.endTimer.rawValue) else {
             return nil
         }
         
@@ -73,10 +73,10 @@ struct SessionManager {
     }
     
     func new(sessioId: String) {
-        UserDefaults.standard.set(sessioId, forKey: StorageKey.SessionID.rawValue)
+        UserDefaults.standard.set(sessioId, forKey: StorageKey.sessionID.rawValue)
     }
     
     func sessionID() -> String? {
-        return UserDefaults.standard.string(forKey: StorageKey.SessionID.rawValue)
+        return UserDefaults.standard.string(forKey: StorageKey.sessionID.rawValue)
     }
 }

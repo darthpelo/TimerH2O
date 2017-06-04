@@ -92,11 +92,11 @@ extension Configurable where Self: TH2OMoreDetailViewController {
         }
         
         switch type {
-        case .Acknowledgements:
+        case .acknowledgements:
             return R.string.localizable.moreAcknowledgements()
-        case .Privacy:
+        case .privacy:
             return R.string.localizable.morePrivacy()
-        case .HealthData:
+        case .healthData:
             return R.string.localizable.moreHealthData()
         }
     }
@@ -107,9 +107,9 @@ extension Configurable where Self: TH2OMoreDetailViewController {
         }
         
         switch type {
-        case .Acknowledgements:
+        case .acknowledgements:
             return "http://www.alessioroberto.it/timerh2o/timerh2o.html"
-        case .Privacy:
+        case .privacy:
             return "http://www.alessioroberto.it/timerh2o/privacy.html"
         default:
             return nil

@@ -98,7 +98,7 @@ struct Presenter {
         updateAmountLabel(actualAmount)
     }
     
-    //MARK: - Private
+    // MARK: - Private
     private func modelUpdate() {
         RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
         saveToHealthKit()
@@ -150,7 +150,7 @@ struct HealthPresenter {
                 return completion(authorized)
             } else {
                 if error != nil {
-                    NSLog("\(error)")
+                    NSLog("\(String(describing: error))")
                 }
                 return completion(authorized)
             }

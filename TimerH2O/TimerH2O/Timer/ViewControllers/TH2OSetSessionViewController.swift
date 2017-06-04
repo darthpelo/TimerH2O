@@ -59,6 +59,7 @@ extension TH2OSetSessionViewController {
             return false
         }
         presenter.save(water, interval)
+        AnswerManager().log(event: "Session data", withCustomAttributes: ["water": water, "interval": interval])
         return true
     }
 }
