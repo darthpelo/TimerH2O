@@ -13,7 +13,7 @@ class TH2OTimerPickerView: UIView {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    typealias DoneListener = (TimeInterval) -> ()
+    typealias DoneListener = (TimeInterval) -> Void
     var doneListener: DoneListener?
     private var countDownDuration: TimeInterval?
     private var parentView: UIView?

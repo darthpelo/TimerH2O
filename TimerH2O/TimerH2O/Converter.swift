@@ -17,7 +17,7 @@ import Foundation
 func convert(amount: [String]) -> Int? {
     var result: String = ""
     for c in amount {
-        result = result + c
+        result += c
     }
     return Int(result)
 }

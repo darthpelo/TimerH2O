@@ -53,7 +53,7 @@ final class HealthManager {
             
             healthKitStore.save(waterSample, withCompletion: { (success, error) in
                 if error != nil {
-                    NSLog("Error saving water sample: \(error?.localizedDescription)")
+                    NSLog("Error saving water sample: \(String(describing: error?.localizedDescription))")
                 } else {
                     NSLog("Water sample saved successfully!")
                 }

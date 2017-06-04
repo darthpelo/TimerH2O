@@ -12,20 +12,21 @@ class TH2OWaterPickerView: UIView {
 
     @IBOutlet weak var pickerTitleLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     fileprivate let numbers = (0...9).map {"\($0)"}
     fileprivate var amount = ["0", "0", "0", "0"]
     
-    typealias DoneAmount = (Int) -> ()
+    typealias DoneAmount = (Int) -> Void
     
     fileprivate var doneAmount: DoneAmount?
     private var parentView: UIView?
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        guard let a = convert(amount: amount) else {
+        guard let amount = convert(amount: amount) else {
             return
         }
-        doneAmount?(a)
+        doneAmount?(amount)
     }
     
     func loadPickerView() -> TH2OWaterPickerView? {
@@ -45,6 +46,9 @@ class TH2OWaterPickerView: UIView {
         
         pickerTitleLabel.text = R.string.localizable.setsessionWaterpickerTitle()
         doneButton.setTitle(R.string.localizable.done(), for: .normal)
+        
+        pickerView.selectRow(2, inComponent: 0, animated: false)
+        amount[0] = "2"
         
         UIApplication.shared.keyWindow?.addSubview(self)
     }
@@ -67,7 +71,7 @@ class TH2OWaterPickerView: UIView {
     private func convert(amount: [String]) -> Int? {
         var result: String = ""
         for c in amount {
-            result = result + c
+            result += c
         }
         return Int(result)
     }

@@ -9,9 +9,10 @@
 import UIKit
 
 enum MoreDetail: Int {
-    case Acknowledgements = 0
-    case Privacy
-    case HealthData
+    case acknowledgements
+    
+    case privacy
+    case healthData
 }
 
 final class TH2OMoreTableViewController: UITableViewController {
@@ -22,10 +23,10 @@ final class TH2OMoreTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TH2OMoreDetailViewController, let a = tableView.indexPathForSelectedRow {
             switch a.row {
-            case MoreDetail.Acknowledgements.rawValue:
-                vc.type = MoreDetail.Acknowledgements
-            case MoreDetail.Privacy.rawValue:
-                vc.type = MoreDetail.Privacy
+            case MoreDetail.acknowledgements.rawValue:
+                vc.type = MoreDetail.acknowledgements
+            case MoreDetail.privacy.rawValue:
+                vc.type = MoreDetail.privacy
             default:
                 ()
             }
@@ -34,7 +35,7 @@ final class TH2OMoreTableViewController: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == MoreDetail.HealthData.rawValue {
+        if indexPath.row == MoreDetail.healthData.rawValue {
             performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.healthData, sender: self)
         } else {
             performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.webDetails, sender: self)

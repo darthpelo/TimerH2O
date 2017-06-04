@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ScheduledTimer = ()->()
+typealias ScheduledTimer = () -> Void
 
 public class TimerManager {
     

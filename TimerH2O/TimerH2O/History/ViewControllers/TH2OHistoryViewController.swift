@@ -7,54 +7,26 @@
 //
 
 import UIKit
-import RealmSwift
 
-class TH2OHistoryViewController: UIViewController {
+class TH2OHistoryViewController: UIViewController, HistoryView {
 
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var collection: Results<Session>?
+    fileprivate var collectionElements: Int?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.title = R.string.localizable.history()
-    }
+    lazy var presenter: HistoryPresenterImplementation = HistoryPresenterImplementation(view: self)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let list = RealmManager().loadAllSessions(), list.count > 0 else {
-            tableView.isHidden = true
-            return
-        }
-        
-        collection = list
-        tableView.reloadData()
+        setupUI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 extension TH2OHistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection?.count ?? 0
+        return collectionElements ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,23 +38,31 @@ extension TH2OHistoryViewController: UITableViewDataSource {
     }
 }
 
-extension TH2OHistoryViewController: UITableViewDelegate {
-    
-}
+extension TH2OHistoryViewController: UITableViewDelegate {}
 
 extension TH2OHistoryViewController {
-    fileprivate func setup(cell: UITableViewCell, forRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let session = collection?[indexPath.row] else {
-            return cell
+    fileprivate func setupUI() {
+        self.title = R.string.localizable.history()
+        
+        collectionElements = presenter.loadSessions()
+        
+        if let collection = collectionElements, collection > 0 {
+            tableView.isHidden = false
+        } else {
+            tableView.isHidden = true
         }
+        
+        tableView.reloadData()
+    }
+    
+    fileprivate func setup(cell: UITableViewCell, forRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let session = presenter.data(forCellAt: indexPath.row) else { return cell }
         
         let goal = R.string.localizable.historyCellGoal()
         let amount = R.string.localizable.historyCellAmount()
-        cell.textLabel?.text = "\(goal): " + String(session.goal) + " \(amount): " + String(session.amount)
+        cell.textLabel?.text = "\(goal): " + session.goal + " \(amount): " + session.amount
         
-        let start = DateFormatter.localizedString(from: session.start, dateStyle: .short, timeStyle: .short)
-        let end = DateFormatter.localizedString(from: session.end, dateStyle: .short, timeStyle: .short)
-        let date = "\(R.string.localizable.historyCellStart()): \(start) \(R.string.localizable.historyCellEnd()): \(end)"
+        let date = "\(R.string.localizable.historyCellStart()): \(session.start) \(R.string.localizable.historyCellEnd()): \(session.end)"
         cell.detailTextLabel?.text = date
         
         return cell

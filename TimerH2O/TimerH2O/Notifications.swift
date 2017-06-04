@@ -10,9 +10,9 @@ import Foundation
 import UserNotifications
 
 enum Snooze: Double {
-    case Five = 300.0
-    case Fifteen = 900.0
-    case Thirty = 1800.0
+    case five = 300.0
+    case fifteen = 900.0
+    case thirty = 1800.0
 }
 
 func notificationsSettings() {
@@ -86,8 +86,8 @@ func localNotificationRequest(snooze: Snooze? = nil, endTime: Date? = nil) {
     }
 }
 
-//MARK: - Private
-private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
+// MARK: - Private
+private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> Void) {
     // Request Authorization
     if #available(iOS 10.0, *) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in

@@ -110,7 +110,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         }
     }
     
-    //MARK: - Private
+    // MARK: - Private
     fileprivate func showWaterPicker() {
         waterPickerView?.isTo(show: true)
     }
@@ -190,13 +190,13 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
             completionHandler(timerCheck())
         case TH2OConstants.UserNotification.snooze5Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze5Action])
-            completionHandler(snozee(Snooze.Five))
+            completionHandler(snozee(Snooze.five))
         case TH2OConstants.UserNotification.snooze15Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze15Action])
-            completionHandler(snozee(Snooze.Fifteen))
+            completionHandler(snozee(Snooze.fifteen))
         case TH2OConstants.UserNotification.snooze30Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze30Action])
-            completionHandler(snozee(Snooze.Thirty))
+            completionHandler(snozee(Snooze.thirty))
         default:
             completionHandler()
         }

@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 struct RealmManager {
-    //MARK: - Public
+    // MARK: - Public
     func create(newSession session: Model) {
         let new = Session()
         new.idx = session.idx
@@ -44,7 +44,7 @@ struct RealmManager {
             // Get the default Realm
             let realm = try loadRealm()
             
-            return realm.objects(Session.self).filter("start != end").sorted(byProperty: "start", ascending: false)
+            return realm.objects(Session.self).filter("start != end").sorted(byKeyPath: "start", ascending: false)
         } catch {
             log(text: "Open with wrong key: \(error)")
             return nil
@@ -63,7 +63,7 @@ struct RealmManager {
         }
     }
     
-    //MARK: - Private
+    // MARK: - Private
     private func loadRealm() throws -> Realm {
         let configuration = Realm.Configuration(encryptionKey: try getKey())
         let realm = try Realm(configuration: configuration)

@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
@@ -38,11 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        AnswerManager().log(event: "Application Was Killed", withCustomAttributes: ["VC":"AppDelegate", "Function":"applicationWillTerminate"])
+        AnswerManager().log(event: "Application Was Killed",
+                            withCustomAttributes: ["VC":
+                                "AppDelegate", "Function":
+                                "applicationWillTerminate"])
         TimerManager.sharedInstance.stop()
         scheduleLocalNotification(SessionManager().endTimer())
     }
-    
     
 }
 
