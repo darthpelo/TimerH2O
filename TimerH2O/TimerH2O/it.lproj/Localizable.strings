@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  TimerH2O
+
+  Created by Alessio Roberto on 06/11/16.
+  Copyright © 2016 Alessio Roberto. All rights reserved.
+*/
+
+"done" = "Conferma";
+
+"timer" = "Timer";
+"history" = "Storico";
+
+"setsession.title.label" = "Imposta quanta acqua vuoi bere durante la giornata ed il tempo che deve intercorrere tra ogni bicchiere di acqua.";
+"setsession.amount.label" = "Quantità di acqua (mL) che vuoi bere durante il giorno.";
+"setsession.interval.label" = "Intervallo di tempo da ogni bicchiere di acqua.";
+
+"setsession.waterpicker.title" = "Quantità di acqua (mL)";
+"setsession.timepicker.title" = "Intervallo";
+
+"localnotification.subtitle" = "E' ora di bere";
+
+"timerview.stop.button" = "Ho bevuto!";
+"timerview.start.button" = "Comincia nuova sessione";
+"timerview.end.button" = "Termina la sessione";
+"timerview.healtkit" = "Connetti ad Apple Salute";
+"timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obbiettivo della giornata!";
+
+"usernotification.drink" = "Ho Bevuto";
+"usernotification.snooze.5" = "Ritarda 5 minuti";
+"usernotification.snooze.15" = "Ritarda 15 minuti";
+"usernotification.snooze.30" = "Ritarda 30 minuti";
+
+"history.cell.goal" = "Obbiettivo";
+"history.cell.amount" = "Quantità finale";
+"history.cell.start" = "Da";
+"history.cell.end" = "A";
+
+"more.acknowledgements" = "Riconoscimenti";
+"more.privacy" = "Privacy";
+"more.healthData" = "Accesso a Salute";
+"more.healthData.title" = "Dati Salute";
+"more.healthData.firstLabel" = "TimerH2O necessita l'autorizzazione per accedere ai tuoi dati dell'applicazione Salute.";
+"more.healthData.secondLabel" = "TimerH2O importa dall'applicazione Salute unicamente i dati relativi alla quantità di acqua bevuta. Per cambiare le impostazioni accedi a Impostazioni > Privacy > Salute > TimerH2O.";
+"more.healthData.switchLabel" = "Collega TimerH2O";

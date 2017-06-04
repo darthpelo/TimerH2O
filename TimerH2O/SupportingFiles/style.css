@@ -1,0 +1,26 @@
+body.home {
+    background-color: #14BECA;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h1.title {
+  font: 100px arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+    font-size: 34px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.centerImage {
+    text-align: center;
+    display: block;
+}
