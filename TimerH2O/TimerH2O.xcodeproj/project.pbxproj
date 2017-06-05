@@ -201,6 +201,16 @@
 			path = TimerH2OUITests;
 			sourceTree = "<group>";
 		};
+		D93207B61EE5A69E00930D55 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D98476F51DBD6382009F92B3 /* History */,
+				D9A213261E1DB95B0031FA80 /* More */,
+				D98476F41DBD6379009F92B3 /* Timer */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		D94A12E31DC53A7D0047FCB6 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,13 +251,11 @@
 				D9D0AEC51DBEA77300B6A8EE /* Controllers */,
 				D98476FB1DBD63FB009F92B3 /* Extensions */,
 				D94A12E31DC53A7D0047FCB6 /* Functions */,
-				D98476F51DBD6382009F92B3 /* History */,
 				D9D0AEC41DBEA76E00B6A8EE /* Models */,
-				D9A213261E1DB95B0031FA80 /* More */,
 				D98476FA1DBD63F5009F92B3 /* Protocols */,
+				D93207B61EE5A69E00930D55 /* Scenes */,
 				D98476F31DBD6340009F92B3 /* Storyboards */,
 				D98476F21DBD6334009F92B3 /* Support */,
-				D98476F41DBD6379009F92B3 /* Timer */,
 			);
 			path = TimerH2O;
 			sourceTree = "<group>";
