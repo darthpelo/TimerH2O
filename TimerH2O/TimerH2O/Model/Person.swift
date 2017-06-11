@@ -9,13 +9,10 @@
 import RealmSwift
 
 class Person: Object {
+    dynamic var userId = ""
     dynamic var name = ""
     dynamic var birthday = NSDate(timeIntervalSince1970: 1)
+    dynamic var emailAddress = ""
+    
     let sessions = List<Session>()
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
 }

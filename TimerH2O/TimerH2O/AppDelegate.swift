@@ -13,13 +13,21 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
-
+        
+        if UserDefaults.standard.userCreated == false {
+            if let userId = UIDevice.current.identifierForVendor?.uuidString {
+                RealmManager().create(newUser: userId)
+                UserDefaults.standard.userCreated = true
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
         return true
     }
     
