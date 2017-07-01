@@ -98,6 +98,10 @@ struct Presenter {
         updateAmountLabel(actualAmount)
     }
     
+    func updateWatch() {
+        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater())
+    }
+    
     // MARK: - Private
     private func modelUpdate() {
         RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
@@ -109,10 +113,12 @@ struct Presenter {
         SessionManager().new(countDown: countDown)
         self.view?.update(countDown: countDown,
                           amount: SessionManager().amountOfWater())
+        updateWatch()
     }
     
     private func updateAmountLabel(_ actualAmount: Double) {
         self.view?.setAmountLabel(with: String(amount(actualAmount)))
+        updateWatch()
     }
     
     private func amount(_ level: Double) -> Double {
