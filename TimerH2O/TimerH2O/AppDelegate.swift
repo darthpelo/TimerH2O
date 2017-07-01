@@ -45,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [TH2OConstants.UserNotification.notificationRequest])
         }
+        
+        Presenter().updateWatch()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

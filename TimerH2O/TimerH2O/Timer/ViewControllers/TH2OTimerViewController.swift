@@ -107,6 +107,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         if #available(iOS 10.0, *) {
             if SessionManager().sessionIsStart() {
                 timerCheck()
+                presenter.updateWatch()
             }
         }
     }

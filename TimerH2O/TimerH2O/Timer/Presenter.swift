@@ -18,6 +18,8 @@ struct Presenter {
         SessionManager().newAmountOf(water: Double(water))
         SessionManager().newTimeInterval(second: interval)
         RealmManager().create(newSession: model)
+        
+        updateWatch()
     }
     
     func startSession() {
@@ -37,6 +39,8 @@ struct Presenter {
         SessionManager().newAmountOf(water: 0)
         endInterval()
         stopTimer()
+        
+        updateWatch()
         
         self.view?.startButton(isEnabled: true)
         self.view?.stopTimerButton(isEnabled: false)
