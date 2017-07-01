@@ -35,7 +35,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Configure User Notification Center
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -51,6 +51,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             startButton(isEnabled: false)
             stopTimerButton(isEnabled: true)
             endSessionButton(isEnabled: true)
+            presenter.updateWatch()
         } else {
             startButton(isEnabled: true)
             stopTimerButton(isEnabled: false)
@@ -127,6 +128,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     fileprivate func snozee(_ time: Snooze) {
+        presenter.updateWatch()
         localNotificationRequest(snooze: time)
     }
 }

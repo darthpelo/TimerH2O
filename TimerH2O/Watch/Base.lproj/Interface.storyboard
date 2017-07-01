@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gIK-xH-zMi">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Water-->
+        <scene sceneID="FKh-1W-CNT">
+            <objects>
+                <controller identifier="Water" hidesWhenLoading="NO" id="gIK-xH-zMi" customClass="WaterInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="nt3-0n-dfV">
+                            <items>
+                                <label alignment="left" text="💧" id="zxG-ls-Fyv">
+                                    <fontDescription key="font" type="system" pointSize="37"/>
+                                </label>
+                                <group alignment="left" layout="vertical" spacing="0.0" id="KWh-6e-vQ2">
+                                    <items>
+                                        <label alignment="left" text="Water left" id="gFK-zx-Nqb">
+                                            <color key="textColor" red="0.054901960780000002" green="0.61960784310000006" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                        </label>
+                                        <label alignment="left" text="2000" id="eHe-3g-TTi">
+                                            <fontDescription key="font" type="system" pointSize="37"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="waterLabel" destination="eHe-3g-TTi" id="nnZ-q3-zMD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="52" y="37"/>
+        </scene>
+    </scenes>
+</document>
