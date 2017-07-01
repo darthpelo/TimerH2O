@@ -20,10 +20,4 @@ class Session: Object {
     override static func primaryKey() -> String? {
         return "idx"
     }
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
 }

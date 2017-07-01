@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 protocol HistoryView: class {}
 
@@ -29,6 +30,14 @@ class HistoryPresenterImplementation {
     func loadSessions() -> Int {
         guard let list = RealmManager().loadAllSessions(), list.count > 0 else {
             return 0
+        }
+        
+        if let userId = UIDevice.current.identifierForVendor?.uuidString,
+            let user = RealmManager().loadUser(withId: userId) {
+            // Check for old final users
+            for session in list where session.user == nil {
+                    RealmManager().update(session: session, withUser: user)
+            }
         }
         self.sessionsList = list
         return list.count
