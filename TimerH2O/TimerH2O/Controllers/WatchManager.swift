@@ -35,8 +35,10 @@ class WatchManager: NSObject {
     private func sendDictionary(_ dict: [String: Any]) {
         do {
             try self.watchSession?.updateApplicationContext(dict)
+            AnswerManager().log(event: "Sent data to Apple Watch")
         } catch {
             print("Error sending dictionary \(dict) to Apple Watch!")
+            AnswerManager().log(event: "Error sending data to Apple Watch")
         }
     }
 }

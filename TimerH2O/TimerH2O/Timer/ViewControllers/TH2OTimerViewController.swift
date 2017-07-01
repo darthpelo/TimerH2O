@@ -8,9 +8,10 @@
 
 import UIKit
 import UserNotifications
+import Instructions
 
 class TH2OTimerViewController: UIViewController, Configurable, Seguible {
-
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var amountLabe: UILabel!
     @IBOutlet weak var startNewSessionButton: UIButton! {
@@ -31,6 +32,9 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     public var waterPickerView: TH2OWaterPickerView?
     private let healthManager = HealthManager()
+    
+    let coachMarksController = CoachMarksController()
+    
     lazy var presenter: Presenter = Presenter(view: self, healthManager: self.healthManager)
     
     override func viewDidLoad() {
@@ -42,6 +46,10 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         } else {
             // Fallback on earlier versions
         }
+        
+        self.coachMarksController.dataSource = self
+        self.coachMarksController.overlay.blurEffectStyle = .dark
+        self.coachMarksController.overlay.allowTap = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,10 +78,21 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             configureWaterPickerView()
             timerCheck()
         }
-
+        
         setAmountLabel(with: SessionManager().amountOfWater())
+        
+        if UserDefaults().timerCoachShowed == false {
+           self.coachMarksController.start(on: self)
+        }
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.coachMarksController.stop(immediately: true)
+    }
+    
+    // MARK: - Actions
     @IBAction func newSessionPressed(_ sender: Any) {
         AnswerManager().log(event: "newSessionPressed")
         newSession()
@@ -99,6 +118,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         presenter.startInterval()
     }
     
+    // MARK: - didEnterBackground & didBecomeActive
     func didEnterBackground() {
         presenter.stopTimer()
     }
@@ -205,4 +225,51 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
         }
     }
     
+}
+
+enum Mark: Int {
+    case one
+    case two
+    case three
+}
+
+extension TH2OTimerViewController: CoachMarksControllerDataSource, CoachMarksControllerDelegate {
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return Mark.three.rawValue + 1
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController,
+                              coachMarkAt index: Int) -> CoachMark {
+        if index == Mark.one.rawValue {
+            return coachMarksController.helper.makeCoachMark(for: self.startNewSessionButton)
+        } else if index == Mark.two.rawValue {
+            return coachMarksController.helper.makeCoachMark(for: self.stopTimerButton)
+        } else {
+            return coachMarksController.helper.makeCoachMark(for: self.endSessionButton)
+        }
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController,
+                              coachMarkViewsAt index: Int,
+                              madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        
+        if index == Mark.one.rawValue {
+            coachViews.bodyView.hintLabel.text = R.string.localizable.coachMarkOne()
+            coachViews.bodyView.nextLabel.text = "👌"
+            
+            return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        } else if index == Mark.two.rawValue {
+            coachViews.bodyView.hintLabel.text = R.string.localizable.coachMarkTwo()
+            coachViews.bodyView.nextLabel.text = "👌"
+            
+            return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        } else {
+            coachViews.bodyView.hintLabel.text = R.string.localizable.coachMarkThree()
+            coachViews.bodyView.nextLabel.text = "🎉"
+            UserDefaults().timerCoachShowed = true
+            return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+        }
+
+    }
 }

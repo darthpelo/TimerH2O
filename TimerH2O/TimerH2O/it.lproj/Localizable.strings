@@ -43,3 +43,7 @@
 "more.healthData.firstLabel" = "TimerH2O necessita l'autorizzazione per accedere ai tuoi dati dell'applicazione Salute.";
 "more.healthData.secondLabel" = "TimerH2O importa dall'applicazione Salute unicamente i dati relativi alla quantità di acqua bevuta. Per cambiare le impostazioni accedi a Impostazioni > Privacy > Salute > TimerH2O.";
 "more.healthData.switchLabel" = "Collega TimerH2O";
+
+"coach.mark.one" = "Comincia a misurare quanta acqua bevi ogni giorno 📝";
+"coach.mark.two" = "Registra ogni bicchiere di acqua bevuta 💧";
+"coach.mark.three" = "Concludi la tua sessione giornaliera 🏁";
