@@ -62,8 +62,8 @@ class TH2OTimerPickerView: UIView {
                         if show {
                             self.frame.origin.y = height - self.frame.size.height
                             DispatchQueue.main.async {
-                                self.datePicker.countDownDuration = 60
-                                self.countDownDuration = 60
+                                self.datePicker.countDownDuration = 3600
+                                self.countDownDuration = 3600
                             }
                         } else {
                             self.frame.origin.y = height

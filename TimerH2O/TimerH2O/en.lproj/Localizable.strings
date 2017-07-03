@@ -43,3 +43,7 @@
 "more.healthData.firstLabel" = "TimerH2O needs permission to access your Health Data";
 "more.healthData.secondLabel" = "TimerH2O is currently importing only water drink data from Health. Please go into Health app Sources if you want to  change individual settings";
 "more.healthData.switchLabel" = "Connect to TimerH2O";
+
+"coach.mark.one" = "Starts to measure how much water you drink every day 📝";
+"coach.mark.two" = "Record every glass of drinking water 💧";
+"coach.mark.three" = "Finish your daily session 🏁";
