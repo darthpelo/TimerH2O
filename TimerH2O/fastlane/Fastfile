@@ -49,7 +49,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :finalTest do
-    gym(scheme: "TimerH2O_BetaTest",
+    gym(
+        scheme: "TimerH2O_BetaTest",
         configuration: 'Test')
 
     pilot(
@@ -73,10 +74,14 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :release do
-    gym(scheme: "TimerH2O")
+    sigh
+    gym(
+        scheme: 'TimerH2O',
+        configuration: 'Release',
+        export_method: 'app-store')
 
     deliver(
-      app_version: "1.0.5",
+      app_version: "1.1.0",
       force: true
     )
     # frameit
