@@ -29,6 +29,8 @@ class WaterInterfaceController: WKInterfaceController {
         }
     }
     
+    var goal: Int?
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -70,6 +72,12 @@ extension WaterInterfaceController: WCSessionDelegate {
             self.progress = progress
             let userdef = UserDefaults.standard
             userdef.set(progress, forKey: "progress")
+        }
+        
+        if let goal = applicationContext["goal"] as? Int {
+            self.goal = goal
+            let userdef = UserDefaults.standard
+            userdef.set(goal, forKey: "goal")
         }
     }
 }

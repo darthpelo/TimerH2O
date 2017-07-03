@@ -26,6 +26,12 @@ class WatchManager: NSObject {
         watchSession?.activate()
     }
     
+    func update(goal: Double) {
+        let goal: Int = Int(goal)
+        
+        sendDictionary(["goal": goal])
+    }
+    
     func update(water: Double) {
         let progress: Int = Int(water)
         

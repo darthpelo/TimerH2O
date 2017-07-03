@@ -16,6 +16,8 @@
 		D91A05CB1E19434C0089E250 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CA1E19434C0089E250 /* Session.swift */; };
 		D91A05CD1E194D840089E250 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CC1E194D840089E250 /* Person.swift */; };
 		D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A05CE1E1951660089E250 /* RealmManager.swift */; };
+		D92446601F093C1A002A23CA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924465E1F093C1A002A23CA /* ComplicationController.swift */; };
+		D92446611F093C1A002A23CA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924465F1F093C1A002A23CA /* NotificationController.swift */; };
 		D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D92795A11E35062400623F9F /* Default-568h@2x.png */; };
 		D92795AB1E369DEB00623F9F /* TimerH2OUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92795AA1E369DEB00623F9F /* TimerH2OUITests.swift */; };
 		D92795B41E369EB200623F9F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92795B31E369EB200623F9F /* SnapshotHelper.swift */; };
@@ -143,6 +145,8 @@
 		D91A05CA1E19434C0089E250 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Model/Session.swift; sourceTree = "<group>"; };
 		D91A05CC1E194D840089E250 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Model/Person.swift; sourceTree = "<group>"; };
 		D91A05CE1E1951660089E250 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = Controllers/RealmManager.swift; sourceTree = "<group>"; };
+		D924465E1F093C1A002A23CA /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		D924465F1F093C1A002A23CA /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		D92795A11E35062400623F9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D92795A81E369DEB00623F9F /* TimerH2OUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerH2OUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92795AA1E369DEB00623F9F /* TimerH2OUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerH2OUITests.swift; sourceTree = "<group>"; };
@@ -493,7 +497,9 @@
 			isa = PBXGroup;
 			children = (
 				D9A972E01F05A57C00ABF4BA /* Info.plist */,
+				D924465E1F093C1A002A23CA /* ComplicationController.swift */,
 				D9A972DC1F05A57C00ABF4BA /* ExtensionDelegate.swift */,
+				D924465F1F093C1A002A23CA /* NotificationController.swift */,
 				D9A972EE1F05A9EC00ABF4BA /* WaterInterfaceController.swift */,
 				D9A972DE1F05A57C00ABF4BA /* Assets.xcassets */,
 			);
@@ -513,11 +519,11 @@
 		D9D0AEC51DBEA77300B6A8EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9FD85B11E15676700CC25D4 /* AnswerManager.swift */,
 				D9830F571E1A95B000D9737F /* HealthManager.swift */,
+				D91A05CE1E1951660089E250 /* RealmManager.swift */,
 				D9D0AEC61DBEA80500B6A8EE /* SessionManager.swift */,
 				D9941F841DCBF7A200918C14 /* Timer.swift */,
-				D9FD85B11E15676700CC25D4 /* AnswerManager.swift */,
-				D91A05CE1E1951660089E250 /* RealmManager.swift */,
 				D98135031F07875E0037E224 /* WatchManager.swift */,
 			);
 			name = Controllers;
@@ -948,6 +954,8 @@
 			files = (
 				D9A972DD1F05A57C00ABF4BA /* ExtensionDelegate.swift in Sources */,
 				D9A972EF1F05A9EC00ABF4BA /* WaterInterfaceController.swift in Sources */,
+				D92446611F093C1A002A23CA /* NotificationController.swift in Sources */,
+				D92446601F093C1A002A23CA /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
