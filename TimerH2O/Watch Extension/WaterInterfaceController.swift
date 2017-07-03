@@ -44,6 +44,20 @@ class WaterInterfaceController: WKInterfaceController {
         }
     }
     
+    var countDown: TimeInterval? {
+        didSet {
+            guard let countDown = countDown else { return }
+            
+            timerLabel.setText(countDown.toString(withSeconds: false))
+            
+            if countDown > 60 {
+                timerLabel.setTextColor(.white)
+            } else {
+                timerLabel.setTextColor(.red)
+            }
+        }
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -88,6 +102,12 @@ extension WaterInterfaceController: WCSessionDelegate {
             self.progress = progress
             let userdef = UserDefaults.standard
             userdef.set(progress, forKey: "progress")
+        }
+        
+        if let countDown = applicationContext["countDown"] as? TimeInterval {
+            self.countDown = countDown
+            let userdef = UserDefaults.standard
+            userdef.set(countDown, forKey: "countDown")
         }
         
         if let countDown = applicationContext["countDown"] as? TimeInterval {
