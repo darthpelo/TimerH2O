@@ -89,6 +89,14 @@ class WaterInterfaceController: WKInterfaceController {
         progress = value
         countDown = timer
     }
+    
+    fileprivate func refreshComplications() {
+        let server = CLKComplicationServer.sharedInstance()
+        guard let complications = server.activeComplications else { return }
+        for complication in complications {
+            server.reloadTimeline(for: complication)
+        }
+    }
 }
 
 extension WaterInterfaceController: WCSessionDelegate {
@@ -115,5 +123,7 @@ extension WaterInterfaceController: WCSessionDelegate {
             let userdef = UserDefaults.standard
             userdef.set(countDown, forKey: "countDown")
         }
+        
+        refreshComplications()
     }
 }

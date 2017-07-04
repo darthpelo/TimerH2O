@@ -17,7 +17,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         // handler(nil);
         //---update in the next 1 hour---
-        handler(NSDate(timeIntervalSinceNow: 1800))
+        handler(NSDate(timeIntervalSinceNow: 3600))
     }
     
     // MARK: - Timeline Configuration
