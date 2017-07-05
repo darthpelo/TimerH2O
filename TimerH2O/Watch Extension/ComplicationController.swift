@@ -42,21 +42,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
+        print("Get current time line for complication: \(complication.family)")
         
         var template: CLKComplicationTemplate?
         var entry: CLKComplicationTimelineEntry?
         let now = NSDate()
         
+        let userdef = UserDefaults.standard
+        let value = userdef.integer(forKey: "progress")
+        var goal = userdef.integer(forKey: "goal")
+        if goal < 1 {
+            goal = 2000
+        }
+        let progress = Double(Double(value) / Double(goal))
+        
+        let ok = "🏁"
+        let error = "😭"
+        var text: String
+        if progress < 0 || progress > 1 {
+            text = error
+        } else {
+            text = ok
+        }
+        
+        print(value)
+        print(goal)
+        print(progress)
+        
         switch complication.family {
         case .modularSmall:
             let modularSmallTemplate =
                 CLKComplicationTemplateModularSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
+            
             modularSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
+                CLKSimpleTextProvider(text: text)
             modularSmallTemplate.fillFraction = Float(progress)
             modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
             modularSmallTemplate.tintColor = .blue
@@ -64,38 +83,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .circularSmall:
             let modularSmallTemplate =
                 CLKComplicationTemplateCircularSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
+
             modularSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
+                CLKSimpleTextProvider(text: text)
             modularSmallTemplate.fillFraction = Float(progress)
             modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
             modularSmallTemplate.tintColor = .blue
             template = modularSmallTemplate
         case .utilitarianSmall:
             let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
+
             utilitarianSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
+                CLKSimpleTextProvider(text: text)
             utilitarianSmallTemplate.fillFraction = Float(progress)
             utilitarianSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
             utilitarianSmallTemplate.tintColor = .blue
             template = utilitarianSmallTemplate
         case .utilitarianSmallFlat:
             let utilitarianSmallFlat = CLKComplicationTemplateUtilitarianSmallFlat()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
+
             utilitarianSmallFlat.textProvider = CLKSimpleTextProvider(text: "\(value)💧")
             template = utilitarianSmallFlat
         case .utilitarianLarge:
             let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
+
             utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "\(value) ml left")
             template = utilitarianLarge
         default:
@@ -103,6 +114,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
         
         if let template = template {
+            print(template)
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: template)
         }
         
