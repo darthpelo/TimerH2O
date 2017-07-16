@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class WaterInterfaceController: WKInterfaceController {
     @IBOutlet var waterLabel: WKInterfaceLabel!
-    @IBOutlet var timerLabel: WKInterfaceLabel!
+    @IBOutlet weak var myTimer: WKInterfaceTimer!
     
     var watchSession: WCSession? {
         didSet {
@@ -48,12 +48,20 @@ class WaterInterfaceController: WKInterfaceController {
         didSet {
             guard let countDown = countDown else { return }
             
-            timerLabel.setText(countDown.toString(withSeconds: false))
+            if timerStarted == false && countDown > 0 {
+                myTimer.setDate(Date(timeInterval: countDown, since: Date()))
+                myTimer.start()
+                timerStarted = true
+            } else if timerStarted == true && countDown == 0 {
+                myTimer.stop()
+                myTimer.setDate(Date(timeInterval: countDown, since: Date()))
+                timerStarted = false
+            }
             
             if countDown > 60 {
-                timerLabel.setTextColor(.white)
+                myTimer.setTextColor(.white)
             } else {
-                timerLabel.setTextColor(.red)
+                myTimer.setTextColor(.red)
             }
         }
     }
@@ -66,25 +74,25 @@ class WaterInterfaceController: WKInterfaceController {
         
         watchSession = WCSession.default()
     }
-
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
         update()
     }
-
+    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         
         update()
     }
-
+    
     private func update() {
         let userdef = UserDefaults.standard
-        let value = userdef.integer(forKey: "progress")
-        let timer = userdef.double(forKey: "countDown")
+        let value = userdef.integer(forKey: DictionaryKey.progress.rawValue)
+        let timer = userdef.double(forKey: DictionaryKey.countDown.rawValue)
         
         progress = value
         countDown = timer
@@ -106,22 +114,22 @@ extension WaterInterfaceController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("watch received app context: ", applicationContext)
-        if let progress = applicationContext["progress"] as? Int {
+        if let progress = applicationContext[DictionaryKey.progress.rawValue] as? Int {
             self.progress = progress
             let userdef = UserDefaults.standard
-            userdef.set(progress, forKey: "progress")
+            userdef.set(progress, forKey: DictionaryKey.progress.rawValue)
         }
         
-        if let countDown = applicationContext["countDown"] as? TimeInterval {
-            self.countDown = countDown
+        if let goal = applicationContext[DictionaryKey.goal.rawValue] as? Int {
+            self.goal = goal
             let userdef = UserDefaults.standard
-            userdef.set(countDown, forKey: "countDown")
+            userdef.set(goal, forKey: DictionaryKey.goal.rawValue)
         }
         
-        if let countDown = applicationContext["countDown"] as? TimeInterval {
+        if let countDown = applicationContext[DictionaryKey.countDown.rawValue] as? TimeInterval {
             self.countDown = countDown
             let userdef = UserDefaults.standard
-            userdef.set(countDown, forKey: "countDown")
+            userdef.set(countDown, forKey: DictionaryKey.countDown.rawValue)
         }
         
         refreshComplications()

@@ -37,16 +37,16 @@
                                         <label alignment="left" text="⌛️" id="3i5-2Y-P8E">
                                             <fontDescription key="font" type="boldSystem" pointSize="18"/>
                                         </label>
-                                        <label alignment="left" text="Label" id="Voe-uT-Rf0">
-                                            <fontDescription key="font" type="italicSystem" weight="light" pointSize="36"/>
-                                        </label>
+                                        <timer width="121" height="47" alignment="left" enabled="YES" previewedSeconds="3363" id="QJ5-E5-2dG">
+                                            <fontDescription key="font" type="system" pointSize="33"/>
+                                        </timer>
                                     </items>
                                 </group>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="timerLabel" destination="Voe-uT-Rf0" id="DXF-PX-Lup"/>
+                        <outlet property="myTimer" destination="QJ5-E5-2dG" id="1cp-WG-9o6"/>
                         <outlet property="waterLabel" destination="eHe-3g-TTi" id="nnZ-q3-zMD"/>
                     </connections>
                 </controller>

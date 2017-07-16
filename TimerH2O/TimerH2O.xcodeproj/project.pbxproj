@@ -70,6 +70,9 @@
 		D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */; };
 		D9F5A61E1E34AC9900B71C9A /* SVProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */; };
 		D9F5A6201E34C25700B71C9A /* TH2OHealthDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5A61F1E34C25700B71C9A /* TH2OHealthDataViewController.swift */; };
+		D9F657D41F1B7A3A004F1F9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E34C851DC2A00700692768 /* Constants.swift */; };
+		D9F657D61F1B8ED2004F1F9A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F657D51F1B8ED2004F1F9A /* Logger.swift */; };
+		D9F657D71F1B8EEB004F1F9A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F657D51F1B8ED2004F1F9A /* Logger.swift */; };
 		D9F7B6071DCD3F0100EAE2BA /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */; };
 		D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9941F841DCBF7A200918C14 /* Timer.swift */; };
 		D9FD85B21E15676700CC25D4 /* AnswerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD85B11E15676700CC25D4 /* AnswerManager.swift */; };
@@ -211,6 +214,7 @@
 		D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = Extensions/TimeInterval.swift; sourceTree = "<group>"; };
 		D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SVProgressHUD.swift; path = Extensions/SVProgressHUD.swift; sourceTree = "<group>"; };
 		D9F5A61F1E34C25700B71C9A /* TH2OHealthDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OHealthDataViewController.swift; path = More/ViewControllers/TH2OHealthDataViewController.swift; sourceTree = "<group>"; };
+		D9F657D51F1B8ED2004F1F9A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		D9FD85B11E15676700CC25D4 /* AnswerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnswerManager.swift; path = Controllers/AnswerManager.swift; sourceTree = "<group>"; };
 		E6C03867379EBC58E4174CD9 /* Pods-TimerH2OTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerH2OTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 				D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */,
 				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
 				D9830F551E1A950500D9737F /* InfoPlist.strings */,
+				D9F657D51F1B8ED2004F1F9A /* Logger.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				D9A213251E1DAD670031FA80 /* Encrypt.swift in Sources */,
 				D93207991EE3FAD900930D55 /* HistoryPresenter.swift in Sources */,
 				D9D0AEC31DBEA4B700B6A8EE /* R.generated.swift in Sources */,
+				D9F657D61F1B8ED2004F1F9A /* Logger.swift in Sources */,
 				D91A05CF1E1951660089E250 /* RealmManager.swift in Sources */,
 				D98135041F07875E0037E224 /* WatchManager.swift in Sources */,
 				D90753441DCF978D00AB6FCC /* UView.swift in Sources */,
@@ -965,7 +971,9 @@
 				D904C1EF1F08484900E7B3E7 /* TimeInterval.swift in Sources */,
 				D9A972EF1F05A9EC00ABF4BA /* WaterInterfaceController.swift in Sources */,
 				D92446611F093C1A002A23CA /* NotificationController.swift in Sources */,
+				D9F657D71F1B8EEB004F1F9A /* Logger.swift in Sources */,
 				D92446601F093C1A002A23CA /* ComplicationController.swift in Sources */,
+				D9F657D41F1B7A3A004F1F9A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
