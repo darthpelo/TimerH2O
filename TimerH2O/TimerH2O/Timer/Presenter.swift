@@ -104,7 +104,8 @@ struct Presenter {
     }
     
     func updateWatch() {
-        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater())
+        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater(),
+                                           countDown: SessionManager().countDown())
     }
     
     // MARK: - Private

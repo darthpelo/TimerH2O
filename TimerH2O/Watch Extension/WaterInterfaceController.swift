@@ -12,6 +12,7 @@ import WatchConnectivity
 
 class WaterInterfaceController: WKInterfaceController {
     @IBOutlet var waterLabel: WKInterfaceLabel!
+    @IBOutlet var timerLabel: WKInterfaceLabel!
     
     var watchSession: WCSession? {
         didSet {
@@ -25,11 +26,23 @@ class WaterInterfaceController: WKInterfaceController {
     var progress: Int? {
         didSet {
             guard let progress = progress else { return }
-            waterLabel.setText("\(progress)")
+            waterLabel.setText("\(progress) ml")
         }
     }
     
-    var goal: Int?
+    var countDown: TimeInterval? {
+        didSet {
+            guard let countDown = countDown else { return }
+            
+            timerLabel.setText(countDown.toString(withSeconds: false))
+            
+            if countDown > 60 {
+                timerLabel.setTextColor(.white)
+            } else {
+                timerLabel.setTextColor(.red)
+            }
+        }
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -57,7 +70,10 @@ class WaterInterfaceController: WKInterfaceController {
     private func update() {
         let userdef = UserDefaults.standard
         let value = userdef.integer(forKey: "progress")
+        let timer = userdef.double(forKey: "countDown")
+        
         progress = value
+        countDown = timer
     }
 }
 
@@ -74,10 +90,10 @@ extension WaterInterfaceController: WCSessionDelegate {
             userdef.set(progress, forKey: "progress")
         }
         
-        if let goal = applicationContext["goal"] as? Int {
-            self.goal = goal
+        if let countDown = applicationContext["countDown"] as? TimeInterval {
+            self.countDown = countDown
             let userdef = UserDefaults.standard
-            userdef.set(goal, forKey: "goal")
+            userdef.set(countDown, forKey: "countDown")
         }
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C4C3C087CD18544CEBD75D7 /* Pods_TimerH2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F0B2E672305FFF3DB72A31 /* Pods_TimerH2O.framework */; };
 		D5B5AF73E60B7568FB3288C2 /* Pods_TimerH2OTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1391F4CE18A2D1A2C0E45AA0 /* Pods_TimerH2OTests.framework */; };
+		D904C1EF1F08484900E7B3E7 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */; };
 		D90753371DCF6EC900AB6FCC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90753351DCF6EC900AB6FCC /* UserNotifications.framework */; };
 		D907533A1DCF8AA100AB6FCC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90753391DCF8AA100AB6FCC /* Notifications.swift */; };
 		D907533D1DCF93EC00AB6FCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D907533F1DCF93EC00AB6FCC /* Localizable.strings */; };
@@ -953,6 +954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A972DD1F05A57C00ABF4BA /* ExtensionDelegate.swift in Sources */,
+				D904C1EF1F08484900E7B3E7 /* TimeInterval.swift in Sources */,
 				D9A972EF1F05A9EC00ABF4BA /* WaterInterfaceController.swift in Sources */,
 				D92446611F093C1A002A23CA /* NotificationController.swift in Sources */,
 				D92446601F093C1A002A23CA /* ComplicationController.swift in Sources */,

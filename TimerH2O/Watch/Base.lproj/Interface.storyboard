@@ -16,17 +16,29 @@
                     <items>
                         <group width="1" alignment="left" id="nt3-0n-dfV">
                             <items>
-                                <label alignment="left" text="💧" id="zxG-ls-Fyv">
-                                    <fontDescription key="font" type="system" pointSize="37"/>
-                                </label>
                                 <group alignment="left" layout="vertical" spacing="0.0" id="KWh-6e-vQ2">
                                     <items>
-                                        <label alignment="left" text="Water left" id="gFK-zx-Nqb">
+                                        <label alignment="left" text="💧" id="gFK-zx-Nqb">
                                             <color key="textColor" red="0.054901960780000002" green="0.61960784310000006" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="18"/>
                                         </label>
-                                        <label alignment="left" text="2000" id="eHe-3g-TTi">
-                                            <fontDescription key="font" type="system" pointSize="37"/>
+                                        <label alignment="left" text="2000 ml" id="eHe-3g-TTi">
+                                            <color key="textColor" red="0.054901960780000002" green="0.61960784310000006" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="boldSystem" pointSize="34"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="ZZ2-0u-jb6">
+                            <items>
+                                <group width="1" height="83" alignment="left" layout="vertical" spacing="0.0" id="keV-Na-2St">
+                                    <items>
+                                        <label alignment="left" text="⌛️" id="3i5-2Y-P8E">
+                                            <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                        </label>
+                                        <label alignment="left" text="Label" id="Voe-uT-Rf0">
+                                            <fontDescription key="font" type="italicSystem" weight="light" pointSize="36"/>
                                         </label>
                                     </items>
                                 </group>
@@ -34,6 +46,7 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="timerLabel" destination="Voe-uT-Rf0" id="DXF-PX-Lup"/>
                         <outlet property="waterLabel" destination="eHe-3g-TTi" id="nnZ-q3-zMD"/>
                     </connections>
                 </controller>

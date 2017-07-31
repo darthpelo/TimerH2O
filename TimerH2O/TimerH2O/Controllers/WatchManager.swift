@@ -26,16 +26,10 @@ class WatchManager: NSObject {
         watchSession?.activate()
     }
     
-    func update(goal: Double) {
-        let goal: Int = Int(goal)
-        
-        sendDictionary(["goal": goal])
-    }
-    
-    func update(water: Double) {
+    func update(water: Double, countDown: TimeInterval) {
         let progress: Int = Int(water)
         
-        sendDictionary(["progress": progress])
+        sendDictionary(["progress": progress, "countDown": countDown])
     }
     
     private func sendDictionary(_ dict: [String: Any]) {
