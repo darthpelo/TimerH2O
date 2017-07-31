@@ -19,7 +19,7 @@ struct Presenter {
         SessionManager().newTimeInterval(second: interval)
         RealmManager().create(newSession: model)
         
-        WatchManager.sharedInstance.update(goal: Double(water))
+        WatchManager.sharedInstance.update(water: Double(water), countDown: interval)
         updateWatch()
     }
     
