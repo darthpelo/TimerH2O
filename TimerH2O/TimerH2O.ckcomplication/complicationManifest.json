@@ -1,0 +1,10 @@
+{
+  "supported complication families" : {
+    "3" : "46105D52-FC6D-45A7-B4C2-1D7D68FC153C.json",
+    "6" : "72650BCC-7FC2-42EF-8C2E-52CA399E30D9.json",
+    "4" : "6D57FD81-EE1D-4CA7-8D5E-45D935757E7B.json",
+    "2" : "2ACFC45B-CA38-4D03-BE6D-7A0A109B1A33.json",
+    "0" : "76B7A785-B4E0-4DD2-8F15-5917303E30FA.json"
+  },
+  "client ID" : "com.alessioroberto.TimerH2O.watchkitapp.watchkitextension"
+}
