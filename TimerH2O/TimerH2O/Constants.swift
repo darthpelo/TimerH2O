@@ -27,6 +27,9 @@ enum DictionaryKey: String {
     case goal
     case progress
     case countDown
+    case start
+    case stop
+    case end
 }
 
 enum WatchText: String {

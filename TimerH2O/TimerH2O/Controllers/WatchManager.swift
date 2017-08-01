@@ -29,7 +29,7 @@ class WatchManager: NSObject {
     func update(water: Double, countDown: TimeInterval) {
         let progress: Int = Int(water)
         
-        sendDictionary([DictionaryKey.progress.rawValue: progress, DictionaryKey.countDown.rawValue: countDown])
+        sendDictionary([DictionaryKey.progress.rawValue: progress])
     }
     
     private func sendDictionary(_ dict: [String: Any]) {
