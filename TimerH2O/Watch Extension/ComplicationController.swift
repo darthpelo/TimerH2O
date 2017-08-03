@@ -17,7 +17,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         // handler(nil);
         //---update in the next 1 hour---
-        handler(NSDate(timeIntervalSinceNow: 1800))
+        handler(NSDate(timeIntervalSinceNow: 3600))
     }
     
     // MARK: - Timeline Configuration
@@ -40,69 +40,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Population
     
+    // Call the handler with the current timeline entry
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-        
-        var template: CLKComplicationTemplate?
         var entry: CLKComplicationTimelineEntry?
         let now = NSDate()
         
-        switch complication.family {
-        case .modularSmall:
-            let modularSmallTemplate =
-                CLKComplicationTemplateModularSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
-            modularSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
-            modularSmallTemplate.fillFraction = Float(progress)
-            modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
-            modularSmallTemplate.tintColor = .blue
-            template = modularSmallTemplate
-        case .circularSmall:
-            let modularSmallTemplate =
-                CLKComplicationTemplateCircularSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
-            modularSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
-            modularSmallTemplate.fillFraction = Float(progress)
-            modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
-            modularSmallTemplate.tintColor = .blue
-            template = modularSmallTemplate
-        case .utilitarianSmall:
-            let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            let goal = userdef.integer(forKey: "goal")
-            let progress = Double(Double(value) / Double(goal))
-            utilitarianSmallTemplate.textProvider =
-                CLKSimpleTextProvider(text: "💧")
-            utilitarianSmallTemplate.fillFraction = Float(progress)
-            utilitarianSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
-            utilitarianSmallTemplate.tintColor = .blue
-            template = utilitarianSmallTemplate
-        case .utilitarianSmallFlat:
-            let utilitarianSmallFlat = CLKComplicationTemplateUtilitarianSmallFlat()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            utilitarianSmallFlat.textProvider = CLKSimpleTextProvider(text: "\(value)💧")
-            template = utilitarianSmallFlat
-        case .utilitarianLarge:
-            let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
-            let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
-            utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "\(value) ml left")
-            template = utilitarianLarge
-        default:
-            template = nil
-        }
-        
-        if let template = template {
+        if let template = complicationTemplate(complication.family) {
             entry = CLKComplicationTimelineEntry(date: now as Date, complicationTemplate: template)
         }
         
@@ -146,7 +89,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .utilitarianSmall:
             let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
             let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
+            let value = userdef.integer(forKey: DictionaryKey.progress.rawValue)
             let progress = Double(Double(value) / 2000.0) * 100
             utilitarianSmallTemplate.textProvider =
                 CLKSimpleTextProvider(text: " 💧")
@@ -157,13 +100,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .utilitarianSmallFlat:
             let utilitarianSmallFlat = CLKComplicationTemplateUtilitarianSmallFlat()
             let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
+            let value = userdef.integer(forKey: DictionaryKey.progress.rawValue)
             utilitarianSmallFlat.textProvider = CLKSimpleTextProvider(text: "\(value)")
             template = utilitarianSmallFlat
         case .utilitarianLarge:
             let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
             let userdef = UserDefaults.standard
-            let value = userdef.integer(forKey: "progress")
+            let value = userdef.integer(forKey: DictionaryKey.progress.rawValue)
             utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "\(value) ml left")
             template = utilitarianLarge
         default:
@@ -173,4 +116,84 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(template)
     }
     
+    // MARK: - Private
+    private func complicationTemplate(_ family: CLKComplicationFamily) -> CLKComplicationTemplate? {
+        logger(object: "Get current time line for complication: \(family)")
+        
+        var template: CLKComplicationTemplate?
+        let value = UserDefaults.standard.integer(forKey: DictionaryKey.progress.rawValue)
+        let progress = self.progress(ofValue: value)
+        
+        var text: String
+        if progress < 0 || progress > 1 {
+            text = WatchText.error.rawValue
+        } else if progress == 0 {
+            text = WatchText.ok.rawValue
+        } else {
+            text = WatchText.onGoing.rawValue
+        }
+        
+        switch family {
+        case .modularSmall:
+            template = modularSmallTemplate(text, progress)
+        case .circularSmall:
+            template = circularSmallTemplate(text, progress)
+        case .utilitarianSmall:
+            template = utilitarianSmallTemplate(text, progress)
+        case .utilitarianSmallFlat:
+            let utilitarianSmallFlat = CLKComplicationTemplateUtilitarianSmallFlat()
+            utilitarianSmallFlat.textProvider = CLKSimpleTextProvider(text: "\(value)💧")
+            template = utilitarianSmallFlat
+        case .utilitarianLarge:
+            let utilitarianLarge = CLKComplicationTemplateUtilitarianLargeFlat()
+            utilitarianLarge.textProvider = CLKSimpleTextProvider(text: "\(value) ml left")
+            template = utilitarianLarge
+        default:
+            template = nil
+        }
+        
+        return template
+    }
+    
+    private func progress(ofValue value: Int) -> Double {
+        var goal = UserDefaults.standard.integer(forKey: DictionaryKey.goal.rawValue)
+        if goal < 1 { goal = 2000 }
+        
+        return Double(Double(value) / Double(goal))
+    }
+    
+    private func modularSmallTemplate(_ text: String, _ progress: Double) -> CLKComplicationTemplate? {
+        let modularSmallTemplate =
+            CLKComplicationTemplateModularSmallRingText()
+        
+        modularSmallTemplate.textProvider = CLKSimpleTextProvider(text: text)
+        modularSmallTemplate.fillFraction = Float(progress)
+        modularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
+        modularSmallTemplate.tintColor = .blue
+        return modularSmallTemplate
+    }
+    
+    private func circularSmallTemplate(_ text: String, _ progress: Double) -> CLKComplicationTemplate? {
+        let circularSmallTemplate =
+            CLKComplicationTemplateCircularSmallRingText()
+        
+        circularSmallTemplate.textProvider = CLKSimpleTextProvider(text: text)
+        circularSmallTemplate.fillFraction = Float(progress)
+        circularSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
+        circularSmallTemplate.tintColor = .blue
+        
+        return circularSmallTemplate
+    }
+    
+    private func utilitarianSmallTemplate(_ text: String, _ progress: Double) -> CLKComplicationTemplate? {
+        let utilitarianSmallTemplate = CLKComplicationTemplateUtilitarianSmallRingText()
+        
+        utilitarianSmallTemplate.textProvider =
+            CLKSimpleTextProvider(text: text)
+        utilitarianSmallTemplate.fillFraction = Float(progress)
+        utilitarianSmallTemplate.ringStyle = CLKComplicationRingStyle.closed
+        utilitarianSmallTemplate.tintColor = .blue
+        
+        return utilitarianSmallTemplate
+    }
 }

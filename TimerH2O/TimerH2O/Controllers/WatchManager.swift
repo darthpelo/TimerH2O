@@ -26,19 +26,21 @@ class WatchManager: NSObject {
         watchSession?.activate()
     }
     
+    func set(goal: Int) {
+        sendDictionary([DictionaryKey.goal.rawValue: goal])
+    }
+    
     func update(water: Double, countDown: TimeInterval) {
         let progress: Int = Int(water)
         
-        sendDictionary(["progress": progress, "countDown": countDown])
+        sendDictionary([DictionaryKey.progress.rawValue: progress])
     }
     
     private func sendDictionary(_ dict: [String: Any]) {
         do {
             try self.watchSession?.updateApplicationContext(dict)
-            AnswerManager().log(event: "Sent data to Apple Watch")
         } catch {
             print("Error sending dictionary \(dict) to Apple Watch!")
-            AnswerManager().log(event: "Error sending data to Apple Watch")
         }
     }
 }
@@ -49,13 +51,16 @@ extension WatchManager: WCSessionDelegate {
     @available(iOS 9.3, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("Session activation did complete")
+        AnswerManager().log(event: "WatchManager session activation did complete")
     }
     
     public func sessionDidBecomeInactive(_ session: WCSession) {
         print("session did become inactive")
+        AnswerManager().log(event: "WatchManager session did become inactive")
     }
     
     public func sessionDidDeactivate(_ session: WCSession) {
         print("session did deactivate")
+        AnswerManager().log(event: "WatchManager session did deactivate")
     }
 }

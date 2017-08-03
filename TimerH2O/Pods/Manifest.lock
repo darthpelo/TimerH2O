@@ -1,5 +1,5 @@
 PODS:
-  - Crashlytics (3.8.4):
+  - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.11)
   - Instructions (1.0.0-beta.1)
@@ -22,7 +22,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Instructions: 4a150e1ed7854776c10cda955ce8b825aa485b74
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
