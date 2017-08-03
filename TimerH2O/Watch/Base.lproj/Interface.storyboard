@@ -16,13 +16,13 @@
                     <items>
                         <group width="1" alignment="left" id="nt3-0n-dfV">
                             <items>
-                                <group alignment="left" layout="vertical" spacing="0.0" id="KWh-6e-vQ2">
+                                <group alignment="left" layout="vertical" spacing="6" id="KWh-6e-vQ2">
                                     <items>
                                         <label alignment="left" text="💧" id="gFK-zx-Nqb">
                                             <color key="textColor" red="0.054901960780000002" green="0.61960784310000006" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="18"/>
                                         </label>
-                                        <label alignment="left" text="2000 ml" id="eHe-3g-TTi">
+                                        <label alignment="left" accessibilityHint="Water left" text="2000 ml" id="eHe-3g-TTi">
                                             <color key="textColor" red="0.054901960780000002" green="0.61960784310000006" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="font" type="boldSystem" pointSize="34"/>
                                         </label>
@@ -30,7 +30,7 @@
                                 </group>
                             </items>
                         </group>
-                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="ZZ2-0u-jb6">
+                        <group width="1" alignment="left" hidden="YES" layout="vertical" spacing="0.0" id="ZZ2-0u-jb6">
                             <items>
                                 <group width="1" height="83" alignment="left" layout="vertical" spacing="0.0" id="keV-Na-2St">
                                     <items>

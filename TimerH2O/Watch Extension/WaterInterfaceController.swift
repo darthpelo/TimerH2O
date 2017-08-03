@@ -14,6 +14,8 @@ class WaterInterfaceController: WKInterfaceController {
     @IBOutlet var waterLabel: WKInterfaceLabel!
     @IBOutlet weak var myTimer: WKInterfaceTimer!
     
+    var timerStarted = false
+    
     var watchSession: WCSession? {
         didSet {
             if let session = watchSession {
@@ -27,20 +29,6 @@ class WaterInterfaceController: WKInterfaceController {
         didSet {
             guard let progress = progress else { return }
             waterLabel.setText("\(progress) ml")
-        }
-    }
-    
-    var countDown: TimeInterval? {
-        didSet {
-            guard let countDown = countDown else { return }
-            
-            timerLabel.setText(countDown.toString(withSeconds: false))
-            
-            if countDown > 60 {
-                timerLabel.setTextColor(.white)
-            } else {
-                timerLabel.setTextColor(.red)
-            }
         }
     }
     
@@ -114,16 +102,16 @@ extension WaterInterfaceController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("watch received app context: ", applicationContext)
+        
+        if let goal = applicationContext[DictionaryKey.goal.rawValue] as? Int {
+            let userdef = UserDefaults.standard
+            userdef.set(goal, forKey: DictionaryKey.goal.rawValue)
+        }
+        
         if let progress = applicationContext[DictionaryKey.progress.rawValue] as? Int {
             self.progress = progress
             let userdef = UserDefaults.standard
             userdef.set(progress, forKey: DictionaryKey.progress.rawValue)
-        }
-        
-        if let goal = applicationContext[DictionaryKey.goal.rawValue] as? Int {
-            self.goal = goal
-            let userdef = UserDefaults.standard
-            userdef.set(goal, forKey: DictionaryKey.goal.rawValue)
         }
         
         if let countDown = applicationContext[DictionaryKey.countDown.rawValue] as? TimeInterval {
