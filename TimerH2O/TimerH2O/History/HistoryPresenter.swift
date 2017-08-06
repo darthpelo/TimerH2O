@@ -21,22 +21,24 @@ struct SessionInfo {
 
 class HistoryPresenterImplementation {
     weak var view: HistoryView!
+    private var dataWrapper: DataWrapper?
     private var sessionsList: Results<Session>?
     
-    init(view: HistoryView) {
+    init(view: HistoryView, dataWrapper: DataWrapper = RealmManager()) {
         self.view = view
+        self.dataWrapper = dataWrapper
     }
     
     func loadSessions() -> Int {
-        guard let list = RealmManager().loadAllSessions(), list.count > 0 else {
+        guard let list = dataWrapper?.loadAllSessions(), list.count > 0 else {
             return 0
         }
         
         if let userId = UIDevice.current.identifierForVendor?.uuidString,
-            let user = RealmManager().loadUser(withId: userId) {
+            let user = dataWrapper?.loadUser(withId: userId) {
             // Check for old final users
             for session in list where session.user == nil {
-                    RealmManager().update(session: session, withUser: user)
+                    dataWrapper?.update(session: session, withUser: user)
             }
         }
         self.sessionsList = list

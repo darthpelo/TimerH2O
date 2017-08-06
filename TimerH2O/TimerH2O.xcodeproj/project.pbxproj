@@ -31,6 +31,7 @@
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
 		D971CD991F37198F00C8B739 /* TH2OTimerViewController+Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */; };
+		D971CD9B1F37BDF200C8B739 /* HistoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971CD9A1F37BDF200C8B739 /* HistoryPresenterTests.swift */; };
 		D97205D61F30D1CF0030D419 /* HealthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97205D51F30D1CF0030D419 /* HealthPresenter.swift */; };
 		D97205D81F3111C70030D419 /* TimerH2O.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = D97205D71F3111C70030D419 /* TimerH2O.ckcomplication */; };
 		D98135041F07875E0037E224 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98135031F07875E0037E224 /* WatchManager.swift */; };
@@ -160,6 +161,7 @@
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
 		D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TH2OTimerViewController+Coach.swift"; path = "Extensions/TH2OTimerViewController+Coach.swift"; sourceTree = "<group>"; };
+		D971CD9A1F37BDF200C8B739 /* HistoryPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenterTests.swift; sourceTree = "<group>"; };
 		D97205D51F30D1CF0030D419 /* HealthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthPresenter.swift; path = More/HealthPresenter.swift; sourceTree = "<group>"; };
 		D97205D71F3111C70030D419 /* TimerH2O.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TimerH2O.ckcomplication; sourceTree = "<group>"; };
 		D98135031F07875E0037E224 /* WatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchManager.swift; path = Controllers/WatchManager.swift; sourceTree = "<group>"; };
@@ -338,9 +340,10 @@
 		D98476DD1DBD622F009F92B3 /* TimerH2OTests */ = {
 			isa = PBXGroup;
 			children = (
-				D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */,
 				D98476E01DBD622F009F92B3 /* Info.plist */,
+				D971CD9A1F37BDF200C8B739 /* HistoryPresenterTests.swift */,
 				D9E34C831DC29BF900692768 /* LocalDataTests.swift */,
+				D98476DE1DBD622F009F92B3 /* TimerH2OTests.swift */,
 				D9F7B6061DCD3F0100EAE2BA /* TimerTests.swift */,
 			);
 			path = TimerH2OTests;
@@ -904,6 +907,7 @@
 				D9D0AEC81DBEA80500B6A8EE /* SessionManager.swift in Sources */,
 				D9F7B6081DCD3F3200EAE2BA /* Timer.swift in Sources */,
 				D94A12E61DC53B0D0047FCB6 /* Converter.swift in Sources */,
+				D971CD9B1F37BDF200C8B739 /* HistoryPresenterTests.swift in Sources */,
 				D98476DF1DBD622F009F92B3 /* TimerH2OTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

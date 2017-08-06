@@ -9,7 +9,17 @@
 import Foundation
 import RealmSwift
 
-struct RealmManager {
+protocol DataWrapper {
+    func create(newUser userId: String)
+    func create(newSession session: Model)
+    func updateSession(withEnd end: Date, finalAmount amount: Double)
+    func update(session: Session, withUser user: Person)
+    func loadAllSessions() -> Results<Session>?
+    func loadSession(withId idx: String) -> Session?
+    func loadUser(withId userId: String) -> Person?
+}
+
+struct RealmManager: DataWrapper {
     // MARK: - Public
     func create(newUser userId: String) {
         let new = Person()
