@@ -39,6 +39,7 @@ class WatchManager: NSObject {
     private func sendDictionary(_ dict: [String: Any]) {
         do {
             try self.watchSession?.updateApplicationContext(dict)
+            self.watchSession?.transferCurrentComplicationUserInfo(dict)
         } catch {
             print("Error sending dictionary \(dict) to Apple Watch!")
         }

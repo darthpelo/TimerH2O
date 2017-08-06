@@ -96,13 +96,9 @@ class WaterInterfaceController: WKInterfaceController {
 }
 
 extension WaterInterfaceController: WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("Session activation did complete")
-    }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        print("watch received app context: ", applicationContext)
-        
         if let goal = applicationContext[DictionaryKey.goal.rawValue] as? Int {
             let userdef = UserDefaults.standard
             userdef.set(goal, forKey: DictionaryKey.goal.rawValue)

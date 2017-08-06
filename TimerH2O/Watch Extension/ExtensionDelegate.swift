@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
@@ -33,5 +34,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
+    
+    func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any]) {
+        if userInfo[DictionaryKey.goal.rawValue] != nil {
+            updateComplicationData()
+        }
+    }
+    
+    private func updateComplicationData() {
+        let complicationsController = ComplicationController()
+        complicationsController.reloadOrExtendData()
+    }
 }

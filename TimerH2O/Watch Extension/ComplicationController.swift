@@ -11,13 +11,29 @@ import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
+    func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Swift.Void) {
         // Call the handler with the date when you would next like to be
         // given the opportunity to update your complication content
-        
-        // handler(nil);
         //---update in the next 1 hour---
-        handler(NSDate(timeIntervalSinceNow: 3600))
+        handler(Date(timeIntervalSinceNow: 3600))
+    }
+    
+    func requestedUpdateDidBegin() {
+        reloadOrExtendData()
+    }
+    func requestedUpdateBudgetExhausted() {
+        reloadOrExtendData()
+    }
+    
+    func reloadOrExtendData() {
+        let server = CLKComplicationServer.sharedInstance()
+        guard let complications = server.activeComplications,
+            complications.count > 0 else { return }
+        
+        // To invalidate the existing data
+        for complication in complications {
+            server.reloadTimeline(for: complication)
+        }
     }
     
     // MARK: - Timeline Configuration
