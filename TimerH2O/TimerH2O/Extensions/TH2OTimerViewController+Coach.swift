@@ -23,13 +23,14 @@ extension TH2OTimerViewController: CoachMarksControllerDataSource, CoachMarksCon
     
     func coachMarksController(_ coachMarksController: CoachMarksController,
                               coachMarkAt index: Int) -> CoachMark {
-        if index == Mark.one.rawValue {
+        switch index {
+        case Mark.one.rawValue:
             return coachMarksController.helper.makeCoachMark(for: self.startNewSessionButton)
-        } else if index == Mark.two.rawValue {
+        case Mark.two.rawValue:
             return coachMarksController.helper.makeCoachMark(for: self.stopTimerButton)
-        } else if index == Mark.three.rawValue {
+        case Mark.three.rawValue:
             return coachMarksController.helper.makeCoachMark(for: self.endSessionButton)
-        } else {
+        case Mark.four.rawValue:
             if let subviews = self.tabBarController?.tabBar.subviews {
                 let coachMark = coachMarksController.helper.makeCoachMark(for: subviews[3]) {(frame: CGRect) -> UIBezierPath in
                     // This will create an oval cutout a bit larger than the view.
@@ -37,6 +38,8 @@ extension TH2OTimerViewController: CoachMarksControllerDataSource, CoachMarksCon
                 }
                 return coachMark
             }
+            return coachMarksController.helper.makeCoachMark(for: nil)
+        default:
             return coachMarksController.helper.makeCoachMark(for: nil)
         }
     }
