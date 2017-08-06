@@ -32,6 +32,7 @@
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
+		D971CD991F37198F00C8B739 /* TH2OTimerViewController+Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */; };
 		D97205D61F30D1CF0030D419 /* HealthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97205D51F30D1CF0030D419 /* HealthPresenter.swift */; };
 		D97205D81F3111C70030D419 /* TimerH2O.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = D97205D71F3111C70030D419 /* TimerH2O.ckcomplication */; };
 		D98135041F07875E0037E224 /* WatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98135031F07875E0037E224 /* WatchManager.swift */; };
@@ -168,6 +169,7 @@
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
+		D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TH2OTimerViewController+Coach.swift"; path = "Extensions/TH2OTimerViewController+Coach.swift"; sourceTree = "<group>"; };
 		D97205D51F30D1CF0030D419 /* HealthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthPresenter.swift; path = More/HealthPresenter.swift; sourceTree = "<group>"; };
 		D97205D71F3111C70030D419 /* TimerH2O.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TimerH2O.ckcomplication; sourceTree = "<group>"; };
 		D98135031F07875E0037E224 /* WatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchManager.swift; path = Controllers/WatchManager.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				D9F0443D1DFDB7DD000E373C /* TimeInterval.swift */,
 				D9F5A61D1E34AC9900B71C9A /* SVProgressHUD.swift */,
 				D9D04D961EED904200DDA699 /* UserDefaults.swift */,
+				D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D971CD991F37198F00C8B739 /* TH2OTimerViewController+Coach.swift in Sources */,
 				D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */,
 				D9F0443E1DFDB7DD000E373C /* TimeInterval.swift in Sources */,
 				D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */,
