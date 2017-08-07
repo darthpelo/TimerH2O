@@ -22,3 +22,18 @@ struct TH2OConstants {
         static let keychainIdentifier = "com.alessioroberto.EncryptionKey"
     }
 }
+
+enum DictionaryKey: String {
+    case goal
+    case progress
+    case countDown
+    case start
+    case stop
+    case end
+}
+
+enum WatchText: String {
+    case ok = "🏁"
+    case error = "😭"
+    case onGoing = "💧"
+}

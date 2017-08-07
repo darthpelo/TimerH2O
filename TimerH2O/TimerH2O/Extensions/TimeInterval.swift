@@ -13,13 +13,18 @@ extension TimeInterval {
     /// Convert TimeInterval instance in a String with the format "00:00:00" (hours:minutes:seconds)
     ///
     /// - Returns: The String rappresentation of the TimeInterval
-    func toString() -> String {
+    func toString(withSeconds seconds: Bool = true) -> String {
         let ti = NSInteger(self)
 
-        let seconds = ti % 60
         let minutes = (ti / 60) % 60
         let hours = (ti / 3600)
         
-        return String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+        if seconds {
+            let seconds = ti % 60
+            return String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+        } else {
+            return String(format: "%0.2d:%0.2d", hours, minutes)
+        }
+        
     }
 }

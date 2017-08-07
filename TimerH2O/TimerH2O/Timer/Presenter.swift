@@ -19,6 +19,7 @@ struct Presenter {
         SessionManager().newTimeInterval(second: interval)
         RealmManager().create(newSession: model)
         
+        WatchManager.sharedInstance.set(goal: water)
         updateWatch()
     }
     
@@ -100,16 +101,18 @@ struct Presenter {
         }
         
         updateAmountLabel(actualAmount)
+        
+        saveToHealthKit(newAmount: amount)
     }
     
     func updateWatch() {
-        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater())
+        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater(),
+                                           countDown: SessionManager().countDown())
     }
     
     // MARK: - Private
     private func modelUpdate() {
         RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
-        saveToHealthKit()
     }
     
     private func updateCountDown() {
@@ -130,40 +133,8 @@ struct Presenter {
     }
 }
 
-extension Presenter {    
-    fileprivate func saveToHealthKit() {
-        if let id = SessionManager().sessionID(),
-            let session = RealmManager().loadSession(withId: id) {
-            healthManager?.saveWaterSample(session.amount/1000, startDate: session.start, endDate: session.end)
-        }
-    }
-}
-
-struct HealthPresenter {
-    weak var healthManager: HealthManager?
-    
-    func healthKitIsAuthorized() -> Bool {
-        guard let healthManager = healthManager else {
-            return false
-        }
-        return healthManager.isAuthorized()
-    }
-    
-    func healthKitAuthorize(completion: @escaping ((_ success: Bool) -> Void)) {
-        guard let healthManager = healthManager else {
-            completion(false)
-            return
-        }
-        
-        healthManager.authorizeHealthKit { (authorized, error) in
-            if authorized {
-                return completion(authorized)
-            } else {
-                if error != nil {
-                    NSLog("\(String(describing: error))")
-                }
-                return completion(authorized)
-            }
-        }
+extension Presenter {
+    fileprivate func saveToHealthKit(newAmount water: Double) {
+        healthManager?.saveWaterSample(water/1000, startDate: Date(), endDate: Date())
     }
 }

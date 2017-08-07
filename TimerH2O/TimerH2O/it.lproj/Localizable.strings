@@ -24,14 +24,14 @@
 "timerview.start.button" = "Comincia nuova sessione";
 "timerview.end.button" = "Termina la sessione";
 "timerview.healtkit" = "Connetti ad Apple Salute";
-"timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obbiettivo della giornata!";
+"timerview.timer.label.finish_presenter" = "Complimenti!\nHai raggiunto il tuo obiettivo della giornata!";
 
 "usernotification.drink" = "Ho Bevuto";
 "usernotification.snooze.5" = "Ritarda 5 minuti";
 "usernotification.snooze.15" = "Ritarda 15 minuti";
 "usernotification.snooze.30" = "Ritarda 30 minuti";
 
-"history.cell.goal" = "Obbiettivo";
+"history.cell.goal" = "Obiettivo";
 "history.cell.amount" = "Quantità finale";
 "history.cell.start" = "Da";
 "history.cell.end" = "A";
@@ -47,3 +47,4 @@
 "coach.mark.one" = "Comincia a misurare quanta acqua bevi ogni giorno 📝";
 "coach.mark.two" = "Registra ogni bicchiere di acqua bevuta 💧";
 "coach.mark.three" = "Concludi la tua sessione giornaliera 🏁";
+"coach.mark.four" = "Connetti TimerH20 con Apple Salute, per salvare in sicurezza tutte le tue sessioni 🔐";
