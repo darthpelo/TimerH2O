@@ -17,14 +17,6 @@ extension Configurable where Self: TH2OTimerViewController {
         notificationCenter.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
-    internal func setTimerLabel(with timerInterval: TimeInterval) {
-        timerLabel.text = timerInterval.toString()
-    }
-    
-    internal func setAmountLabel(with amount: Double) {
-        amountLabe.text = "\(amount)"
-    }
-    
     internal func configureWaterPickerView() {
         waterPickerView = TH2OWaterPickerView().loadPickerView()
         

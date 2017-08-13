@@ -15,4 +15,5 @@ protocol ViewProtocol: class {
     func startButton(isEnabled: Bool)
     func stopTimerButton(isEnabled: Bool)
     func endSessionButton(isEnabled: Bool)
+    func showWaterPicker()
 }

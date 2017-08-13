@@ -33,4 +33,6 @@ extension TH2OSetSessionViewController: ViewProtocol {
     internal func setTimerLabel(with string: String) {}
 
     internal func update(countDown: TimeInterval) {}
+    
+    internal func showWaterPicker() {}
 }

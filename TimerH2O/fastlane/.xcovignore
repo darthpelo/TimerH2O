@@ -1,0 +1,26 @@
+# Exclude AppDelegate
+- AppDelegate.swift
+
+# Exclude all files ending by "View.swift"
+- .*View.swift
+
+# Exclude all files ending by "Controller.swift"
+- .*Controller.swift
+- TH2OTimerViewController+Coach.swift
+
+# Exclude others files
+- Encrypt.swift
+- R.generated.swift
+- SVProgressHUD.swift
+- Logger.swift
+- HealthPresenter.swift
+- TH2OSetSessionVCExtensions.swift
+- Seguible.swift
+- HealthManager.swift
+- Session.swift
+- Timer.swift
+- RealmManager.swift
+
+# Exclude all dependencies
+- Pods
+- Carthage/Checkouts

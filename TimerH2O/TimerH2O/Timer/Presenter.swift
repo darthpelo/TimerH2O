@@ -9,15 +9,42 @@
 import Foundation
 
 struct Presenter {
-    weak var view: ViewProtocol?
-    weak var healthManager: HealthManager?
+    fileprivate weak var view: ViewProtocol?
+    fileprivate weak var healthManager: HealthManager?
+    fileprivate var sessionManager: SessionManager
+    fileprivate var dataManager: DataWrapper
+    
+    init(view: ViewProtocol? = nil,
+         healthManager: HealthManager = HealthManager(),
+         sessionManager: SessionManager = SessionManagerImplementation(),
+         dataManager: DataWrapper = RealmManager()) {
+        self.view = view
+        self.healthManager = healthManager
+        self.sessionManager = sessionManager
+        self.dataManager = dataManager
+    }
+    
+    func setupView() {
+        if sessionIsStarted() {
+            if let timeInterval = sessionManager.endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
+                startTimer(timeInterval)
+            } else {
+                endInterval()
+                DispatchQueue.main.async {
+                    self.view?.showWaterPicker()
+                }
+            }
+        }
+        
+        view?.setAmountLabel(with: "\(sessionManager.amountOfWater())")
+    }
     
     func save(_ water: Int, _ interval: TimeInterval) {
         let model = Model(idx: UUID().uuidString, water: Double(water), interval: interval)
-        SessionManager().new(sessioId: model.idx)
-        SessionManager().newAmountOf(water: Double(water))
-        SessionManager().newTimeInterval(second: interval)
-        RealmManager().create(newSession: model)
+        sessionManager.new(sessioId: model.idx)
+        sessionManager.newAmountOf(water: Double(water))
+        sessionManager.newTimeInterval(second: interval)
+        dataManager.create(newSession: model)
         
         WatchManager.sharedInstance.set(goal: water)
         updateWatch()
@@ -25,7 +52,7 @@ struct Presenter {
     
     func startSession() {
         AnswerManager().log(event: "StartSessoin")
-        SessionManager().newSession(isStart: true)
+        sessionManager.newSession(isStart: true)
         self.view?.startButton(isEnabled: false)
         self.view?.stopTimerButton(isEnabled: true)
         self.view?.endSessionButton(isEnabled: true)
@@ -36,8 +63,8 @@ struct Presenter {
         
         modelUpdate()
         
-        SessionManager().newSession(isStart: false)
-        SessionManager().newAmountOf(water: 0)
+        sessionManager.newSession(isStart: false)
+        sessionManager.newAmountOf(water: 0)
         endInterval()
         stopTimer()
         
@@ -49,12 +76,30 @@ struct Presenter {
         self.view?.setTimerLabel(with: R.string.localizable.timerviewTimerLabelFinish_presenter())
     }
     
+    func sessionIsStarted() -> Bool {
+        switch sessionManager.state() {
+        case .start:
+            return true
+        case .end:
+            return false
+        }
+    }
+    
+    func intervalIsStarted() -> Bool {
+        switch sessionManager.intervalState() {
+        case .start:
+            return true
+        case .end:
+            return false
+        }
+    }
+    
     func startTimer() {
         TimerManager.sharedInstance.start()
         
-        let endTime = Date(timeIntervalSinceNow: SessionManager().timeInterval())
-        SessionManager().new(endTimer: endTime)
-        SessionManager().new(countDown: SessionManager().timeInterval())
+        let endTime = Date(timeIntervalSinceNow: sessionManager.timeInterval())
+        sessionManager.new(endTimer: endTime)
+        sessionManager.new(countDown: sessionManager.timeInterval())
         
         TimerManager.sharedInstance.scheduledTimer = {
             self.updateCountDown()
@@ -62,7 +107,7 @@ struct Presenter {
     }
     
     func startTimer(_ endTimer: TimeInterval) {
-        SessionManager().new(countDown: endTimer)
+        sessionManager.new(countDown: endTimer)
         TimerManager.sharedInstance.start()
         
         TimerManager.sharedInstance.scheduledTimer = {
@@ -76,23 +121,24 @@ struct Presenter {
     
     func startInterval() {
         AnswerManager().log(event: "StartInterval")
-        SessionManager().newInterval(isStart: true)
+        sessionManager.newInterval(isStart: true)
         startTimer()
+        view?.setTimerLabel(with: sessionManager.timeInterval().toString())
     }
     
     func endInterval() {
         AnswerManager().log(event: "EndInterval")
-        SessionManager().newInterval(isStart: false)
-        SessionManager().new(endTimer: Date(timeIntervalSince1970: 1))
-        SessionManager().new(countDown: 0)
+        sessionManager.newInterval(isStart: false)
+        sessionManager.new(endTimer: Date(timeIntervalSince1970: 1))
+        sessionManager.new(countDown: 0)
         TimerManager.sharedInstance.stop()
     }
     
     func update(water amount: Double) {
-        var actualAmount = SessionManager().amountOfWater()
+        var actualAmount = sessionManager.amountOfWater()
         
         actualAmount -= amount
-        SessionManager().newAmountOf(water: actualAmount)
+        sessionManager.newAmountOf(water: actualAmount)
         
         if actualAmount > 0 {
             startInterval()
@@ -106,20 +152,20 @@ struct Presenter {
     }
     
     func updateWatch() {
-        WatchManager.sharedInstance.update(water: SessionManager().amountOfWater(),
-                                           countDown: SessionManager().countDown())
+        WatchManager.sharedInstance.update(water: sessionManager.amountOfWater(),
+                                           countDown: sessionManager.countDown())
     }
     
     // MARK: - Private
     private func modelUpdate() {
-        RealmManager().updateSession(withEnd: Date(), finalAmount: SessionManager().amountOfWater())
+        dataManager.updateSession(withEnd: Date(), finalAmount: sessionManager.amountOfWater())
     }
     
     private func updateCountDown() {
-        let countDown = SessionManager().countDown() - 1
-        SessionManager().new(countDown: countDown)
+        let countDown = sessionManager.countDown() - 1
+        sessionManager.new(countDown: countDown)
         self.view?.update(countDown: countDown,
-                          amount: SessionManager().amountOfWater())
+                          amount: sessionManager.amountOfWater())
         updateWatch()
     }
     

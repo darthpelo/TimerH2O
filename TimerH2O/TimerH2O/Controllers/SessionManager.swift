@@ -8,6 +8,22 @@
 
 import Foundation
 
+protocol SessionManager {
+    func newSession(isStart: Bool)
+    func state() -> State
+    func intervalState() -> State
+    func newInterval(isStart: Bool)
+    func amountOfWater() -> Double
+    func new(sessioId: String)
+    func newAmountOf(water: Double)
+    func newTimeInterval(second: TimeInterval)
+    func endTimer() -> Date?
+    func timeInterval() -> TimeInterval
+    func new(countDown: TimeInterval)
+    func countDown() -> TimeInterval
+    func new(endTimer: Date)
+}
+
 enum StorageKey: String {
     case amountOfWater = "com.alessioroberto.amountOfWater"
     case sessionStart = "com.alessioroberto.sessionStart"
@@ -18,53 +34,72 @@ enum StorageKey: String {
     case sessionID = "com.alessioroberto.sessionid"
 }
 
-struct SessionManager {
-    func newSession(isStart: Bool) {
-        UserDefaults.standard.set(isStart, forKey: StorageKey.sessionStart.rawValue)
+enum State {
+    case start
+    case end
+}
+
+struct SessionManagerImplementation: SessionManager {
+    private var userDefault: UserDefaults
+    
+    init(userDefault: UserDefaults = UserDefaults.standard) {
+        self.userDefault = userDefault
     }
     
-    func sessionIsStart() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.sessionStart.rawValue)
+    func state() -> State {
+        if userDefault.bool(forKey: StorageKey.sessionStart.rawValue) == true {
+            return .start
+        } else {
+            return .end
+        }
+    }
+    
+    func intervalState() -> State {
+        if userDefault.bool(forKey: StorageKey.intervalStart.rawValue) == true {
+            return .start
+        } else {
+            return .end
+        }
+    }
+    
+    func newSession(isStart: Bool) {
+        userDefault.set(isStart, forKey: StorageKey.sessionStart.rawValue)
     }
     
     func newInterval(isStart: Bool) {
-        UserDefaults.standard.set(isStart, forKey: StorageKey.intervalStart.rawValue)
-    }
-    
-    func intervalIsStart() -> Bool {
-        return UserDefaults.standard.bool(forKey: StorageKey.intervalStart.rawValue)
+        userDefault.set(isStart, forKey: StorageKey.intervalStart.rawValue)
     }
     
     func newAmountOf(water: Double) {
-        UserDefaults.standard.set(water, forKey: StorageKey.amountOfWater.rawValue)
+        userDefault.set(water, forKey: StorageKey.amountOfWater.rawValue)
     }
     
     func amountOfWater() -> Double {
-        return UserDefaults.standard.double(forKey: StorageKey.amountOfWater.rawValue)
+        return userDefault.double(forKey: StorageKey.amountOfWater.rawValue)
     }
     
     func newTimeInterval(second: TimeInterval) {
-        UserDefaults.standard.set(second, forKey: StorageKey.timeInterval.rawValue)
+        userDefault.set(second, forKey: StorageKey.timeInterval.rawValue)
     }
     
     func timeInterval() -> TimeInterval {
-        return UserDefaults.standard.double(forKey: StorageKey.timeInterval.rawValue)
+        return userDefault.double(forKey: StorageKey.timeInterval.rawValue)
     }
     
     func new(countDown: TimeInterval) {
-        UserDefaults.standard.set(countDown, forKey: StorageKey.countDown.rawValue)
+        userDefault.set(countDown, forKey: StorageKey.countDown.rawValue)
     }
     
     func countDown() -> TimeInterval {
-        return UserDefaults.standard.double(forKey: StorageKey.countDown.rawValue)
+        return userDefault.double(forKey: StorageKey.countDown.rawValue)
     }
     
     func new(endTimer: Date) {
-        UserDefaults.standard.set(endTimer, forKey: StorageKey.endTimer.rawValue)
+        userDefault.set(endTimer, forKey: StorageKey.endTimer.rawValue)
     }
     
     func endTimer() -> Date? {
-        guard let when = UserDefaults.standard.object(forKey: StorageKey.endTimer.rawValue) else {
+        guard let when = userDefault.object(forKey: StorageKey.endTimer.rawValue) else {
             return nil
         }
         
@@ -73,10 +108,10 @@ struct SessionManager {
     }
     
     func new(sessioId: String) {
-        UserDefaults.standard.set(sessioId, forKey: StorageKey.sessionID.rawValue)
+        userDefault.set(sessioId, forKey: StorageKey.sessionID.rawValue)
     }
     
     func sessionID() -> String? {
-        return UserDefaults.standard.string(forKey: StorageKey.sessionID.rawValue)
+        return userDefault.string(forKey: StorageKey.sessionID.rawValue)
     }
 }

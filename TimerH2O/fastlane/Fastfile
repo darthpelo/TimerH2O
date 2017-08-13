@@ -15,6 +15,13 @@ platform :ios do
     scan(
        scheme: 'TimerH2O'
     )
+
+    xcov(
+       workspace: "TimerH2O.xcworkspace",
+       scheme: "TimerH2O",
+       minimum_coverage_percentage: 40.0,
+       output_directory: "xcov_output"
+    )
   end
 
   desc "Submit to internal testers using Crashlytics"

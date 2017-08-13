@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var watcher = WatchManager()
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
@@ -35,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        TimerManager.sharedInstance.stop()
-        scheduleLocalNotification(SessionManager().endTimer())
+        
+        scheduleLocalNotification()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -54,15 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             withCustomAttributes: ["VC":
                                 "AppDelegate", "Function":
                                 "applicationWillTerminate"])
-        TimerManager.sharedInstance.stop()
-        scheduleLocalNotification(SessionManager().endTimer())
+        scheduleLocalNotification()
     }
     
 }
 
 extension AppDelegate {
-    fileprivate func scheduleLocalNotification(_ endTime: Date?) {
-        guard let endTime = endTime else {
+    fileprivate func scheduleLocalNotification() {
+        TimerManager.sharedInstance.stop()
+        
+        guard let endTime = SessionManagerImplementation().endTimer() else {
             return
         }
         // Create Notification Content

@@ -39,7 +39,6 @@ class TH2OTimerPickerView: UIView {
         return view
     }
     
-    
     func configure(onView: UIView, withCallback: @escaping DoneListener) {
         doneListener = withCallback
         parentView = onView

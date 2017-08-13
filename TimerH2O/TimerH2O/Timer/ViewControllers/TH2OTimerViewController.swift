@@ -31,11 +31,11 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     public var waterPickerView: TH2OWaterPickerView?
-    private let healthManager = HealthManager()
+//    private let healthManager = HealthManager()
     
     let coachMarksController = CoachMarksController()
     
-    lazy var presenter: Presenter = Presenter(view: self, healthManager: self.healthManager)
+    lazy var presenter: Presenter = Presenter(view: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if SessionManager().sessionIsStart() {
+        if presenter.sessionIsStarted() {
             startButton(isEnabled: false)
             stopTimerButton(isEnabled: true)
             endSessionButton(isEnabled: true)
@@ -65,6 +65,8 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
             stopTimerButton(isEnabled: false)
             endSessionButton(isEnabled: false)
         }
+        
+        presenter.setupView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,13 +75,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         
         setupNotification()
         notificationsSettings()
-        
-        if SessionManager().sessionIsStart() {
-            configureWaterPickerView()
-            timerCheck()
-        }
-        
-        setAmountLabel(with: SessionManager().amountOfWater())
+        configureWaterPickerView()
         
         if UserDefaults().timerCoachShowed == false {
            self.coachMarksController.start(on: self)
@@ -99,7 +95,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     @IBAction func drinkButtonPressed(_ sender: AnyObject) {
-        if SessionManager().sessionIsStart() && SessionManager().intervalIsStart() {
+        if presenter.sessionIsStarted() && presenter.intervalIsStarted() {
             AnswerManager().log(event: "drinkButtonPressed")
             presenter.endInterval()
             showWaterPicker()
@@ -112,7 +108,6 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     }
     
     @IBAction func unwindToTimer(segue: UIStoryboardSegue) {
-        setTimerLabel(with: SessionManager().timeInterval())
         configureWaterPickerView()
         presenter.startSession()
         presenter.startInterval()
@@ -125,28 +120,18 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
     
     func didBecomeActive() {
         if #available(iOS 10.0, *) {
-            if SessionManager().sessionIsStart() {
-                timerCheck()
+            if presenter.sessionIsStarted() {
+                presenter.setupView()
                 presenter.updateWatch()
             }
         }
     }
     
-    // MARK: - Private
-    fileprivate func showWaterPicker() {
+    internal func showWaterPicker() {
         waterPickerView?.isTo(show: true)
     }
     
-    fileprivate func timerCheck() {
-        if let timeInterval = SessionManager().endTimer()?.timeIntervalSince(Date()), timeInterval > 0 {
-            self.presenter.startTimer(timeInterval)
-        } else {
-            presenter.endInterval()
-            DispatchQueue.main.async { [weak self] in
-                self?.showWaterPicker()
-            }
-        }
-    }
+    // MARK: - Private
     
     fileprivate func snozee(_ time: Snooze) {
         presenter.updateWatch()
@@ -160,19 +145,15 @@ extension TH2OTimerViewController: ViewProtocol {
             presenter.endInterval()
             DispatchQueue.main.async { [weak self] in
                 self?.showWaterPicker()
-                self?.setAmountLabel(with: amount)
+                self?.setAmountLabel(with: "\(amount)")
             }
         } else {
-            setTimerLabel(with: countDown)
+            setTimerLabel(with: countDown.toString())
         }
     }
     
     internal func setTimerLabel(with string: String) {
         timerLabel.text = string
-    }
-    
-    internal func setAmountLabel(with string: String) {
-        amountLabe.text = string
     }
     
     internal func startButton(isEnabled: Bool) {
@@ -185,6 +166,10 @@ extension TH2OTimerViewController: ViewProtocol {
     
     internal func endSessionButton(isEnabled: Bool) {
         endSessionButton.isEnabled = isEnabled
+    }
+    
+    internal func setAmountLabel(with string: String) {
+        amountLabe.text = string
     }
 }
 
@@ -207,10 +192,10 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
         case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
             completionHandler()
         case UNNotificationDefaultActionIdentifier: // App was opened from notification
-            completionHandler(timerCheck())
+            completionHandler(presenter.setupView())
         case TH2OConstants.UserNotification.drinkAction:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.drinkAction])
-            completionHandler(timerCheck())
+            completionHandler(presenter.setupView())
         case TH2OConstants.UserNotification.snooze5Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze5Action])
             completionHandler(snozee(Snooze.five))

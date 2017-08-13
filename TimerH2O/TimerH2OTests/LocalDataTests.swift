@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import TimerH2O
+
 class LocalDataTests: XCTestCase {
     
     override func setUp() {
@@ -21,29 +23,29 @@ class LocalDataTests: XCTestCase {
     }
     
     func testSessionInProgressTests() {
-        SessionManager().newSession(isStart: true)
-        XCTAssertTrue(SessionManager().sessionIsStart())
-        SessionManager().newSession(isStart: false)
-        XCTAssertFalse(SessionManager().sessionIsStart())
+        SessionManagerImplementation().newSession(isStart: true)
+        XCTAssertEqual(State.start, SessionManagerImplementation().state())
+        SessionManagerImplementation().newSession(isStart: false)
+        XCTAssertEqual(State.end, SessionManagerImplementation().state())
     }
 
     func testWaterSetupTests() {
         let water = 50.0
-        SessionManager().newAmountOf(water: water)
-        XCTAssertEqual(SessionManager().amountOfWater(), water)
+        SessionManagerImplementation().newAmountOf(water: water)
+        XCTAssertEqual(SessionManagerImplementation().amountOfWater(), water)
     }
 
     func testTimeIntervalTests() {
         let timer: Double = 15 // Second
-        SessionManager().newTimeInterval(second: timer)
-        XCTAssertEqual(SessionManager().timeInterval(), timer)
+        SessionManagerImplementation().newTimeInterval(second: timer)
+        XCTAssertEqual(SessionManagerImplementation().timeInterval(), timer)
     }
 
     func testSaveDate() {
         let date = Date()
-        SessionManager().new(endTimer: date)
+        SessionManagerImplementation().new(endTimer: date)
         
-        let result = SessionManager().endTimer()
+        let result = SessionManagerImplementation().endTimer()
         XCTAssertNotNil(result)
         XCTAssertEqual(result, date)
     }

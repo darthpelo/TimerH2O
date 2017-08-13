@@ -44,7 +44,7 @@ struct RealmManager: DataWrapper {
             // Get the default Realm
             let realm = try loadRealm()
             
-            if let idx = SessionManager().sessionID(),
+            if let idx = SessionManagerImplementation().sessionID(),
                 let session = realm.object(ofType: Session.self, forPrimaryKey: idx) {
                 try realm.write {
                     session.amount = session.goal - amount

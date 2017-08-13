@@ -71,3 +71,4 @@ fastlane/test_output
 /TimerH2O/fastlane/report.xml
 /TimerH2O/fastlane/Appfile
 TimerH2O/fastlane/test_output
+/TimerH2O/xcov_output
