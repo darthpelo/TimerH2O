@@ -8,6 +8,7 @@ platform :ios do
     increment_build_number(
         build_number: build_number
     )
+    cocoapods
   end
 
   desc "Runs all the tests"
