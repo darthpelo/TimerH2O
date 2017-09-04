@@ -68,6 +68,7 @@ struct Presenter {
         endInterval()
         stopTimer()
         
+        WatchManager.sharedInstance.set(goal: 0)
         updateWatch()
         
         self.view?.startButton(isEnabled: true)
