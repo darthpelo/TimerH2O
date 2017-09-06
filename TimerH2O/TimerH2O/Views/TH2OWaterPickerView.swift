@@ -23,7 +23,7 @@ class TH2OWaterPickerView: UIView {
     private var parentView: UIView?
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        guard let amount = convert(amount: amount) else {
+        guard let amount = Converter.convert(amount: amount) else {
             return
         }
         doneAmount?(amount)
@@ -66,14 +66,6 @@ class TH2OWaterPickerView: UIView {
                             self.frame.origin.y = height
                         }
             }, completion: nil)
-    }
-    
-    private func convert(amount: [String]) -> Int? {
-        var result: String = ""
-        for c in amount {
-            result += c
-        }
-        return Int(result)
     }
 }
 
