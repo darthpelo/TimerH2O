@@ -10,6 +10,7 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - Carthage
   - R.generated.swift
+  - build.swift
 
 line_length:
     warning: 175

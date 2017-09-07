@@ -10,7 +10,7 @@ import Foundation
 
 struct Presenter {
     fileprivate weak var view: ViewProtocol?
-    fileprivate weak var healthManager: HealthManager?
+    fileprivate var healthManager: HealthManager
     fileprivate var sessionManager: SessionManager
     fileprivate var dataManager: DataWrapper
     
@@ -68,6 +68,7 @@ struct Presenter {
         endInterval()
         stopTimer()
         
+        WatchManager.sharedInstance.set(goal: 0)
         updateWatch()
         
         self.view?.startButton(isEnabled: true)
@@ -181,6 +182,6 @@ struct Presenter {
 
 extension Presenter {
     fileprivate func saveToHealthKit(newAmount water: Double) {
-        healthManager?.saveWaterSample(water/1000, startDate: Date(), endDate: Date())
+        healthManager.saveWaterSample(water/1000, startDate: Date(), endDate: Date())
     }
 }
