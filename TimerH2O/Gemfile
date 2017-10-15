@@ -3,4 +3,8 @@ source "https://rubygems.org"
 
 gem "fastlane"
 gem "cocoapods"
-gem "xcov"
+#gem 'xcov'
+gem "danger-gitlab"
+gem 'danger-swiftlint', '~> 0.5.1' 
+gem 'danger-xcov', '~> 0.2.4'  
+#gem 'danger', :git => 'git@github.com:danger/danger.git', :branch => 'master'
