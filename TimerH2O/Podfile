@@ -11,6 +11,7 @@ target 'TimerH2O' do
   pod 'RealmSwift'
   pod 'SVProgressHUD'
   pod 'Instructions', '1.0.0-beta.1'
+  pod 'Firebase/Core'
   #pod 'Charts'
 
   target 'TimerH2OTests' do

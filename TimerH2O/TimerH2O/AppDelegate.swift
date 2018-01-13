@@ -8,6 +8,7 @@
 
 import UIKit
 import Fabric
+import Firebase
 import Crashlytics
 import UserNotifications
 
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var watcher = WatchManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
         

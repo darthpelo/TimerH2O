@@ -28,6 +28,7 @@
 		D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */; };
 		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */; };
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
+		D95279CE200A2B7C00F723F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */; };
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
 		D971CD991F37198F00C8B739 /* TH2OTimerViewController+Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */; };
@@ -158,6 +159,7 @@
 		D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TH2OWaterPickerView.xib; sourceTree = "<group>"; };
 		D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionVCExtensions.swift; sourceTree = "<group>"; };
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
+		D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
 		D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TH2OTimerViewController+Coach.swift"; path = "Extensions/TH2OTimerViewController+Coach.swift"; sourceTree = "<group>"; };
@@ -366,15 +368,16 @@
 		D98476F21DBD6334009F92B3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				D9E34C851DC2A00700692768 /* Constants.swift */,
-				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D98476E91DBD625C009F92B3 /* TimerH2O.entitlements */,
-				D98476D01DBD622F009F92B3 /* Assets.xcassets */,
-				D98476D51DBD622F009F92B3 /* Info.plist */,
 				D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */,
-				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
-				D9830F551E1A950500D9737F /* InfoPlist.strings */,
+				D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */,
+				D98476D51DBD622F009F92B3 /* Info.plist */,
+				D9E34C851DC2A00700692768 /* Constants.swift */,
 				D9F657D51F1B8ED2004F1F9A /* Logger.swift */,
+				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
+				D98476D01DBD622F009F92B3 /* Assets.xcassets */,
+				D9830F551E1A950500D9737F /* InfoPlist.strings */,
+				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */,
 				D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */,
 				D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */,
+				D95279CE200A2B7C00F723F0 /* GoogleService-Info.plist in Resources */,
 				D97205D81F3111C70030D419 /* TimerH2O.ckcomplication in Resources */,
 				D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */,
 			);
@@ -729,19 +733,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
