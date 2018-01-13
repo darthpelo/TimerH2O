@@ -21,7 +21,7 @@ class WatchManager: NSObject {
     
     override init() {
         super.init()
-        watchSession = WCSession.default()
+        watchSession = WCSession.default
         watchSession?.delegate = self
         watchSession?.activate()
     }

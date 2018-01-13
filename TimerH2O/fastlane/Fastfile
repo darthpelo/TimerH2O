@@ -27,8 +27,9 @@ platform :ios do
 
   desc "Submit to internal testers using Crashlytics"
   lane :alpha do |values|
-    test
-    gym(scheme: 'TimerH2O',
+    cert
+    sigh
+    gym(scheme: 'TimerH2O_BetaTest',
         configuration: 'Test',
         export_method: 'ad-hoc')
 

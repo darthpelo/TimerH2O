@@ -28,6 +28,7 @@
 		D94A12E81DC548ED0047FCB6 /* TH2OWaterPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */; };
 		D94A12EA1DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */; };
 		D94A12EC1DC54AE90047FCB6 /* TH2OWaterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */; };
+		D95279CE200A2B7C00F723F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */; };
 		D963E04D1DFC0DF3005B67F4 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04C1DFC0DF3005B67F4 /* Configurable.swift */; };
 		D963E04F1DFC133C005B67F4 /* Seguible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963E04E1DFC133C005B67F4 /* Seguible.swift */; };
 		D971CD991F37198F00C8B739 /* TH2OTimerViewController+Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */; };
@@ -158,6 +159,7 @@
 		D94A12E71DC548ED0047FCB6 /* TH2OWaterPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TH2OWaterPickerView.xib; sourceTree = "<group>"; };
 		D94A12E91DC54A460047FCB6 /* TH2OSetSessionVCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TH2OSetSessionVCExtensions.swift; sourceTree = "<group>"; };
 		D94A12EB1DC54AE90047FCB6 /* TH2OWaterPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TH2OWaterPickerView.swift; path = Views/TH2OWaterPickerView.swift; sourceTree = "<group>"; };
+		D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D963E04C1DFC0DF3005B67F4 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = Extensions/Configurable.swift; sourceTree = "<group>"; };
 		D963E04E1DFC133C005B67F4 /* Seguible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Seguible.swift; path = Protocols/Seguible.swift; sourceTree = "<group>"; };
 		D971CD981F37198F00C8B739 /* TH2OTimerViewController+Coach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TH2OTimerViewController+Coach.swift"; path = "Extensions/TH2OTimerViewController+Coach.swift"; sourceTree = "<group>"; };
@@ -366,15 +368,16 @@
 		D98476F21DBD6334009F92B3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				D9E34C851DC2A00700692768 /* Constants.swift */,
-				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
 				D98476E91DBD625C009F92B3 /* TimerH2O.entitlements */,
-				D98476D01DBD622F009F92B3 /* Assets.xcassets */,
-				D98476D51DBD622F009F92B3 /* Info.plist */,
 				D94A12DE1DC5339A0047FCB6 /* MyPlayground.playground */,
-				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
-				D9830F551E1A950500D9737F /* InfoPlist.strings */,
+				D95279CD200A2B7C00F723F0 /* GoogleService-Info.plist */,
+				D98476D51DBD622F009F92B3 /* Info.plist */,
+				D9E34C851DC2A00700692768 /* Constants.swift */,
 				D9F657D51F1B8ED2004F1F9A /* Logger.swift */,
+				D9D0AEC21DBEA4B700B6A8EE /* R.generated.swift */,
+				D98476D01DBD622F009F92B3 /* Assets.xcassets */,
+				D9830F551E1A950500D9737F /* InfoPlist.strings */,
+				D907533F1DCF93EC00AB6FCC /* Localizable.strings */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -622,12 +625,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Alessio Roberto";
 				TargetAttributes = {
 					D98476C31DBD622F009F92B3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GK5S624D99;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -641,6 +645,7 @@
 					D98476D91DBD622F009F92B3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GK5S624D99;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D98476C31DBD622F009F92B3;
 					};
@@ -652,6 +657,7 @@
 					D9A972D41F05A57B00ABF4BA = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = GK5S624D99;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -690,6 +696,7 @@
 				D98476D11DBD622F009F92B3 /* Assets.xcassets in Resources */,
 				D92795A21E35062400623F9F /* Default-568h@2x.png in Resources */,
 				D98476CF1DBD622F009F92B3 /* Main.storyboard in Resources */,
+				D95279CE200A2B7C00F723F0 /* GoogleService-Info.plist in Resources */,
 				D97205D81F3111C70030D419 /* TimerH2O.ckcomplication in Resources */,
 				D9CA9B7E1DC7EA11003EFD4F /* TH2OTimePickerView.xib in Resources */,
 			);
@@ -729,19 +736,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2O/Pods-TimerH2O-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Instructions/Instructions.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instructions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -754,9 +765,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TimerH2OTests/Pods-TimerH2OTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -822,7 +838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
 		D9FD85B31E165A4900CC25D4 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1023,7 +1039,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1031,7 +1049,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1074,7 +1096,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1082,7 +1106,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1114,7 +1142,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1123,7 +1151,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b6c5d947-f585-454d-9f34-c236311adead";
 				PROVISIONING_PROFILE_SPECIFIER = TimerH2O_Dev;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1134,7 +1163,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1142,7 +1171,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c8e2ee66-09cf-49ef-9355-7e246c8cd077";
 				PROVISIONING_PROFILE_SPECIFIER = TimerH2O_AppStore;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1157,7 +1187,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimerH2O.app/TimerH2O";
 			};
 			name = Debug;
@@ -1173,7 +1204,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimerH2O.app/TimerH2O";
 			};
 			name = Release;
@@ -1188,7 +1220,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1196,7 +1230,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1229,7 +1267,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TimerH2O/TimerH2O.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Alessio Roberto (GK5S624D99)";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = TimerH2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1237,7 +1275,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1df5d56f-cd19-495a-a88b-8a209a73b302";
 				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O-AdHoc";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Test;
 		};
@@ -1252,7 +1291,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.TimerH2OTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimerH2O.app/TimerH2O";
 			};
 			name = Test;
@@ -1264,7 +1304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				IBSC_MODULE = Watch_Extension;
@@ -1288,7 +1328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
@@ -1311,7 +1351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
@@ -1333,7 +1373,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
@@ -1345,7 +1385,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O WatchExt Dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
@@ -1357,7 +1398,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1368,7 +1409,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O WatchExt AppStore";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
@@ -1380,7 +1422,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1709071225;
+				CURRENT_PROJECT_VERSION = 1801131714;
 				DEVELOPMENT_TEAM = GK5S624D99;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1391,7 +1433,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "TimerH2O WatchExt AdHoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};

@@ -192,23 +192,27 @@ extension TH2OTimerViewController: UNUserNotificationCenterDelegate {
         case UNNotificationDismissActionIdentifier: // Notification was dismissed by user
             completionHandler()
         case UNNotificationDefaultActionIdentifier: // App was opened from notification
-            completionHandler(presenter.setupView())
+            presenter.setupView()
+            completionHandler()
         case TH2OConstants.UserNotification.drinkAction:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.drinkAction])
-            completionHandler(presenter.setupView())
+            presenter.setupView()
+            completionHandler()
         case TH2OConstants.UserNotification.snooze5Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze5Action])
-            completionHandler(snozee(Snooze.five))
+            snozee(Snooze.five)
+            completionHandler()
         case TH2OConstants.UserNotification.snooze15Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze15Action])
-            completionHandler(snozee(Snooze.fifteen))
+            snozee(Snooze.fifteen)
+            completionHandler()
         case TH2OConstants.UserNotification.snooze30Action:
             AnswerManager().log(event: "Notification Action", withCustomAttributes: ["action": TH2OConstants.UserNotification.snooze30Action])
-            completionHandler(snozee(Snooze.thirty))
+            snozee(Snooze.thirty)
+            completionHandler()
         default:
             completionHandler()
         }
     }
     
 }
-

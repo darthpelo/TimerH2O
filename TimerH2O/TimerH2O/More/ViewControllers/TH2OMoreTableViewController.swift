@@ -36,9 +36,9 @@ final class TH2OMoreTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == MoreDetail.healthData.rawValue {
-            performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.healthData, sender: self)
+            performSegue(withIdentifier: R.segue.th2OMoreTableViewController.healthData, sender: self)
         } else {
-            performSegue(withIdentifier: R.segue.tH2OMoreTableViewController.webDetails, sender: self)
+            performSegue(withIdentifier: R.segue.th2OMoreTableViewController.webDetails, sender: self)
         }
     }
     

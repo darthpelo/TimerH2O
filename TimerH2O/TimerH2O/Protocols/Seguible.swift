@@ -12,12 +12,12 @@ protocol Seguible {}
 
 extension Seguible where Self: TH2OSetSessionViewController {
     internal func backToTimer() {
-        performSegue(withIdentifier: R.segue.tH2OSetSessionViewController.backToTimerVC.identifier, sender: nil)
+        performSegue(withIdentifier: R.segue.th2OSetSessionViewController.backToTimerVC.identifier, sender: nil)
     }
 }
 
 extension Seguible where Self: TH2OTimerViewController {
     internal func newSession() {
-        performSegue(withIdentifier: R.segue.tH2OTimerViewController.newSessionVC.identifier, sender: nil)
+        performSegue(withIdentifier: R.segue.th2OTimerViewController.newSessionVC.identifier, sender: nil)
     }
 }

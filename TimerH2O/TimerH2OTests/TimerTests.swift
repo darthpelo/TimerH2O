@@ -32,6 +32,6 @@ class TimerTests: XCTestCase {
             expec.fulfill()
         }
         
-        waitForExpectations(timeout: 5.0, handler:nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 }
