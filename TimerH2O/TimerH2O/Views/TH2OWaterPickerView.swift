@@ -30,7 +30,7 @@ class TH2OWaterPickerView: UIView {
     }
     
     func loadPickerView() -> TH2OWaterPickerView? {
-        guard let view = R.nib.tH2OWaterPickerView.firstView(owner: self) else {
+        guard let view = R.nib.th2OWaterPickerView.firstView(owner: self) else {
             return nil
         }
         

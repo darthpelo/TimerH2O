@@ -28,14 +28,14 @@ final class TH2OMoreDetailViewController: UIViewController, Configurable {
 // MARK: - WKNavigationDelegate
 extension TH2OMoreDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        NSLog(error.localizedDescription)
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+        }
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        NSLog("Strat to load")
         SVProgressHUD.show(withTitle: nil)
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        NSLog("finish to load")
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
         }

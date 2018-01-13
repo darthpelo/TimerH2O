@@ -100,9 +100,9 @@ extension Configurable where Self: TH2OMoreDetailViewController {
         
         switch type {
         case .acknowledgements:
-            return "http://www.alessioroberto.it/timerh2o/timerh2o.html"
+            return "http://www.timerh2o.info/timerh2o.html"
         case .privacy:
-            return "http://www.alessioroberto.it/timerh2o/privacy.html"
+            return "http://www.timerh2o.info/privacy.html"
         default:
             return nil
         }

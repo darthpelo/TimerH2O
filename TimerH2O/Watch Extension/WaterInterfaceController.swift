@@ -60,7 +60,7 @@ class WaterInterfaceController: WKInterfaceController {
         // Configure interface objects here.
         update()
         
-        watchSession = WCSession.default()
+        watchSession = WCSession.default
     }
     
     override func willActivate() {

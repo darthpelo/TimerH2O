@@ -31,7 +31,7 @@ class TH2OTimerPickerView: UIView {
     }
     
     func loadDatePickerView() -> TH2OTimerPickerView? {
-        guard let view = R.nib.tH2OTimePickerView.firstView(owner: self) else {
+        guard let view = R.nib.th2OTimePickerView.firstView(owner: self) else {
             return nil
         }
         view.frame.origin.y = UIScreen.main.bounds.height
