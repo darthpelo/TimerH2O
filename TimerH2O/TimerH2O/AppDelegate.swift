@@ -8,6 +8,7 @@
 
 import UIKit
 import Fabric
+import FacebookCore
 import Firebase
 import Crashlytics
 import UserNotifications
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
+        
+        AppEventsLogger.activate(application)
         
         if UserDefaults.standard.userCreated == false {
             if let userId = UIDevice.current.identifierForVendor?.uuidString {

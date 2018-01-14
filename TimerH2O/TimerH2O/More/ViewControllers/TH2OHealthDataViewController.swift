@@ -37,7 +37,9 @@ final class TH2OHealthDataViewController: UIViewController, Configurable {
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         presenter.healthKitAuthorize { [weak self] (authorize) in
-            self?.healthSwitch.isOn = authorize
+            DispatchQueue.main.async { [weak self] in
+                self?.healthSwitch.isOn = authorize
+            }
             
             if authorize { AnswerManager().log(event: "Health Connected") }
         }
