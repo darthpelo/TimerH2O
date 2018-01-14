@@ -70,5 +70,19 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb199839673927398</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>199839673927398</string>
+    <key>FacebookDisplayName</key>
+    <string>Timer H2O</string>
 </dict>
 </plist>

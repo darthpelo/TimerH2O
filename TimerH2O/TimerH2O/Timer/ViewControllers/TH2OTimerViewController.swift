@@ -118,7 +118,7 @@ class TH2OTimerViewController: UIViewController, Configurable, Seguible {
         presenter.stopTimer()
     }
     
-    func didBecomeActive() {
+    @objc func didBecomeActive() {
         if #available(iOS 10.0, *) {
             if presenter.sessionIsStarted() {
                 presenter.setupView()

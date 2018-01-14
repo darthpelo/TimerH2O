@@ -12,6 +12,7 @@ target 'TimerH2O' do
   pod 'SVProgressHUD'
   pod 'Instructions'
   pod 'Firebase/Core'
+  pod 'FacebookCore'
   #pod 'Charts'
 
   target 'TimerH2OTests' do
