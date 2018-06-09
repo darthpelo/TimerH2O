@@ -10,7 +10,7 @@ target 'TimerH2O' do
   pod 'Crashlytics', '~>  3.9'
   pod 'RealmSwift'
   pod 'SVProgressHUD'
-  pod 'Instructions'
+  pod 'Instructions', '1.1.0'
   pod 'Firebase/Core'
   pod 'FacebookCore'
   #pod 'Charts'
