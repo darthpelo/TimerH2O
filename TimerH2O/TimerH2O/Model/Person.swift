@@ -9,10 +9,10 @@
 import RealmSwift
 
 class Person: Object {
-    dynamic var userId = ""
-    dynamic var name = ""
-    dynamic var birthday = NSDate(timeIntervalSince1970: 1)
-    dynamic var emailAddress = ""
+    @objc dynamic var userId = ""
+    @objc dynamic var name = ""
+    @objc dynamic var birthday = NSDate(timeIntervalSince1970: 1)
+    @objc dynamic var emailAddress = ""
     
     let sessions = List<Session>()
 }

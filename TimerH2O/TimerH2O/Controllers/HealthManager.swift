@@ -51,7 +51,7 @@ final class HealthManager {
             let waterQuantity = HKQuantity(unit: HKUnit.liter(), doubleValue: water)
             let waterSample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: startDate, end: endDate)
             
-            healthKitStore.save(waterSample, withCompletion: { (success, error) in
+            healthKitStore.save(waterSample, withCompletion: { (_, error) in
                 if error != nil {
                     NSLog("Error saving water sample: \(String(describing: error?.localizedDescription))")
                 } else {

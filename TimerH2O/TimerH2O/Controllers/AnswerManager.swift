@@ -10,7 +10,7 @@ import Foundation
 import Crashlytics
 
 struct AnswerManager {
-    func log(event eventName: String, withCustomAttributes customAttributes: [String : Any]? = nil) {
+    func log(event eventName: String, withCustomAttributes customAttributes: [String: Any]? = nil) {
          Answers.logCustomEvent(withName: eventName, customAttributes: customAttributes)
     }
     

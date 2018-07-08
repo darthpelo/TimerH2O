@@ -97,7 +97,7 @@ struct RealmManager: DataWrapper {
             // Get the default Realm
             let realm = try loadRealm()
             
-            let predicate = NSPredicate(format:"userId = %@", userId)
+            let predicate = NSPredicate(format: "userId = %@", userId)
             return realm.objects(Person.self).filter(predicate).first
         } catch {
             log(text: "Open with wrong key: \(error)")
